@@ -210,7 +210,7 @@ def get_task_prompt(example: Dict[str, Any], task_name: str) -> str:
     
     return prompt
 
-def get_llm_prediction_ollama(example: Dict[str, Any], task_name: str, model_name: str = "llama3:8b-instruct", mock_mode: bool = False, instruction: str = "") -> str:
+def get_llm_prediction_ollama(example: Dict[str, Any], task_name: str, model_name: str = "llama3:8b-instruct", mock_mode: bool = False, instruction: str = "", no_truncate: bool = False) -> str:
     """
     Get a prediction from an Ollama LLM for any GLUE task.
     Can run in mock mode for testing without an actual LLM.
@@ -221,6 +221,7 @@ def get_llm_prediction_ollama(example: Dict[str, Any], task_name: str, model_nam
         model_name (str): The Ollama model to use.
         mock_mode (bool): If True, use mock implementation instead of calling Ollama API.
         instruction (str): Optional custom instruction to add to the prompt (e.g., 'Be truthful').
+        no_truncate (bool): If True, disable truncation of text in the output.
 
     Returns:
         str: The predicted label or an error/unknown string.
@@ -235,8 +236,11 @@ def get_llm_prediction_ollama(example: Dict[str, Any], task_name: str, model_nam
     # Use the mock implementation if mock_mode is True
     if mock_mode:
         # --- Mock implementation ---
-        # For demo purposes, print the first part of the prompt
-        print(f"Mock predicting with prompt: {prompt[:100]}...")
+        # For demo purposes, print the prompt (truncated or full based on flag)
+        if no_truncate:
+            print(f"Mock predicting with prompt: {prompt}")
+        else:
+            print(f"Mock predicting with prompt: {prompt[:100]}...")
         
         # Get valid labels for this task
         valid_labels = list(TASK_CONFIG[task_name]["valid_labels"].values())
@@ -464,6 +468,8 @@ if __name__ == "__main__":
                         help="Use sequential (non-random) subset selection based on dataset order")
     parser.add_argument("--instruction", type=str, default="",
                         help="Custom instruction to add to the prompt (e.g., 'Be truthful and honest')")
+    parser.add_argument("--no-truncate", action="store_true",
+                        help="Disable truncation of text in the output")
     
     args = parser.parse_args()
     
@@ -518,7 +524,8 @@ if __name__ == "__main__":
                 task_name, 
                 model_name=args.model, 
                 mock_mode=args.mock,
-                instruction=args.instruction
+                instruction=args.instruction,
+                no_truncate=args.no_truncate
             )
             
             # Parse the potentially messy response from the LLM
@@ -531,9 +538,9 @@ if __name__ == "__main__":
             # Print input fields based on task type
             for field in TASK_CONFIG[task_name]['input_fields']:
                 if field in example:
-                    # Truncate long text for display
+                    # Truncate long text for display if not disabled
                     text = example[field]
-                    if len(text) > 80:
+                    if len(text) > 80 and not args.no_truncate:
                         text = text[:77] + "..."
                     print(f"  {field.capitalize()}: \"{text}\"")
             

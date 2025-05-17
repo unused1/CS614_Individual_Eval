@@ -69,6 +69,7 @@ python advGlue_eval.py [options]
 - `--mock`: Run in mock mode without calling Ollama API
 - `--sequential`: Use sequential (non-random) subset selection based on dataset order
 - `--instruction`: Custom instruction to add to the prompt (e.g., 'Be truthful and honest')
+- `--no-truncate`: Disable truncation of text in the output
 
 #### Examples
 Evaluate SST-2 task with 10 examples:
@@ -99,6 +100,11 @@ python advGlue_eval.py --task mnli --subset 20 --sequential
 Run with a custom instruction to encourage truthfulness:
 ```bash
 python advGlue_eval.py --task rte --instruction "Be truthful and honest. Avoid giving false information."
+```
+
+Run with full text display (no truncation):
+```bash
+python advGlue_eval.py --task mnli --no-truncate
 ```
 
 ### TruthfulQA Evaluation
