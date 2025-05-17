@@ -2,6 +2,7 @@ import json
 import random
 import argparse
 from typing import List, Dict, Any, Tuple
+import ollama
 
 # --- Constants and Configuration ---
 # Available GLUE tasks in the dataset
@@ -203,86 +204,83 @@ def get_task_prompt(example: Dict[str, Any], task_name: str) -> str:
     
     return prompt
 
-def get_llm_prediction_ollama(example: Dict[str, Any], task_name: str, model_name: str = "llama3:8b-instruct") -> str:
+def get_llm_prediction_ollama(example: Dict[str, Any], task_name: str, model_name: str = "llama3:8b-instruct", mock_mode: bool = False) -> str:
     """
-    Placeholder function to get a prediction from an Ollama LLM for any GLUE task.
-    Replace this with your actual Ollama API call.
+    Get a prediction from an Ollama LLM for any GLUE task.
+    Can run in mock mode for testing without an actual LLM.
 
     Args:
         example (Dict[str, Any]): The example to classify.
         task_name (str): The name of the GLUE task.
         model_name (str): The Ollama model to use.
+        mock_mode (bool): If True, use mock implementation instead of calling Ollama API.
 
     Returns:
         str: The predicted label or an error/unknown string.
     """
     # Generate an appropriate prompt for the task
     prompt = get_task_prompt(example, task_name)
-    
-    # --- Mock implementation for now ---
-    # Replace this mock logic with your actual Ollama call above.
-    # For demo purposes, print the first part of the prompt
-    print(f"Mock predicting with prompt: {prompt[:100]}...")
 
-    # IMPORTANT: Implement your Ollama call here.
-    # Example using the 'ollama' library (install with 'pip install ollama'):
-    #
-    # import ollama
-    # try:
-    #     response = ollama.chat(
-    #         model=model_name,
-    #         messages=[{'role': 'user', 'content': prompt}],
-    #         options={"temperature": 0.0} # Low temperature for classification
-    #     )
-    #     prediction = response['message']['content'].strip().lower()
-    #     return prediction
-    # except Exception as e:
-    #     print(f"Error querying Ollama model {model_name}: {e}")
-    #     return "error"
-    
-    # Get valid labels for this task
-    valid_labels = list(TASK_CONFIG[task_name]["valid_labels"].values())
-    
-    # Simple mock logic based on task type
-    if task_name == "sst2":
-        sentence = example["sentence"].lower()
-        if "good" in sentence or "excellent" in sentence or "great" in sentence:
-            return "positive"
-        elif "bad" in sentence or "terrible" in sentence or "awful" in sentence:
-            return "negative"
+    # Use the mock implementation if mock_mode is True
+    if mock_mode:
+        # --- Mock implementation ---
+        # For demo purposes, print the first part of the prompt
+        print(f"Mock predicting with prompt: {prompt[:100]}...")
+        
+        # Get valid labels for this task
+        valid_labels = list(TASK_CONFIG[task_name]["valid_labels"].values())
+        
+        # Simple mock logic based on task type
+        if task_name == "sst2":
+            sentence = example["sentence"].lower()
+            if "good" in sentence or "excellent" in sentence or "great" in sentence:
+                return "positive"
+            elif "bad" in sentence or "terrible" in sentence or "awful" in sentence:
+                return "negative"
+            else:
+                # Simulate LLM output that might need parsing
+                return random.choice(["positive", "negative", "The sentiment is positive."])
+        
+        elif task_name == "qqp":
+            # Simple heuristic for question similarity
+            q1 = example["question1"].lower()
+            q2 = example["question2"].lower()
+            if len(set(q1.split()) & set(q2.split())) > 3:  # If they share more than 3 words
+                return "duplicate"
+            else:
+                return "not_duplicate"
+        
+        elif task_name in ["mnli", "mnli-mm"]:
+            # Simple mock for NLI tasks
+            premise = example["premise"].lower()
+            hypothesis = example["hypothesis"].lower()
+            if premise.find(hypothesis) >= 0:  # If hypothesis is contained in premise
+                return "entailment"
+            elif any(word in premise for word in ["not", "no", "never"]) and any(word in hypothesis for word in ["is", "are", "was"]):
+                return "contradiction"
+            else:
+                return "neutral"
+        
+        elif task_name == "qnli" or task_name == "rte":
+            # Simple mock for QNLI and RTE
+            return random.choice(valid_labels)
+        
         else:
-            # Simulate LLM output that might need parsing
-            return random.choice(["positive", "negative", "The sentiment is positive."])
-    
-    elif task_name == "qqp":
-        # Simple heuristic for question similarity
-        q1 = example["question1"].lower()
-        q2 = example["question2"].lower()
-        if len(set(q1.split()) & set(q2.split())) > 3:  # If they share more than 3 words
-            return "duplicate"
-        else:
-            return "not_duplicate"
-    
-    elif task_name in ["mnli", "mnli-mm"]:
-        # Simple mock for NLI tasks
-        premise = example["premise"].lower()
-        hypothesis = example["hypothesis"].lower()
-        if premise.find(hypothesis) >= 0:  # If hypothesis is contained in premise
-            return "entailment"
-        elif any(word in premise for word in ["not", "no", "never"]) and any(word in hypothesis for word in ["is", "are", "was"]):
-            return "contradiction"
-        else:
-            return "neutral"
-    
-    elif task_name == "qnli" or task_name == "rte":
-        # Simple mock for QNLI and RTE
-        return random.choice(valid_labels)
-    
+            # For any other task, just return a random valid label
+            return random.choice(valid_labels)
     else:
-        # For any other task, just return a random valid label
-        return random.choice(valid_labels)
-    # --- End of Mock implementation ---
-
+        # --- Actual Ollama API call ---
+        try:
+            response = ollama.chat(
+                model=model_name,
+                messages=[{'role': 'user', 'content': prompt}],
+                options={"temperature": 0.0} # Low temperature for classification
+            )
+            prediction = response['message']['content'].strip().lower()
+            return prediction
+        except Exception as e:
+            print(f"Error querying Ollama model {model_name}: {e}")
+            return "error"
 
 def parse_llm_response(raw_response: str, task_name: str) -> str:
     """
@@ -436,7 +434,7 @@ def evaluate_predictions(
     
     return eval_results
 
-# --- Main Execution Example ---
+# --- Main Execution ---
 
 if __name__ == "__main__":
     # Set up command-line argument parsing
@@ -449,6 +447,8 @@ if __name__ == "__main__":
                         help="Ollama model to use (default: llama3:8b-instruct)")
     parser.add_argument("--dataset", type=str, default="dataset/dev.json",
                         help="Path to the AdvGLUE dev.json file (default: dataset/dev.json)")
+    parser.add_argument("--mock", action="store_true",
+                        help="Run in mock mode without calling Ollama API")
     
     args = parser.parse_args()
     
@@ -489,7 +489,7 @@ if __name__ == "__main__":
         
         for example in task_data:
             # Get the raw LLM prediction
-            raw_llm_response = get_llm_prediction_ollama(example, task_name, model_name=args.model)
+            raw_llm_response = get_llm_prediction_ollama(example, task_name, model_name=args.model, mock_mode=args.mock)
             
             # Parse the potentially messy response from the LLM
             parsed_prediction = parse_llm_response(raw_llm_response, task_name)
