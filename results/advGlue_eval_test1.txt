@@ -1,5 +1,5 @@
-# Evaluation run on 2025-05-17 13:54:10
-# Command: advGlue_eval.py --task all --subset 5 --model llama3.2:3b --sequential --no-truncate --output results/advGlue_eval_test1.out
+# Evaluation run on 2025-05-17 14:00:27
+# Command: advGlue_eval.py --task all --subset 5 --model llama3.2:3b --sequential --no-truncate --output results/advGlue_eval_test1.txt
 
 
 ==================================================
