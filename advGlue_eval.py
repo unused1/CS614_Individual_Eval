@@ -461,8 +461,8 @@ if __name__ == "__main__":
                         help="GLUE task to evaluate (or 'all' for all tasks)")
     parser.add_argument("--subset", type=int, default=10,
                         help="Number of examples to evaluate per task (default: 10)")
-    parser.add_argument("--model", type=str, default="llama3:8b-instruct",
-                        help="Ollama model to use (default: llama3:8b-instruct)")
+    parser.add_argument("--model", type=str, default="llama3.2:3b",
+                        help="Ollama model to use (default: llama3.2:3b)")
     parser.add_argument("--dataset", type=str, default="dataset/dev.json",
                         help="Path to the AdvGLUE dev.json file (default: dataset/dev.json)")
     parser.add_argument("--mock", action="store_true",

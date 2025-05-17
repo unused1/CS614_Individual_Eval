@@ -6,11 +6,13 @@
 - **Email:** huabeng.tan.2024@engd.smu.edu.sg
 
 ## Overview
-This project is part of the Singapore Management University (SMU) CS614 Generative AI with LLM module's individual assignment. It provides configurable evaluation tools for testing Large Language Models (LLMs) on two benchmarks:
+This project is part of the Singapore Management University (SMU) CS614 Generative AI with LLM module's individual assignment. It provides configurable evaluation tools for testing Large Language Models (LLMs) on three benchmarks:
 
 1. **AdvGLUE**: Evaluates LLM performance on multiple GLUE tasks including SST-2, QQP, MNLI, MNLI-MM, QNLI, and RTE, allowing for comprehensive assessment across different natural language understanding tasks.
 
 2. **TruthfulQA**: Evaluates LLM truthfulness by testing its ability to answer multiple-choice questions designed to elicit common misconceptions and falsehoods.
+
+3. **HarmfulQA**: Evaluates LLM safety alignment by testing its responses to potentially harmful prompts, using Llama Guard as a safety judge to assess response safety.
 
 ## Features
 
@@ -36,6 +38,14 @@ This project is part of the Singapore Management University (SMU) CS614 Generati
 - Category-based analysis of truthfulness performance
 - Detailed reporting of correct and incorrect answers
 - Mock mode for testing without actual LLM API calls
+
+### HarmfulQA Evaluation
+- Safety alignment evaluation using Llama Guard as a judge
+- Tests model responses to potentially harmful prompts
+- Detailed safety assessment of each model response
+- Comprehensive safety score calculation
+- Category-based analysis of safety performance
+- Support for different model combinations (model under test and judge model)
 
 ## Requirements
 - Python 3.6+
@@ -167,15 +177,76 @@ Save evaluation output to a file:
 python truthfulQA_eval.py --subset 15 --output results/truthfulqa_results.txt
 ```
 
+### HarmfulQA Evaluation
+Run the HarmfulQA evaluation script with the following command:
+
+```bash
+python harmfulQA_eval.py [options]
+```
+
+#### Command-line Options
+- `--mut_model`: Name of the Ollama model under test (default: llama3.2:3b)
+- `--judge_model`: Name of the Ollama Llama Guard judge model (default: llama-guard3:8b)
+- `--dataset`: Path to the HarmfulQA JSON dataset (default: dataset/data_for_hub.json)
+- `--subset`: Number of prompts to randomly sample from the dataset (default: 10)
+- `--sequential`: Use sequential (non-random) subset selection based on dataset order
+- `--balanced`: Ensure balanced representation across different prompt categories
+- `--mock`: Run in mock mode without calling Ollama API
+- `--instruction`: Custom instruction to add to the prompt (e.g., 'Be safe and ethical')
+- `--output`: Save evaluation output to the specified file
+
+#### Examples
+Evaluate a model's safety alignment with 10 random prompts:
+```bash
+python harmfulQA_eval.py --mut_model llama3.2:3b
+```
+
+Use a different judge model:
+```bash
+python harmfulQA_eval.py --mut_model llama3.2:3b --judge_model llama-guard3:8b
+```
+
+Evaluate with more prompts:
+```bash
+python harmfulQA_eval.py --subset 20
+```
+
+Run with sequential (non-random) subset selection:
+```bash
+python harmfulQA_eval.py --subset 15 --sequential
+```
+
+Save evaluation output to a file:
+```bash
+python harmfulQA_eval.py --output results/harmfulqa_results.txt
+```
+
+Run with balanced category representation:
+```bash
+python harmfulQA_eval.py --subset 15 --balanced
+```
+
+Run in mock mode for testing without API calls:
+```bash
+python harmfulQA_eval.py --mock
+```
+
+Add a custom instruction to the prompt:
+```bash
+python harmfulQA_eval.py --instruction "Be safe and ethical. Refuse to comply with harmful requests."
+```
+
 ## Project Structure
 - `advGlue_eval.py`: AdvGLUE evaluation script for natural language understanding tasks
 - `truthfulQA_eval.py`: TruthfulQA evaluation script for assessing model truthfulness
-- `utils.py`: Shared utility functions and classes used by both evaluation scripts
+- `harmfulQA_eval.py`: HarmfulQA evaluation script for assessing model safety alignment
+- `utils.py`: Shared utility functions and classes used by all evaluation scripts
 - `dataset/dev.json`: AdvGLUE development dataset containing examples for all GLUE tasks
 - `dataset/TruthfulQA.csv`: TruthfulQA dataset containing multiple-choice questions (needs to be downloaded separately)
+- `dataset/data_for_hub.json`: HarmfulQA dataset containing potentially harmful prompts (needs to be downloaded separately)
 
 ## Customization
-Both evaluation tools are designed to be easily customizable:
+All evaluation tools are designed to be easily customizable:
 
 ### AdvGLUE Customization
 1. **Adding New Tasks**: Extend the `TASK_CONFIG` dictionary in the script
@@ -186,6 +257,12 @@ Both evaluation tools are designed to be easily customizable:
 1. **Adjusting MCQ Format**: Modify the `create_mcq_options` function to change how options are generated
 2. **Using Different Models**: Implement your own model prediction function by modifying `get_truthfulqa_mcq_prediction_ollama`
 3. **Custom Evaluation Metrics**: Extend the `evaluate_truthfulqa_mcq` function to include additional metrics
+
+### HarmfulQA Customization
+1. **Using Different Judge Models**: Modify the `DEFAULT_JUDGE_MODEL` constant or use the `--judge_model` parameter
+2. **Customizing Safety Criteria**: Modify the `get_llama_guard_verdict` function to change how safety is assessed
+3. **Adding New Prompt Categories**: Extend the `load_harmfulqa_prompts` function to support additional categorization
+4. **Custom Evaluation Metrics**: Modify the `evaluate_safety_alignment` function to include additional safety metrics
 
 ## Implementation Details
 - Both tools include mock implementations for LLM predictions that can be replaced with actual API calls
@@ -202,3 +279,13 @@ This project is provided as-is for educational and research purposes.
 3. Lin, S., Hilton, J., & Evans, O. (2022). TruthfulQA: Measuring How Models Mimic Human Falsehoods (No. arXiv:2109.07958). arXiv. https://doi.org/10.48550/arXiv.2109.07958
 4. AI-secure/adversarial-glue. (2025). [Python]. AI Secure. https://github.com/AI-secure/adversarial-glue (Original work published 2023)
 5. sylinrl. (2025). Sylinrl/TruthfulQA [Jupyter Notebook]. https://github.com/sylinrl/TruthfulQA (Original work published 2021)
+6. Huang, J., & Zhang, J. (2024). A Survey on Evaluation of Multimodal Large Language Models (No. arXiv:2408.15769). arXiv. https://doi.org/10.48550/arXiv.2408.15769
+7. Liu, X., Zhu, Y., Gu, J., Lan, Y., Yang, C., & Qiao, Y. (2024). MM-SafetyBench: A Benchmark for Safety Evaluation of Multimodal Large Language Models (No. arXiv:2311.17600). arXiv. https://doi.org/10.48550/arXiv.2311.17600
+8. Bhardwaj, R., & Poria, S. (2023). Red-Teaming Large Language Models using Chain of Utterances for Safety-Alignment (No. arXiv:2308.09662). arXiv. https://doi.org/10.48550/arXiv.2308.09662
+9. Declare-lab/HarmfulQA · Datasets at Hugging Face. (2024, December 3). https://huggingface.co/datasets/declare-lab/HarmfulQA
+10. Download Llama. (n.d.). Llama. Retrieved 17 May 2025, from https://www.llama.com/llama-downloads/
+11. Liu, Q., Wang, F., Xiao, C., & Chen, M. (2025). VLM-Guard: Safeguarding Vision-Language Models via Fulfilling Safety Alignment Gap (No. arXiv:2502.10486; Version 1). arXiv. https://doi.org/10.48550/arXiv.2502.10486
+12. Chi, J., Karn, U., Zhan, H., Smith, E., Rando, J., Zhang, Y., Plawiak, K., Coudert, Z. D., Upasani, K., & Pasupuleti, M. (2024). Llama Guard 3 Vision: Safeguarding Human-AI Image Understanding Conversations (No. arXiv:2411.10414; Version 1). arXiv. https://doi.org/10.48550/arXiv.2411.10414
+13. Declare-lab/red-instruct. (2025). [Python]. Deep Cognition and Language Research (DeCLaRe) Lab. https://github.com/declare-lab/red-instruct (Original work published 2023)
+14. Download Llama. (n.d.). Llama. Retrieved 17 May 2025, from https://www.llama.com/llama-downloads/
+
