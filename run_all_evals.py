@@ -146,6 +146,12 @@ def main():
                         help=f"Number of examples to evaluate per task/dataset (default: {DEFAULT_SUBSET_SIZE}, 0 for full dataset)")
     parser.add_argument("--full-dataset", action="store_true", 
                         help="Use the full dataset (equivalent to --subset 0)")
+    parser.add_argument("--advglue-subset", type=int, default=None,
+                        help="Number of examples to evaluate for AdvGLUE (overrides --subset)")
+    parser.add_argument("--truthfulqa-subset", type=int, default=None,
+                        help="Number of examples to evaluate for TruthfulQA (overrides --subset)")
+    parser.add_argument("--harmfulqa-subset", type=int, default=None,
+                        help="Number of examples to evaluate for HarmfulQA (overrides --subset)")
     parser.add_argument("--output-dir", type=str, default=DEFAULT_OUTPUT_DIR,
                         help=f"Directory to save results (default: {DEFAULT_OUTPUT_DIR})")
     parser.add_argument("--skip-advglue", action="store_true", help="Skip AdvGLUE evaluation")
@@ -173,7 +179,10 @@ def main():
         f.write(f"Run timestamp: {timestamp}\n")
         f.write(f"Models: {', '.join(args.models)}\n")
         f.write(f"Judge model: {args.judge_model}\n")
-        f.write(f"Subset size: {args.subset}\n")
+        f.write(f"Default subset size: {args.subset}\n")
+        f.write(f"AdvGLUE subset size: {advglue_subset}\n")
+        f.write(f"TruthfulQA subset size: {truthfulqa_subset}\n")
+        f.write(f"HarmfulQA subset size: {harmfulqa_subset}\n")
         f.write(f"Balanced: {args.balanced}\n")
         f.write(f"Sequential: {args.sequential}\n")
         f.write(f"Skip AdvGLUE: {args.skip_advglue}\n")
@@ -196,6 +205,11 @@ def main():
     total_evaluations = 0
     evaluations_to_run = []
     
+    # Determine subset sizes for each evaluation type
+    advglue_subset = args.advglue_subset if args.advglue_subset is not None else args.subset
+    truthfulqa_subset = args.truthfulqa_subset if args.truthfulqa_subset is not None else args.subset
+    harmfulqa_subset = args.harmfulqa_subset if args.harmfulqa_subset is not None else args.subset
+    
     for model in args.models:
         model_dir = os.path.join(run_dir, model.replace(":", "_"))
         create_output_dir(model_dir)
@@ -210,6 +224,7 @@ def main():
                 'script': 'advGlue_eval.py',
                 'output': os.path.join(model_dir, "advglue_results.txt"),
                 'judge_model': None,
+                'subset_size': advglue_subset,
                 'extra_args': ["--task", "all"]
             })
         
@@ -223,6 +238,7 @@ def main():
                 'script': 'truthfulQA_eval.py',
                 'output': os.path.join(model_dir, "truthfulqa_results.txt"),
                 'judge_model': None,
+                'subset_size': truthfulqa_subset,
                 'extra_args': []
             })
         
@@ -236,6 +252,7 @@ def main():
                 'script': 'harmfulQA_eval.py',
                 'output': os.path.join(model_dir, "harmfulqa_results.txt"),
                 'judge_model': args.judge_model,
+                'subset_size': harmfulqa_subset,
                 'extra_args': []
             })
     
@@ -275,7 +292,7 @@ def main():
             eval_info['script'],
             eval_info['model'],
             eval_info['output'],
-            args.subset,
+            eval_info['subset_size'],
             judge_model=eval_info['judge_model'],
             additional_args=additional_args + eval_info['extra_args'],
             disable_progress=args.no_progress

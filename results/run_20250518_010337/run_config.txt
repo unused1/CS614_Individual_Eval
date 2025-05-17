@@ -1,0 +1,9 @@
+Run timestamp: 20250518_010337
+Models: mistral-small3.1
+Judge model: llama-guard3:8b
+Subset size: 0
+Balanced: False
+Sequential: False
+Skip AdvGLUE: False
+Skip TruthfulQA: False
+Skip HarmfulQA: False

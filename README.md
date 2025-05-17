@@ -246,8 +246,11 @@ python run_all_evals.py [options]
 #### Command-line Options
 - `--models`: List of models to evaluate (default: llama3.3, mistral-small3.1, gemma3:27b)
 - `--judge-model`: Judge model for HarmfulQA evaluation (default: llama-guard3:8b)
-- `--subset`: Number of examples to evaluate per task/dataset (default: 20)
+- `--subset`: Number of examples to evaluate per task/dataset (default: 20, 0 for full dataset)
 - `--full-dataset`: Use the full dataset (equivalent to --subset 0)
+- `--advglue-subset`: Number of examples to evaluate for AdvGLUE (overrides --subset)
+- `--truthfulqa-subset`: Number of examples to evaluate for TruthfulQA (overrides --subset)
+- `--harmfulqa-subset`: Number of examples to evaluate for HarmfulQA (overrides --subset)
 - `--output-dir`: Directory to save results (default: results)
 - `--skip-advglue`: Skip AdvGLUE evaluation
 - `--skip-truthfulqa`: Skip TruthfulQA evaluation
