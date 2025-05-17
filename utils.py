@@ -2,6 +2,9 @@
 Utility functions and classes for the evaluation scripts.
 """
 
+import sys
+import datetime
+
 class OutputCapture:
     """
     Utility class for capturing output to both console and file.
@@ -25,9 +28,27 @@ class OutputCapture:
             try:
                 self.file = open(output_file, 'w', encoding='utf-8')
                 print(f"Saving output to {output_file}")
+                
+                # Save command and parameters at the top of the file
+                self._save_command_info()
             except Exception as e:
                 print(f"Warning: Could not open output file {output_file}: {e}")
                 self.file = None
+    
+    def _save_command_info(self):
+        """Save the command and parameters used to run the script."""
+        if self.file:
+            # Get current date and time
+            now = datetime.datetime.now()
+            date_str = now.strftime("%Y-%m-%d %H:%M:%S")
+            
+            # Get the command line arguments
+            command = " ".join(sys.argv)
+            
+            # Write to file
+            self.file.write(f"# Evaluation run on {date_str}\n")
+            self.file.write(f"# Command: {command}\n\n")
+            self.file.flush()
     
     def print(self, *args, **kwargs):
         """
