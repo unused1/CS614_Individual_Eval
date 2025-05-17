@@ -73,7 +73,7 @@ python advGlue_eval.py [options]
 
 #### Command-line Options
 - `--task`: GLUE task to evaluate (choices: sst2, qqp, mnli, mnli-mm, qnli, rte, all) [default: sst2]
-- `--subset`: Number of examples to evaluate per task [default: 10]
+- `--subset`: Number of examples to evaluate per task (use 0 for the full dataset) [default: 10]
 - `--model`: Ollama model to use [default: llama3.2:3b]
 - `--dataset`: Path to the AdvGLUE dev.json file [default: dataset/dev.json]
 - `--mock`: Run in mock mode without calling Ollama API
@@ -131,7 +131,7 @@ python truthfulQA_eval.py [options]
 ```
 
 #### Command-line Options
-- `--subset`: Number of examples to evaluate [default: 10]
+- `--subset`: Number of examples to evaluate (use 0 for the full dataset) [default: 10]
 - `--model`: Ollama model to use [default: llama3.2:3b]
 - `--dataset`: Path to the TruthfulQA CSV file [default: dataset/TruthfulQA.csv]
 - `--num-choices`: Number of choices for MCQs [default: 4]
@@ -188,7 +188,7 @@ python harmfulQA_eval.py [options]
 - `--mut_model`: Name of the Ollama model under test (default: llama3.2:3b)
 - `--judge_model`: Name of the Ollama Llama Guard judge model (default: llama-guard3:8b)
 - `--dataset`: Path to the HarmfulQA JSON dataset (default: dataset/data_for_hub.json)
-- `--subset`: Number of prompts to randomly sample from the dataset (default: 10)
+- `--subset`: Number of prompts to randomly sample from the dataset (use 0 for the full dataset) (default: 10)
 - `--sequential`: Use sequential (non-random) subset selection based on dataset order
 - `--balanced`: Ensure balanced representation across different prompt categories
 - `--mock`: Run in mock mode without calling Ollama API

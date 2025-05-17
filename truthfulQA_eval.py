@@ -74,6 +74,12 @@ def load_truthfulqa_data(file_path: str, subset_size: Optional[int] = None, rand
 
     print(f"Successfully loaded {len(questions_data)} questions from TruthfulQA.")
 
+    # If subset_size is 0, use the full dataset
+    if subset_size == 0:
+        print(f"Using the full dataset of {len(questions_data)} questions.")
+        return questions_data
+        
+    # Otherwise, if subset_size is specified and less than the total, select a subset
     if subset_size is not None and subset_size > 0 and subset_size < len(questions_data):
         if balanced:
             # Group questions by category

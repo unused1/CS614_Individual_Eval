@@ -137,7 +137,13 @@ def load_advglue_data(file_path: str, task_name: str, subset_size: int = None, r
 
     print(f"Successfully loaded {len(examples)} {task_name} examples.")
 
-    if subset_size is not None and subset_size < len(examples):
+    # If subset_size is 0, use the full dataset
+    if subset_size == 0:
+        print(f"Using the full dataset of {len(examples)} {task_name} examples.")
+        return examples
+        
+    # Otherwise, if subset_size is specified and less than the total, select a subset
+    if subset_size is not None and subset_size > 0 and subset_size < len(examples):
         if random_subset:
             print(f"Sampling {subset_size} examples randomly.")
             return random.sample(examples, subset_size)
