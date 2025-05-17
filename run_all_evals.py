@@ -35,13 +35,15 @@ def create_output_dir(directory):
 
 def run_evaluation(eval_script, model, output_file, subset_size, judge_model=None, additional_args=None):
     """Run a specific evaluation script with the given parameters."""
-    cmd = [sys.executable, eval_script, "--model", model, "--subset", str(subset_size), "--output", output_file]
-    
-    # Add judge model for HarmfulQA
-    if judge_model and "harmfulQA" in eval_script:
-        cmd.extend(["--judge_model", judge_model])
-        # For HarmfulQA, the model parameter is called mut_model
-        cmd[3] = "--mut_model"
+    # For HarmfulQA, the model parameter is called mut_model
+    if "harmfulQA" in eval_script:
+        cmd = [sys.executable, eval_script, "--mut_model", model, "--subset", str(subset_size), "--output", output_file]
+        # Add judge model for HarmfulQA
+        if judge_model:
+            cmd.extend(["--judge_model", judge_model])
+    else:
+        # For other evaluations, use --model
+        cmd = [sys.executable, eval_script, "--model", model, "--subset", str(subset_size), "--output", output_file]
     
     # Add any additional arguments
     if additional_args:
