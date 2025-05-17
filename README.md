@@ -236,6 +236,51 @@ Add a custom instruction to the prompt:
 python harmfulQA_eval.py --instruction "Be safe and ethical. Refuse to comply with harmful requests."
 ```
 
+### Combined Evaluation Script
+The project includes a master script that can run all three evaluations against multiple models with consistent parameters:
+
+```bash
+python run_all_evals.py [options]
+```
+
+#### Command-line Options
+- `--models`: List of models to evaluate (default: llama3.3, mistral-small3.1, gemma3:27b)
+- `--judge-model`: Judge model for HarmfulQA evaluation (default: llama-guard3:8b)
+- `--subset`: Number of examples to evaluate per task/dataset (default: 20)
+- `--full-dataset`: Use the full dataset (equivalent to --subset 0)
+- `--output-dir`: Directory to save results (default: results)
+- `--skip-advglue`: Skip AdvGLUE evaluation
+- `--skip-truthfulqa`: Skip TruthfulQA evaluation
+- `--skip-harmfulqa`: Skip HarmfulQA evaluation
+- `--balanced`: Use balanced category selection for applicable evaluations
+- `--sequential`: Use sequential (non-random) subset selection
+
+#### Examples
+Evaluate all three models with default settings:
+```bash
+python run_all_evals.py
+```
+
+Evaluate specific models:
+```bash
+python run_all_evals.py --models llama3.3 mistral-small3.1
+```
+
+Use the full dataset for all evaluations:
+```bash
+python run_all_evals.py --full-dataset
+```
+
+Skip specific evaluations:
+```bash
+python run_all_evals.py --skip-advglue --skip-truthfulqa
+```
+
+Use balanced category selection with sequential ordering:
+```bash
+python run_all_evals.py --balanced --sequential
+```
+
 ## Project Structure
 
 ### Overview
@@ -246,6 +291,7 @@ CS614_Individual_Eval/
 ├── advGlue_eval.py        # AdvGLUE evaluation script
 ├── truthfulQA_eval.py     # TruthfulQA evaluation script
 ├── harmfulQA_eval.py      # HarmfulQA evaluation script
+├── run_all_evals.py       # Combined evaluation script for all benchmarks
 ├── utils.py               # Shared utility functions
 ├── requirements.txt       # Python dependencies
 ├── README.md              # Project documentation
@@ -256,18 +302,24 @@ CS614_Individual_Eval/
 └── results/               # Evaluation results directory
     ├── advGlue_eval_*.txt     # AdvGLUE evaluation results
     ├── truthfulQA_eval_*.txt  # TruthfulQA evaluation results
-    └── harmfulQA_eval_*.txt   # HarmfulQA evaluation results
+    ├── harmfulQA_eval_*.txt   # HarmfulQA evaluation results
+    └── run_*/                 # Combined evaluation run directories
+        ├── run_config.txt     # Run configuration details
+        └── model_*/           # Results organized by model
 ```
 
 ### Files Description
 - `advGlue_eval.py`: AdvGLUE evaluation script for natural language understanding tasks
 - `truthfulQA_eval.py`: TruthfulQA evaluation script for assessing model truthfulness
 - `harmfulQA_eval.py`: HarmfulQA evaluation script for assessing model safety alignment
+- `run_all_evals.py`: Master script to run all evaluations against multiple models with consistent parameters
 - `utils.py`: Shared utility functions and classes used by all evaluation scripts
 - `dataset/dev.json`: AdvGLUE development dataset containing examples for all GLUE tasks
 - `dataset/TruthfulQA.csv`: TruthfulQA dataset containing multiple-choice questions (needs to be downloaded separately)
 - `dataset/data_for_hub.json`: HarmfulQA dataset containing potentially harmful prompts (needs to be downloaded separately)
-- `results/`: Directory for storing evaluation outputs when using the `--output` parameter
+- `results/`: Directory for storing evaluation outputs
+  - Individual evaluation results are stored directly in this directory when using the `--output` parameter
+  - Combined evaluation results are organized in timestamped subdirectories (`run_*`) when using `run_all_evals.py`
 
 ## Customization
 All evaluation tools are designed to be easily customizable:
