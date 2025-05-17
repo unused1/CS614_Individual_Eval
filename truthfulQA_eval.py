@@ -14,7 +14,7 @@ DEFAULT_MODEL_NAME = "llama3.2:3b"
 
 # --- 1. Parsing TruthfulQA.csv ---
 
-def load_truthfulqa_data(file_path: str, subset_size: Optional[int] = None, random_subset: bool = True) -> List[Dict[str, Any]]:
+def load_truthfulqa_data(file_path: str, subset_size: Optional[int] = None, random_subset: bool = True, balanced: bool = False) -> List[Dict[str, Any]]:
     """
     Loads and parses the TruthfulQA.csv file.
 
@@ -24,6 +24,9 @@ def load_truthfulqa_data(file_path: str, subset_size: Optional[int] = None, rand
                                      Defaults to None (all questions).
         random_subset (bool): If True, randomly samples the subset. If False, takes the first
                              subset_size questions in order. Defaults to True.
+        balanced (bool): If True, ensures balanced representation across different categories.
+                        If subset_size is provided, attempts to select an equal number of 
+                        questions from each category. Defaults to False.
 
     Returns:
         List[Dict[str, Any]]: A list of dictionaries, where each dictionary
@@ -72,7 +75,56 @@ def load_truthfulqa_data(file_path: str, subset_size: Optional[int] = None, rand
     print(f"Successfully loaded {len(questions_data)} questions from TruthfulQA.")
 
     if subset_size is not None and subset_size > 0 and subset_size < len(questions_data):
-        if random_subset:
+        if balanced:
+            # Group questions by category
+            categories = {}
+            for q in questions_data:
+                category = q['category']
+                if category not in categories:
+                    categories[category] = []
+                categories[category].append(q)
+            
+            # Calculate how many questions to take from each category
+            num_categories = len(categories)
+            questions_per_category = max(1, subset_size // num_categories)
+            
+            # Select questions from each category
+            balanced_subset = []
+            for category, questions in categories.items():
+                if random_subset:
+                    # Randomly select questions from this category
+                    category_questions = random.sample(questions, min(questions_per_category, len(questions)))
+                else:
+                    # Take the first N questions from this category
+                    category_questions = questions[:min(questions_per_category, len(questions))]
+                balanced_subset.extend(category_questions)
+            
+            # If we need more questions to reach subset_size, randomly select from remaining questions
+            if len(balanced_subset) < subset_size:
+                # Get all questions not already selected
+                remaining = [q for q in questions_data if q not in balanced_subset]
+                # Randomly select from remaining questions to reach subset_size
+                if remaining and len(balanced_subset) < subset_size:
+                    additional = random.sample(remaining, min(subset_size - len(balanced_subset), len(remaining)))
+                    balanced_subset.extend(additional)
+            
+            # If we have more questions than needed, trim to subset_size
+            if len(balanced_subset) > subset_size:
+                balanced_subset = balanced_subset[:subset_size]
+            
+            print(f"Selected {len(balanced_subset)} questions with balanced category representation.")
+            # Count questions per category for reporting
+            category_counts = {}
+            for q in balanced_subset:
+                category = q['category']
+                if category not in category_counts:
+                    category_counts[category] = 0
+                category_counts[category] += 1
+            for category, count in category_counts.items():
+                print(f"  - {category}: {count} questions")
+                
+            return balanced_subset
+        elif random_subset:
             print(f"Sampling {subset_size} questions randomly.")
             return random.sample(questions_data, subset_size)
         else:
@@ -264,6 +316,8 @@ if __name__ == "__main__":
                         help="Custom instruction to add to the prompt (e.g., 'Be truthful and honest')")
     parser.add_argument("--sequential", action="store_true",
                         help="Use sequential (non-random) subset selection based on dataset order")
+    parser.add_argument("--balanced", action="store_true",
+                        help="Ensure balanced representation across different question categories")
     parser.add_argument("--output", type=str, default="",
                         help="Save evaluation output to the specified file")
     
@@ -288,7 +342,8 @@ if __name__ == "__main__":
     all_truthfulqa_data = load_truthfulqa_data(
         truthfulqa_csv_path, 
         subset_size=args.subset,
-        random_subset=not args.sequential
+        random_subset=not args.sequential,
+        balanced=args.balanced
     )
 
     if all_truthfulqa_data:

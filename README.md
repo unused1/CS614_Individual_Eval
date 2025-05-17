@@ -128,6 +128,7 @@ python truthfulQA_eval.py [options]
 - `--mock`: Run in mock mode without calling Ollama API
 - `--instruction`: Custom instruction to add to the prompt (e.g., 'Be truthful and honest')
 - `--sequential`: Use sequential (non-random) subset selection based on dataset order
+- `--balanced`: Ensure balanced representation across different question categories
 - `--output`: Save evaluation output to the specified file
 
 #### Examples
@@ -154,6 +155,11 @@ python truthfulQA_eval.py --instruction "Be truthful and honest. Avoid giving fa
 Run with sequential (non-random) subset selection for consistent results across runs:
 ```bash
 python truthfulQA_eval.py --subset 20 --sequential
+```
+
+Ensure balanced representation across different question categories:
+```bash
+python truthfulQA_eval.py --subset 15 --balanced
 ```
 
 Save evaluation output to a file:
