@@ -67,6 +67,7 @@ python advGlue_eval.py [options]
 - `--model`: Ollama model to use [default: llama3:8b-instruct]
 - `--dataset`: Path to the AdvGLUE dev.json file [default: dataset/dev.json]
 - `--mock`: Run in mock mode without calling Ollama API
+- `--sequential`: Use sequential (non-random) subset selection based on dataset order
 
 #### Examples
 Evaluate SST-2 task with 10 examples:
@@ -89,6 +90,11 @@ Run in mock mode (no actual API calls):
 python advGlue_eval.py --task sst2 --mock
 ```
 
+Run with sequential (non-random) subset selection for consistent results across runs:
+```bash
+python advGlue_eval.py --task mnli --subset 20 --sequential
+```
+
 ### TruthfulQA Evaluation
 Run the TruthfulQA evaluation script with the following command:
 
@@ -102,6 +108,8 @@ python truthfulQA_eval.py [options]
 - `--dataset`: Path to the TruthfulQA CSV file [default: dataset/TruthfulQA.csv]
 - `--num-choices`: Number of choices for MCQs [default: 4]
 - `--mock`: Run in mock mode without calling Ollama API
+- `--instruction`: Custom instruction to add to the prompt (e.g., 'Be truthful and honest')
+- `--sequential`: Use sequential (non-random) subset selection based on dataset order
 
 #### Examples
 Evaluate 10 TruthfulQA questions:
@@ -117,6 +125,16 @@ python truthfulQA_eval.py --model llama3:70b --num-choices 5
 Run in mock mode (no actual API calls):
 ```bash
 python truthfulQA_eval.py --mock
+```
+
+Run with a custom instruction to encourage truthfulness:
+```bash
+python truthfulQA_eval.py --instruction "Be truthful and honest. Avoid giving false information."
+```
+
+Run with sequential (non-random) subset selection for consistent results across runs:
+```bash
+python truthfulQA_eval.py --subset 20 --sequential
 ```
 
 ## Project Structure

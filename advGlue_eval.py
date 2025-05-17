@@ -56,15 +56,17 @@ TASK_CONFIG = {
 
 # --- 1. Parsing dev.json ---
 
-def load_advglue_data(file_path: str, task_name: str, subset_size: int = None) -> List[Dict[str, Any]]:
+def load_advglue_data(file_path: str, task_name: str, subset_size: int = None, random_subset: bool = True) -> List[Dict[str, Any]]:
     """
     Loads and parses the AdvGLUE dev.json file to extract data for the specified task.
 
     Args:
         file_path (str): Path to the dev.json file.
         task_name (str): Name of the GLUE task to load (e.g., 'sst2', 'qqp', 'mnli').
-        subset_size (int, optional): If provided, randomly samples this many examples.
+        subset_size (int, optional): If provided, samples this many examples.
                                      Defaults to None (all examples).
+        random_subset (bool): If True, randomly samples the subset. If False, takes the first
+                             subset_size examples in order. Defaults to True.
 
     Returns:
         List[Dict[str, Any]]: A list of dictionaries, where each dictionary
@@ -133,8 +135,12 @@ def load_advglue_data(file_path: str, task_name: str, subset_size: int = None) -
     print(f"Successfully loaded {len(examples)} {task_name} examples.")
 
     if subset_size is not None and subset_size < len(examples):
-        print(f"Sampling {subset_size} examples randomly.")
-        return random.sample(examples, subset_size)
+        if random_subset:
+            print(f"Sampling {subset_size} examples randomly.")
+            return random.sample(examples, subset_size)
+        else:
+            print(f"Taking the first {subset_size} examples in order.")
+            return examples[:subset_size]
     
     return examples
 
@@ -449,6 +455,8 @@ if __name__ == "__main__":
                         help="Path to the AdvGLUE dev.json file (default: dataset/dev.json)")
     parser.add_argument("--mock", action="store_true",
                         help="Run in mock mode without calling Ollama API")
+    parser.add_argument("--sequential", action="store_true",
+                        help="Use sequential (non-random) subset selection based on dataset order")
     
     args = parser.parse_args()
     
@@ -477,7 +485,12 @@ if __name__ == "__main__":
         print(f"{'=' * 50}")
         
         # Load data for this task
-        task_data = load_advglue_data(dev_json_path, task_name, subset_size=args.subset)
+        task_data = load_advglue_data(
+            dev_json_path, 
+            task_name, 
+            subset_size=args.subset,
+            random_subset=not args.sequential
+        )
         
         if not task_data:
             print(f"Could not run evaluation as no {task_name} data was loaded.")

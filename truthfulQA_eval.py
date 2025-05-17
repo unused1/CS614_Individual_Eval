@@ -11,14 +11,16 @@ DEFAULT_MODEL_NAME = "llama3.2:3b"
 
 # --- 1. Parsing TruthfulQA.csv ---
 
-def load_truthfulqa_data(file_path: str, subset_size: Optional[int] = None) -> List[Dict[str, Any]]:
+def load_truthfulqa_data(file_path: str, subset_size: Optional[int] = None, random_subset: bool = True) -> List[Dict[str, Any]]:
     """
     Loads and parses the TruthfulQA.csv file.
 
     Args:
         file_path (str): Path to the TruthfulQA.csv file.
-        subset_size (int, optional): If provided, randomly samples this many questions.
+        subset_size (int, optional): If provided, samples this many questions.
                                      Defaults to None (all questions).
+        random_subset (bool): If True, randomly samples the subset. If False, takes the first
+                             subset_size questions in order. Defaults to True.
 
     Returns:
         List[Dict[str, Any]]: A list of dictionaries, where each dictionary
@@ -67,8 +69,12 @@ def load_truthfulqa_data(file_path: str, subset_size: Optional[int] = None) -> L
     print(f"Successfully loaded {len(questions_data)} questions from TruthfulQA.")
 
     if subset_size is not None and subset_size > 0 and subset_size < len(questions_data):
-        print(f"Sampling {subset_size} questions randomly.")
-        return random.sample(questions_data, subset_size)
+        if random_subset:
+            print(f"Sampling {subset_size} questions randomly.")
+            return random.sample(questions_data, subset_size)
+        else:
+            print(f"Taking the first {subset_size} questions in order.")
+            return questions_data[:subset_size]
     
     return questions_data
 
@@ -115,7 +121,8 @@ def get_truthfulqa_mcq_prediction_ollama(
     question: str, 
     options: List[str], 
     model_name: str = DEFAULT_MODEL_NAME,
-    mock_mode: bool = False
+    mock_mode: bool = False,
+    instruction: str = ""
 ) -> str:
     """
     Gets LLM's choice for an MCQ from TruthfulQA using Ollama.
@@ -126,6 +133,7 @@ def get_truthfulqa_mcq_prediction_ollama(
         options (List[str]): A list of answer choices.
         model_name (str): The Ollama model to use.
         mock_mode (bool): If True, use mock implementation instead of calling Ollama API.
+        instruction (str): Optional custom instruction to add to the prompt (e.g., 'Be truthful').
 
     Returns:
         str: The letter (A, B, C, ...) corresponding to the LLM's chosen answer, 
@@ -137,8 +145,11 @@ def get_truthfulqa_mcq_prediction_ollama(
     for label, opt_text in zip(option_labels, options):
         formatted_options += f"{label}) {opt_text}\n"
 
+    # Add instruction if provided
+    instruction_text = f"{instruction}\n" if instruction else ""
+    
     prompt = f"""Please answer the following multiple-choice question.
-Question: {question}
+{instruction_text}Question: {question}
 
 Options:
 {formatted_options}
@@ -246,6 +257,11 @@ if __name__ == "__main__":
                         help=f"Number of choices for MCQs (default: {NUM_CHOICES})")
     parser.add_argument("--mock", action="store_true",
                         help="Run in mock mode without calling Ollama API")
+    parser.add_argument("--instruction", type=str, default="",
+                        help="Custom instruction to add to the prompt (e.g., 'Be truthful and honest')")
+    parser.add_argument("--sequential", action="store_true",
+                        help="Use sequential (non-random) subset selection based on dataset order")
+    
     
     args = parser.parse_args()
     
@@ -261,13 +277,20 @@ if __name__ == "__main__":
         exit(1)
     
     # Load TruthfulQA data
-    all_truthfulqa_data = load_truthfulqa_data(truthfulqa_csv_path, subset_size=args.subset)
+    all_truthfulqa_data = load_truthfulqa_data(
+        truthfulqa_csv_path, 
+        subset_size=args.subset,
+        random_subset=not args.sequential
+    )
 
     if all_truthfulqa_data:
         print(f"\n--- Preparing and Processing {len(all_truthfulqa_data)} TruthfulQA questions as MCQs ---")
         print(f"Model: {args.model}")
         if args.mock:
             print("Running in MOCK mode (no actual LLM calls)")
+        if args.instruction:
+            print(f"Custom instruction: \"{args.instruction}\"")
+        
         
         mcq_evaluation_attempts = []
 
@@ -299,7 +322,8 @@ if __name__ == "__main__":
                 item['question'], 
                 shuffled_options,
                 model_name=args.model,
-                mock_mode=args.mock
+                mock_mode=args.mock,
+                instruction=args.instruction
             )
             
             mcq_evaluation_attempts.append({
@@ -313,7 +337,9 @@ if __name__ == "__main__":
             })
             
             print(f"  Question: \"{item['question'][:80]}...\"")
-            # print(f"  Options presented: {dict(zip(option_letters, shuffled_options))}") # Optional: for debugging
+            print("  Options presented:")
+            for letter, option in zip(option_letters, shuffled_options):
+                print(f"    {letter}: {option}")
             print(f"  Correct Answer Letter: {correct_letter} (Text: '{correct_answer_text}')")
             print(f"  LLM Chosen Letter: {llm_chosen_letter}")
             print("-" * 20)
