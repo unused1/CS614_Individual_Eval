@@ -5,6 +5,9 @@ import ollama
 from typing import List, Dict, Any, Tuple, Optional
 import re
 
+# Import the OutputCapture utility
+from utils import OutputCapture
+
 # --- Constants ---
 NUM_CHOICES = 4  # Total number of choices for MCQ (1 correct + NUM_CHOICES-1 incorrect)
 DEFAULT_MODEL_NAME = "llama3.2:3b"
@@ -261,9 +264,14 @@ if __name__ == "__main__":
                         help="Custom instruction to add to the prompt (e.g., 'Be truthful and honest')")
     parser.add_argument("--sequential", action="store_true",
                         help="Use sequential (non-random) subset selection based on dataset order")
+    parser.add_argument("--output", type=str, default="",
+                        help="Save evaluation output to the specified file")
     
     
     args = parser.parse_args()
+    
+    # Set up output capture if output file is specified
+    output = OutputCapture(args.output if args.output else None)
     
     # Path to the dataset file
     truthfulqa_csv_path = args.dataset
@@ -273,7 +281,7 @@ if __name__ == "__main__":
         with open(truthfulqa_csv_path, 'r', encoding='utf-8') as f:
             pass  # Just checking if the file exists and can be opened
     except FileNotFoundError:
-        print(f"Error: The dataset file {truthfulqa_csv_path} was not found.")
+        output.print(f"Error: The dataset file {truthfulqa_csv_path} was not found.")
         exit(1)
     
     # Load TruthfulQA data
@@ -284,23 +292,26 @@ if __name__ == "__main__":
     )
 
     if all_truthfulqa_data:
-        print(f"\n--- Preparing and Processing {len(all_truthfulqa_data)} TruthfulQA questions as MCQs ---")
-        print(f"Model: {args.model}")
+        output.print(f"\n--- Preparing and Processing {len(all_truthfulqa_data)} TruthfulQA questions as MCQs ---")
+        output.print(f"Model: {args.model}")
         if args.mock:
-            print("Running in MOCK mode (no actual LLM calls)")
+            output.print("Running in MOCK mode (no actual LLM calls)")
         if args.instruction:
-            print(f"Custom instruction: \"{args.instruction}\"")
+            output.print(f"Custom instruction: \"{args.instruction}\"")
         
         
         mcq_evaluation_attempts = []
 
         for i, item in enumerate(all_truthfulqa_data):
-            print(f"\nProcessing Question ID: {item['id']} ({i+1}/{len(all_truthfulqa_data)})")
+            output.print(f"\nProcessing Question ID: {item['id']} ({i+1}/{len(all_truthfulqa_data)})")
+            output.print(f"Category: {item['category']}")
+            output.print(f"Question: {item['question']}")
+            output.print("-" * 40)
             
             mcq_setup = create_mcq_options(item, args.num_choices)
             
             if mcq_setup is None:
-                print(f"  Skipping question ID {item['id']} due to insufficient options for MCQ.")
+                output.print(f"  Skipping question ID {item['id']} due to insufficient options for MCQ.")
                 continue
                 
             shuffled_options, correct_answer_text = mcq_setup
@@ -314,7 +325,7 @@ if __name__ == "__main__":
                     break
             
             if not correct_letter:
-                print(f"  Error: Could not find correct answer text '{correct_answer_text}' in shuffled options for Q_ID {item['id']}. Options: {shuffled_options}. Skipping.")
+                output.print(f"  Error: Could not find correct answer text '{correct_answer_text}' in shuffled options for Q_ID {item['id']}. Options: {shuffled_options}. Skipping.")
                 continue
 
             # Get LLM's choice
@@ -336,33 +347,36 @@ if __name__ == "__main__":
                 'correct_letter': correct_letter
             })
             
-            print(f"  Question: \"{item['question'][:80]}...\"")
-            print("  Options presented:")
+            output.print(f"  Options presented:")
             for letter, option in zip(option_letters, shuffled_options):
-                print(f"    {letter}: {option}")
-            print(f"  Correct Answer Letter: {correct_letter} (Text: '{correct_answer_text}')")
-            print(f"  LLM Chosen Letter: {llm_chosen_letter}")
-            print("-" * 20)
+                output.print(f"    {letter}: {option}")
+            output.print(f"  Correct Answer Letter: {correct_letter} (Text: '{correct_answer_text}')")
+            output.print(f"  LLM Chosen Letter: {llm_chosen_letter}")
+            output.print("-" * 20)
 
 
         if mcq_evaluation_attempts:
-            print("\n--- TruthfulQA MCQ Evaluation Results ---")
+            output.print("\n--- TruthfulQA MCQ Evaluation Results ---")
             truthfulqa_eval_metrics = evaluate_truthfulqa_mcq(mcq_evaluation_attempts)
 
-            print(f"Total MCQs Attempted: {truthfulqa_eval_metrics['total_count']}")
-            print(f"Correct LLM Choices: {truthfulqa_eval_metrics['correct_count']}")
-            print(f"Accuracy: {truthfulqa_eval_metrics['accuracy']:.2f}%")
+            output.print(f"Total MCQs Attempted: {truthfulqa_eval_metrics['total_count']}")
+            output.print(f"Correct LLM Choices: {truthfulqa_eval_metrics['correct_count']}")
+            output.print(f"Accuracy: {truthfulqa_eval_metrics['accuracy']:.2f}%")
 
             # For more detailed review:
-            # print("\n--- Detailed Breakdown (Incorrect Answers) ---")
+            # output.print("\n--- Detailed Breakdown (Incorrect Answers) ---")
             # for detail in truthfulqa_eval_metrics['detailed_results']:
             #     if not detail['is_correct']:
-            #         print(f"Q_ID: {detail['id']} (Category: {detail['category']}) - Incorrect")
-            #         # print(f"  Q: {detail['question']}")
-            #         # print(f"  Options: {detail['options_presented']}")
-            #         print(f"  LLM Chose: {detail['llm_chosen_letter']}, Correct was: {detail['actual_correct_letter']} ('{detail['correct_answer_text']}')")
-        else:
-            print("No MCQ attempts were made, cannot evaluate.")
+            #         output.print(f"ID: {detail['id']} - Category: {detail['category']}")
+            #         output.print(f"Question: {detail['question']}")
+            #         output.print(f"Correct: {detail['actual_correct_letter']}, LLM Chose: {detail['llm_chosen_letter']}")
+            #         output.print("-" * 20)
             
+            # Close the output file if it was opened
+            output.close()
+        else:
+            output.print("No MCQ attempts were made, cannot evaluate.")
+            output.close()
     else:
-        print("Could not run evaluation as no TruthfulQA data was loaded.")
+        output.print("Could not run evaluation as no TruthfulQA data was loaded.")
+        output.close()

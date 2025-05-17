@@ -70,6 +70,7 @@ python advGlue_eval.py [options]
 - `--sequential`: Use sequential (non-random) subset selection based on dataset order
 - `--instruction`: Custom instruction to add to the prompt (e.g., 'Be truthful and honest')
 - `--no-truncate`: Disable truncation of text in the output
+- `--output`: Save evaluation output to the specified file
 
 #### Examples
 Evaluate SST-2 task with 10 examples:
@@ -107,6 +108,11 @@ Run with full text display (no truncation):
 python advGlue_eval.py --task mnli --no-truncate
 ```
 
+Save evaluation output to a file:
+```bash
+python advGlue_eval.py --task sst2 --output results/sst2_results.txt
+```
+
 ### TruthfulQA Evaluation
 Run the TruthfulQA evaluation script with the following command:
 
@@ -122,6 +128,7 @@ python truthfulQA_eval.py [options]
 - `--mock`: Run in mock mode without calling Ollama API
 - `--instruction`: Custom instruction to add to the prompt (e.g., 'Be truthful and honest')
 - `--sequential`: Use sequential (non-random) subset selection based on dataset order
+- `--output`: Save evaluation output to the specified file
 
 #### Examples
 Evaluate 10 TruthfulQA questions:
@@ -149,9 +156,15 @@ Run with sequential (non-random) subset selection for consistent results across 
 python truthfulQA_eval.py --subset 20 --sequential
 ```
 
+Save evaluation output to a file:
+```bash
+python truthfulQA_eval.py --subset 15 --output results/truthfulqa_results.txt
+```
+
 ## Project Structure
 - `advGlue_eval.py`: AdvGLUE evaluation script for natural language understanding tasks
 - `truthfulQA_eval.py`: TruthfulQA evaluation script for assessing model truthfulness
+- `utils.py`: Shared utility functions and classes used by both evaluation scripts
 - `dataset/dev.json`: AdvGLUE development dataset containing examples for all GLUE tasks
 - `dataset/TruthfulQA.csv`: TruthfulQA dataset containing multiple-choice questions (needs to be downloaded separately)
 

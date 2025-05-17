@@ -4,6 +4,9 @@ import argparse
 from typing import List, Dict, Any, Tuple
 import ollama
 
+# Import the OutputCapture utility
+from utils import OutputCapture
+
 # --- Constants and Configuration ---
 # Available GLUE tasks in the dataset
 AVAILABLE_TASKS = ["sst2", "qqp", "mnli", "mnli-mm", "qnli", "rte"]
@@ -470,8 +473,13 @@ if __name__ == "__main__":
                         help="Custom instruction to add to the prompt (e.g., 'Be truthful and honest')")
     parser.add_argument("--no-truncate", action="store_true",
                         help="Disable truncation of text in the output")
+    parser.add_argument("--output", type=str, default="",
+                        help="Save evaluation output to the specified file")
     
     args = parser.parse_args()
+    
+    # Set up output capture if output file is specified
+    output = OutputCapture(args.output if args.output else None)
     
     # Determine which tasks to run
     tasks_to_run = AVAILABLE_TASKS if args.task == "all" else [args.task]
@@ -484,7 +492,7 @@ if __name__ == "__main__":
         with open(dev_json_path, 'r', encoding='utf-8') as f:
             pass  # Just checking if the file exists and can be opened
     except FileNotFoundError:
-        print(f"Error: The dataset file {dev_json_path} was not found.")
+        output.print(f"Error: The dataset file {dev_json_path} was not found.")
         exit(1)
     
     # Store results for all tasks
@@ -492,14 +500,14 @@ if __name__ == "__main__":
     
     # Process each task
     for task_name in tasks_to_run:
-        print(f"\n{'=' * 50}")
-        print(f"Model: {args.model}")
-        print(f"Processing task: {task_name} ({TASK_CONFIG[task_name]['description']})")
+        output.print(f"\n{'=' * 50}")
+        output.print(f"Model: {args.model}")
+        output.print(f"Processing task: {task_name} ({TASK_CONFIG[task_name]['description']})")
         if args.instruction:
-            print(f"Custom instruction: \"{args.instruction}\"")
+            output.print(f"Custom instruction: \"{args.instruction}\"")
         if args.mock:
-            print("Running in MOCK mode (no actual LLM calls)")
-        print(f"{'=' * 50}")
+            output.print("Running in MOCK mode (no actual LLM calls)")
+        output.print(f"{'=' * 50}")
         
         # Load data for this task
         task_data = load_advglue_data(
@@ -510,10 +518,10 @@ if __name__ == "__main__":
         )
         
         if not task_data:
-            print(f"Could not run evaluation as no {task_name} data was loaded.")
+            output.print(f"Could not run evaluation as no {task_name} data was loaded.")
             continue
         
-        print(f"\n--- Processing {len(task_data)} {task_name} examples ---")
+        output.print(f"\n--- Processing {len(task_data)} {task_name} examples ---")
         
         llm_predictions_parsed = []
         
@@ -533,7 +541,7 @@ if __name__ == "__main__":
             llm_predictions_parsed.append(parsed_prediction)
             
             # Print progress with task-specific formatting
-            print(f"\nExample ID: {example.get('id', 'unknown')}")
+            output.print(f"\nExample ID: {example.get('id', 'unknown')}")
             
             # Print input fields based on task type
             for field in TASK_CONFIG[task_name]['input_fields']:
@@ -542,61 +550,64 @@ if __name__ == "__main__":
                     text = example[field]
                     if len(text) > 80 and not args.no_truncate:
                         text = text[:77] + "..."
-                    print(f"  {field.capitalize()}: \"{text}\"")
+                    output.print(f"  {field.capitalize()}: \"{text}\"")
             
-            print(f"  Ground Truth: {example['ground_truth_label']}")
-            print(f"  Raw LLM: \"{raw_llm_response}\"")
-            print(f"  Parsed LLM: {parsed_prediction}")
-            print(f"  Correct: {example['ground_truth_label'] == parsed_prediction}")
-            print("-" * 40)
+            output.print(f"  Ground Truth: {example['ground_truth_label']}")
+            output.print(f"  Raw LLM: \"{raw_llm_response}\"")
+            output.print(f"  Parsed Prediction: {parsed_prediction}")
+            output.print(f"  Correct: {parsed_prediction == example['ground_truth_label']}")
+            output.print("-" * 40)
         
         # Evaluate predictions
-        print("\n--- Evaluation Results ---")
+        output.print("\n--- Evaluation Results ---")
         evaluation_results = evaluate_predictions(task_data, llm_predictions_parsed, task_name)
         
         # Store results for this task
         all_results[task_name] = evaluation_results
         
         # Print basic metrics
-        print(f"Task: {task_name}")
-        print(f"Total Examples: {evaluation_results['total_count']}")
-        print(f"Correct Predictions: {evaluation_results['correct_count']}")
-        print(f"Accuracy: {evaluation_results['accuracy']:.2f}%")
+        output.print(f"Task: {task_name}")
+        output.print(f"Total Examples: {evaluation_results['total_count']}")
+        output.print(f"Correct Predictions: {evaluation_results['correct_count']}")
+        output.print(f"Accuracy: {evaluation_results['accuracy']:.2f}%")
         
         # Print per-class metrics for multi-class tasks
         if "class_accuracies" in evaluation_results:
-            print("\nPer-class accuracies:")
+            output.print("\nPer-class accuracies:")
             for label, accuracy in evaluation_results["class_accuracies"].items():
-                print(f"  {label}: {accuracy:.2f}%")
+                output.print(f"  {label}: {accuracy:.2f}%")
         
         # Optionally print detailed breakdown of incorrect predictions
-        print("\n--- Incorrect Predictions ---")
+        output.print("\n--- Incorrect Predictions ---")
         incorrect_count = 0
         for detail in evaluation_results['detailed_results']:
             if not detail['correct']:
                 incorrect_count += 1
-                print(f"ID: {detail['id']}")
+                output.print(f"ID: {detail['id']}")
                 # Print the input fields
                 for field in TASK_CONFIG[task_name]['input_fields']:
                     if field in detail:
-                        # Truncate long text for display
+                        # Truncate long text for display if not disabled
                         text = detail[field]
-                        if len(text) > 80:
+                        if len(text) > 80 and not args.no_truncate:
                             text = text[:77] + "..."
-                        print(f"  {field.capitalize()}: \"{text}\"")
-                print(f"  GT: {detail['ground_truth']}, Pred: {detail['predicted']}")
-                print("-" * 20)
+                        output.print(f"  {field.capitalize()}: \"{text}\"")
+                output.print(f"  GT: {detail['ground_truth']}, Pred: {detail['predicted']}")
+                output.print("-" * 20)
                 # Limit the number of incorrect examples shown
-                if incorrect_count >= 5:  # Show at most 5 incorrect examples
-                    remaining = sum(1 for d in evaluation_results['detailed_results'] if not d['correct']) - 5
+                if incorrect_count >= 10:
+                    remaining = len([d for d in evaluation_results['detailed_results'] if not d['correct']]) - 10
                     if remaining > 0:
-                        print(f"... and {remaining} more incorrect predictions.")
+                        output.print(f"... and {remaining} more incorrect predictions.")
                     break
     
     # If multiple tasks were run, print a summary
     if len(tasks_to_run) > 1:
-        print("\n" + "=" * 50)
-        print("SUMMARY OF ALL TASKS")
-        print("=" * 50)
+        output.print("\n" + "=" * 50)
+        output.print("SUMMARY OF ALL TASKS")
+        output.print("=" * 50)
         for task_name, results in all_results.items():
-            print(f"{task_name}: Accuracy = {results['accuracy']:.2f}% ({results['correct_count']}/{results['total_count']})")
+            output.print(f"{task_name}: Accuracy = {results['accuracy']:.2f}% ({results['correct_count']}/{results['total_count']})")
+        
+        # Close the output file if it was opened
+        output.close()
