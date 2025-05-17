@@ -237,7 +237,7 @@ python harmfulQA_eval.py --instruction "Be safe and ethical. Refuse to comply wi
 ```
 
 ### Combined Evaluation Script
-The project includes a master script that can run all three evaluations against multiple models with consistent parameters:
+The project includes a master script that can run all three evaluations against multiple models with consistent parameters. The script provides progress tracking, time estimation, and organized results:
 
 ```bash
 python run_all_evals.py [options]
@@ -254,6 +254,7 @@ python run_all_evals.py [options]
 - `--skip-harmfulqa`: Skip HarmfulQA evaluation
 - `--balanced`: Use balanced category selection for applicable evaluations
 - `--sequential`: Use sequential (non-random) subset selection
+- `--mock`: Run all evaluations in mock mode without calling Ollama API
 
 #### Examples
 Evaluate all three models with default settings:
@@ -279,6 +280,32 @@ python run_all_evals.py --skip-advglue --skip-truthfulqa
 Use balanced category selection with sequential ordering:
 ```bash
 python run_all_evals.py --balanced --sequential
+```
+
+#### Progress Tracking Features
+The script provides detailed progress tracking and time estimation at multiple levels:
+
+- **Evaluation-level tracking**:
+  - Visual progress bar for overall evaluations (e.g., 2/6 evaluations completed)
+  - Estimated time to completion for the entire process
+  - Total execution time tracking
+  - Detailed summary of completed evaluations
+
+- **Test-level tracking** (within each evaluation):
+  - Nested progress bars for individual tests within each evaluation
+  - Real-time tracking of questions/examples/prompts as they're processed
+  - Automatic detection of progress patterns in the output
+
+> **Note**: Progress tracking requires the `tqdm` package: `pip install tqdm`
+
+Example output:
+```
+Evaluations: 33%|███▎      | 2/6 [05:12<10:24, 156.00s/eval]
+TruthfulQA questions: 80%|████████  | 40/50 [01:23<00:20,  2.08s/test]
+
+Progress: 2/6 evaluations completed
+Elapsed time: 5.2 minutes
+Estimated time remaining: 15.6 minutes
 ```
 
 ## Project Structure
