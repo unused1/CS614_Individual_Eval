@@ -237,6 +237,29 @@ python harmfulQA_eval.py --instruction "Be safe and ethical. Refuse to comply wi
 ```
 
 ## Project Structure
+
+### Overview
+The project follows a modular structure with separate evaluation scripts for each benchmark, shared utility functions, and organized dataset and results directories.
+
+```
+CS614_Individual_Eval/
+├── advGlue_eval.py        # AdvGLUE evaluation script
+├── truthfulQA_eval.py     # TruthfulQA evaluation script
+├── harmfulQA_eval.py      # HarmfulQA evaluation script
+├── utils.py               # Shared utility functions
+├── requirements.txt       # Python dependencies
+├── README.md              # Project documentation
+├── dataset/               # Data directory
+│   ├── dev.json           # AdvGLUE development dataset
+│   ├── TruthfulQA.csv     # TruthfulQA dataset
+│   └── data_for_hub.json  # HarmfulQA dataset
+└── results/               # Evaluation results directory
+    ├── advGlue_eval_*.txt     # AdvGLUE evaluation results
+    ├── truthfulQA_eval_*.txt  # TruthfulQA evaluation results
+    └── harmfulQA_eval_*.txt   # HarmfulQA evaluation results
+```
+
+### Files Description
 - `advGlue_eval.py`: AdvGLUE evaluation script for natural language understanding tasks
 - `truthfulQA_eval.py`: TruthfulQA evaluation script for assessing model truthfulness
 - `harmfulQA_eval.py`: HarmfulQA evaluation script for assessing model safety alignment
@@ -244,6 +267,7 @@ python harmfulQA_eval.py --instruction "Be safe and ethical. Refuse to comply wi
 - `dataset/dev.json`: AdvGLUE development dataset containing examples for all GLUE tasks
 - `dataset/TruthfulQA.csv`: TruthfulQA dataset containing multiple-choice questions (needs to be downloaded separately)
 - `dataset/data_for_hub.json`: HarmfulQA dataset containing potentially harmful prompts (needs to be downloaded separately)
+- `results/`: Directory for storing evaluation outputs when using the `--output` parameter
 
 ## Customization
 All evaluation tools are designed to be easily customizable:
