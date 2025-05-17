@@ -64,10 +64,11 @@ python advGlue_eval.py [options]
 #### Command-line Options
 - `--task`: GLUE task to evaluate (choices: sst2, qqp, mnli, mnli-mm, qnli, rte, all) [default: sst2]
 - `--subset`: Number of examples to evaluate per task [default: 10]
-- `--model`: Ollama model to use [default: llama3:8b-instruct]
+- `--model`: Ollama model to use [default: llama3.2:3b]
 - `--dataset`: Path to the AdvGLUE dev.json file [default: dataset/dev.json]
 - `--mock`: Run in mock mode without calling Ollama API
 - `--sequential`: Use sequential (non-random) subset selection based on dataset order
+- `--instruction`: Custom instruction to add to the prompt (e.g., 'Be truthful and honest')
 
 #### Examples
 Evaluate SST-2 task with 10 examples:
@@ -82,7 +83,7 @@ python advGlue_eval.py --task all --subset 5
 
 Use a different model:
 ```bash
-python advGlue_eval.py --task qqp --model mistral:latest
+python advGlue_eval.py --task qqp --model llama3.2:3b
 ```
 
 Run in mock mode (no actual API calls):
@@ -95,6 +96,11 @@ Run with sequential (non-random) subset selection for consistent results across 
 python advGlue_eval.py --task mnli --subset 20 --sequential
 ```
 
+Run with a custom instruction to encourage truthfulness:
+```bash
+python advGlue_eval.py --task rte --instruction "Be truthful and honest. Avoid giving false information."
+```
+
 ### TruthfulQA Evaluation
 Run the TruthfulQA evaluation script with the following command:
 
@@ -104,7 +110,7 @@ python truthfulQA_eval.py [options]
 
 #### Command-line Options
 - `--subset`: Number of examples to evaluate [default: 10]
-- `--model`: Ollama model to use [default: llama3:8b-instruct]
+- `--model`: Ollama model to use [default: llama3.2:3b]
 - `--dataset`: Path to the TruthfulQA CSV file [default: dataset/TruthfulQA.csv]
 - `--num-choices`: Number of choices for MCQs [default: 4]
 - `--mock`: Run in mock mode without calling Ollama API
@@ -119,7 +125,7 @@ python truthfulQA_eval.py --subset 10
 
 Use a different model with 5 answer choices per question:
 ```bash
-python truthfulQA_eval.py --model llama3:70b --num-choices 5
+python truthfulQA_eval.py --model llama3.2:3b --num-choices 5
 ```
 
 Run in mock mode (no actual API calls):

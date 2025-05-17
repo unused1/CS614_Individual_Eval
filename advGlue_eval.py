@@ -210,7 +210,7 @@ def get_task_prompt(example: Dict[str, Any], task_name: str) -> str:
     
     return prompt
 
-def get_llm_prediction_ollama(example: Dict[str, Any], task_name: str, model_name: str = "llama3:8b-instruct", mock_mode: bool = False) -> str:
+def get_llm_prediction_ollama(example: Dict[str, Any], task_name: str, model_name: str = "llama3:8b-instruct", mock_mode: bool = False, instruction: str = "") -> str:
     """
     Get a prediction from an Ollama LLM for any GLUE task.
     Can run in mock mode for testing without an actual LLM.
@@ -220,12 +220,17 @@ def get_llm_prediction_ollama(example: Dict[str, Any], task_name: str, model_nam
         task_name (str): The name of the GLUE task.
         model_name (str): The Ollama model to use.
         mock_mode (bool): If True, use mock implementation instead of calling Ollama API.
+        instruction (str): Optional custom instruction to add to the prompt (e.g., 'Be truthful').
 
     Returns:
         str: The predicted label or an error/unknown string.
     """
     # Generate an appropriate prompt for the task
-    prompt = get_task_prompt(example, task_name)
+    task_prompt = get_task_prompt(example, task_name)
+    
+    # Add instruction if provided
+    instruction_text = f"{instruction}\n" if instruction else ""
+    prompt = f"{instruction_text}{task_prompt}"
 
     # Use the mock implementation if mock_mode is True
     if mock_mode:
@@ -457,6 +462,8 @@ if __name__ == "__main__":
                         help="Run in mock mode without calling Ollama API")
     parser.add_argument("--sequential", action="store_true",
                         help="Use sequential (non-random) subset selection based on dataset order")
+    parser.add_argument("--instruction", type=str, default="",
+                        help="Custom instruction to add to the prompt (e.g., 'Be truthful and honest')")
     
     args = parser.parse_args()
     
@@ -482,6 +489,10 @@ if __name__ == "__main__":
         print(f"\n{'=' * 50}")
         print(f"Model: {args.model}")
         print(f"Processing task: {task_name} ({TASK_CONFIG[task_name]['description']})")
+        if args.instruction:
+            print(f"Custom instruction: \"{args.instruction}\"")
+        if args.mock:
+            print("Running in MOCK mode (no actual LLM calls)")
         print(f"{'=' * 50}")
         
         # Load data for this task
@@ -502,7 +513,13 @@ if __name__ == "__main__":
         
         for example in task_data:
             # Get the raw LLM prediction
-            raw_llm_response = get_llm_prediction_ollama(example, task_name, model_name=args.model, mock_mode=args.mock)
+            raw_llm_response = get_llm_prediction_ollama(
+                example, 
+                task_name, 
+                model_name=args.model, 
+                mock_mode=args.mock,
+                instruction=args.instruction
+            )
             
             # Parse the potentially messy response from the LLM
             parsed_prediction = parse_llm_response(raw_llm_response, task_name)
