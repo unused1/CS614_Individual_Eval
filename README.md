@@ -255,6 +255,7 @@ python run_all_evals.py [options]
 - `--balanced`: Use balanced category selection for applicable evaluations
 - `--sequential`: Use sequential (non-random) subset selection
 - `--mock`: Run all evaluations in mock mode without calling Ollama API
+- `--no-progress`: Disable progress bars even if tqdm is available
 
 #### Examples
 Evaluate all three models with default settings:
@@ -372,6 +373,10 @@ All evaluation tools are designed to be easily customizable:
 - Response parsing is robust to handle variations in LLM outputs
 - Evaluation metrics are task-specific, with special handling for different categories
 - Command-line arguments provide flexibility in configuration without code changes
+
+## Acknowledgments
+This project was developed with assistance from:
+- Claude 3.7 Sonnet (Anthropic) - Provided coding assistance for implementing progress tracking features, mock mode functionality, and debugging
 
 ## License
 This project is provided as-is for educational and research purposes.

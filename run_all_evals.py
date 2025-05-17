@@ -33,7 +33,7 @@ def create_output_dir(directory):
         os.makedirs(directory)
         print(f"Created output directory: {directory}")
 
-def run_evaluation(eval_script, model, output_file, subset_size, judge_model=None, additional_args=None):
+def run_evaluation(eval_script, model, output_file, subset_size, judge_model=None, additional_args=None, disable_progress=False):
     """Run a specific evaluation script with the given parameters."""
     # For HarmfulQA, the model parameter is called mut_model
     if "harmfulQA" in eval_script:
@@ -55,9 +55,12 @@ def run_evaluation(eval_script, model, output_file, subset_size, judge_model=Non
     
     start_time = time.time()
     
-    # Create a nested progress bar for individual tests if tqdm is available
+    # Create a nested progress bar for individual tests if tqdm is available and not disabled
     inner_progress = None
-    if TQDM_AVAILABLE:
+    progress_pattern = None
+    use_inner_progress = TQDM_AVAILABLE and not disable_progress
+    
+    if use_inner_progress:
         # Determine the type of evaluation to set appropriate progress patterns
         if "advGlue" in eval_script:
             # For AdvGLUE, we'll look for "Processing example X/Y" in the output
@@ -94,8 +97,8 @@ def run_evaluation(eval_script, model, output_file, subset_size, judge_model=Non
     for line in process.stdout:
         all_output.append(line.rstrip())
         
-        # Look for progress patterns if tqdm is available
-        if TQDM_AVAILABLE and progress_pattern:
+        # Look for progress patterns if inner progress bars are enabled
+        if use_inner_progress and progress_pattern:
             match = re.search(progress_pattern, line)
             if match:
                 current, total = int(match.group(1)), int(match.group(2))
@@ -151,6 +154,7 @@ def main():
     parser.add_argument("--balanced", action="store_true", help="Use balanced category selection for applicable evaluations")
     parser.add_argument("--sequential", action="store_true", help="Use sequential (non-random) subset selection")
     parser.add_argument("--mock", action="store_true", help="Run all evaluations in mock mode without calling Ollama API")
+    parser.add_argument("--no-progress", action="store_true", help="Disable progress bars even if tqdm is available")
     
     args = parser.parse_args()
     
@@ -251,8 +255,10 @@ def main():
     start_time = time.time()
     completed = 0
     
-    # Create progress bar if tqdm is available
-    if TQDM_AVAILABLE:
+    # Create progress bar if tqdm is available and not disabled
+    use_progress_bar = TQDM_AVAILABLE and not args.no_progress
+    progress_bar = None
+    if use_progress_bar:
         progress_bar = tqdm(total=total_evaluations, desc="Evaluations", unit="eval")
     
     # Run each evaluation
@@ -271,7 +277,8 @@ def main():
             eval_info['output'],
             args.subset,
             judge_model=eval_info['judge_model'],
-            additional_args=additional_args + eval_info['extra_args']
+            additional_args=additional_args + eval_info['extra_args'],
+            disable_progress=args.no_progress
         )
         all_success = all_success and success
         
@@ -295,16 +302,16 @@ def main():
         print(f"Elapsed time: {elapsed_time/60:.1f} minutes")
         print(f"Estimated time remaining: {eta_str}")
         
-        # Update progress bar if available
-        if TQDM_AVAILABLE:
+        # Update progress bar if it exists
+        if progress_bar is not None:
             progress_bar.update(1)
             progress_bar.set_postfix({"ETA": eta_str})
         
         # Add a separator between evaluations
         print(f"\n{'-'*80}")
     
-    # Close progress bar if it was created
-    if TQDM_AVAILABLE:
+    # Close progress bar if it exists
+    if progress_bar is not None:
         progress_bar.close()
     
     # Calculate total execution time
