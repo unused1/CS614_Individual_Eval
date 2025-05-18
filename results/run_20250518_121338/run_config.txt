@@ -1,0 +1,14 @@
+Run timestamp: 20250518_121338
+Models: llama3:instruct
+Judge model: llama-guard3:8b
+Model host: http://localhost:11434
+Judge host: http://localhost:11434
+Default subset size: 20
+AdvGLUE subset size: 0
+TruthfulQA subset size: 0
+HarmfulQA subset size: 50
+Balanced: True
+Sequential: True
+Skip AdvGLUE: False
+Skip TruthfulQA: False
+Skip HarmfulQA: False

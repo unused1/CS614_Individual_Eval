@@ -1,0 +1,546 @@
+# Evaluation run on 2025-05-18 12:30:53
+# Command: advGlue_eval.py --model deepseek-r1:7b --subset 0 --output results/run_20250518_123052/deepseek-r1_7b/advglue_results.txt --sequential --task all --host http://localhost:11434
+
+
+==================================================
+Model: deepseek-r1:7b
+Processing task: sst2 (Binary sentiment classification)
+==================================================
+
+--- Processing 148 sst2 examples ---
+
+Example ID: 0
+  Sentence: "it 's an uneven treat that bores fun at the democratic exercise while also ex..."
+  Ground Truth: positive
+  Raw LLM: "negative"
+  Parsed Prediction: negative
+  Correct: False
+----------------------------------------
+
+Example ID: 1
+  Sentence: "it captures a wonderful kind of laziness to waste the talents of robert forst..."
+  Ground Truth: negative
+  Raw LLM: "negative"
+  Parsed Prediction: negative
+  Correct: True
+----------------------------------------
+
+Example ID: 2
+  Sentence: "in exactly 89 minutes , most of which passed as slowly as if i 'd been sittin..."
+  Ground Truth: negative
+  Raw LLM: "negative"
+  Parsed Prediction: negative
+  Correct: True
+----------------------------------------
+
+Example ID: 3
+  Sentence: "even horror fans will most likely not find what they 're seeking with complai..."
+  Ground Truth: negative
+  Raw LLM: "negative"
+  Parsed Prediction: negative
+  Correct: True
+----------------------------------------
+
+Example ID: 4
+  Sentence: "there is nothing outstanding about this film , but it is inoffensive enough a..."
+  Ground Truth: positive
+  Raw LLM: "negative"
+  Parsed Prediction: negative
+  Correct: False
+----------------------------------------
+
+Example ID: 5
+  Sentence: "for the most part , director anne-sophie birot 's first feature is a sensitiv..."
+  Ground Truth: positive
+  Raw LLM: "negative"
+  Parsed Prediction: negative
+  Correct: False
+----------------------------------------
+
+Example ID: 6
+  Sentence: "this one is ok one to skip , even for horror movie fanatics ."
+  Ground Truth: negative
+  Raw LLM: "negative"
+  Parsed Prediction: negative
+  Correct: True
+----------------------------------------
+
+Example ID: 7
+  Sentence: "this ranks a train damage of an battle positive -- a stupefying ideal by the ..."
+  Ground Truth: negative
+  Raw LLM: "negative"
+  Parsed Prediction: negative
+  Correct: True
+----------------------------------------
+
+Example ID: 8
+  Sentence: "this is a story of two misfits who do n't stand a chance alone , but together..."
+  Ground Truth: positive
+  Raw LLM: "positive"
+  Parsed Prediction: positive
+  Correct: True
+----------------------------------------
+
+Example ID: 9
+  Sentence: "for all its impressive craftsmanship , and despite an overbearing series of t..."
+  Ground Truth: negative
+  Raw LLM: "positive"
+  Parsed Prediction: positive
+  Correct: False
+----------------------------------------
+
+Example ID: 10
+  Sentence: "the action switches between past and present , but the material link is too f..."
+  Ground Truth: negative
+  Raw LLM: "negative"
+  Parsed Prediction: negative
+  Correct: True
+----------------------------------------
+
+Example ID: 11
+  Sentence: "the title not only illuminates its main characters , but the lazy people behi..."
+  Ground Truth: negative
+  Raw LLM: "negative"
+  Parsed Prediction: negative
+  Correct: True
+----------------------------------------
+
+Example ID: 12
+  Sentence: "for all its impressive craftsmanship , and despite an overbearing series of t..."
+  Ground Truth: negative
+  Raw LLM: "positive"
+  Parsed Prediction: positive
+  Correct: False
+----------------------------------------
+
+Example ID: 13
+  Sentence: "this casting travesty transcends our preconceived vision of the holy republic..."
+  Ground Truth: positive
+  Raw LLM: "negative"
+  Parsed Prediction: negative
+  Correct: False
+----------------------------------------
+
+Example ID: 14
+  Sentence: "it 's unhurried -- very , very unhurried ."
+  Ground Truth: negative
+  Raw LLM: "positive"
+  Parsed Prediction: positive
+  Correct: False
+----------------------------------------
+
+Example ID: 15
+  Sentence: "or invigorating last year 's taxes with your ex-wife ."
+  Ground Truth: negative
+  Raw LLM: "negative"
+  Parsed Prediction: negative
+  Correct: True
+----------------------------------------
+
+Example ID: 16
+  Sentence: "good old-fashioned slash-and-hack is backward !"
+  Ground Truth: positive
+  Raw LLM: "negative"
+  Parsed Prediction: negative
+  Correct: False
+----------------------------------------
+
+Example ID: 17
+  Sentence: "a piquant and intriguing thriller cast with surprises , read my lips is an by..."
+  Ground Truth: positive
+  Raw LLM: "positive"
+  Parsed Prediction: positive
+  Correct: True
+----------------------------------------
+
+Example ID: 18
+  Sentence: "if you 're hard up for raunchy college humor , this is your ticket only here ."
+  Ground Truth: positive
+  Raw LLM: "positive"
+  Parsed Prediction: positive
+  Correct: True
+----------------------------------------
+
+Example ID: 19
+  Sentence: "the title not only describes its main characters , but the lazy people behind..."
+  Ground Truth: negative
+  Raw LLM: "positive"
+  Parsed Prediction: positive
+  Correct: False
+----------------------------------------
+
+Example ID: 20
+  Sentence: "we root for ( clara and paul ) , even like them , though but it 's an emotion..."
+  Ground Truth: positive
+  Raw LLM: "negative"
+  Parsed Prediction: negative
+  Correct: False
+----------------------------------------
+
+Example ID: 21
+  Sentence: "even horror fans will most likely not find what they 're seeking with trouble..."
+  Ground Truth: negative
+  Raw LLM: "negative"
+  Parsed Prediction: negative
+  Correct: True
+----------------------------------------
+
+Example ID: 22
+  Sentence: "a bid , heartfelt family travesty ."
+  Ground Truth: positive
+  Raw LLM: "negative"
+  Parsed Prediction: negative
+  Correct: False
+----------------------------------------
+
+Example ID: 23
+  Sentence: "a synthesis of bromides and absurdities that seems beseechingly tender in its..."
+  Ground Truth: negative
+  Raw LLM: "negative"
+  Parsed Prediction: negative
+  Correct: True
+----------------------------------------
+
+Example ID: 24
+  Sentence: "it 's one pussy-ass world when unexpectedly killer-thrillers turn around worl..."
+  Ground Truth: negative
+  Raw LLM: "negative"
+  Parsed Prediction: negative
+  Correct: True
+----------------------------------------
+
+Example ID: 25
+  Sentence: "allows us to expect that nolan is poised to embark a major aftertaste as a co..."
+  Ground Truth: positive
+  Raw LLM: "positive"
+  Parsed Prediction: positive
+  Correct: True
+----------------------------------------
+
+Example ID: 26
+  Sentence: "unflinchingly bleak and harrowing"
+  Ground Truth: negative
+  Raw LLM: "negative"
+  Parsed Prediction: negative
+  Correct: True
+----------------------------------------
+
+Example ID: 27
+  Sentence: "audrey tatou has a knack for picking roles that magnify her outrageous gentil..."
+  Ground Truth: positive
+  Raw LLM: "negative"
+  Parsed Prediction: negative
+  Correct: False
+----------------------------------------
+
+Example ID: 28
+  Sentence: "it feels like an after-school special gussied up with some fancy special effe..."
+  Ground Truth: negative
+  Raw LLM: "negative"
+  Parsed Prediction: negative
+  Correct: True
+----------------------------------------
+
+Example ID: 29
+  Sentence: "a bidders , franco family tragedy ."
+  Ground Truth: positive
+  Raw LLM: "negative"
+  Parsed Prediction: negative
+  Correct: False
+----------------------------------------
+
+Example ID: 30
+  Sentence: "holm ... embodies the character under an neatly monarchy fetish ."
+  Ground Truth: positive
+  Raw LLM: "negative"
+  Parsed Prediction: negative
+  Correct: False
+----------------------------------------
+
+Example ID: 31
+  Sentence: "the title not only describes its main characters , but the lazy residents beh..."
+  Ground Truth: negative
+  Raw LLM: "negative"
+  Parsed Prediction: negative
+  Correct: True
+----------------------------------------
+
+Example ID: 32
+  Sentence: "the weight between the lump , the unerring professional of the chilly product..."
+  Ground Truth: positive
+  Raw LLM: "negative"
+  Parsed Prediction: negative
+  Correct: False
+----------------------------------------
+
+Example ID: 33
+  Sentence: "you surprise why enough was n't just a music videos modestly although a full-..."
+  Ground Truth: negative
+  Raw LLM: "negative"
+  Parsed Prediction: negative
+  Correct: True
+----------------------------------------
+
+Example ID: 34
+  Sentence: "opportune old-fashioned slash-and-hack is back !"
+  Ground Truth: positive
+  Raw LLM: "positive"
+  Parsed Prediction: positive
+  Correct: True
+----------------------------------------
+
+Example ID: 35
+  Sentence: "the mesmerizing performances of the leads keep the film grounded nor maintain..."
+  Ground Truth: positive
+  Raw LLM: "negative"
+  Parsed Prediction: negative
+  Correct: False
+----------------------------------------
+
+Example ID: 36
+  Sentence: "pumpkin takes an admirable look at the hypocrisy of political correctness , b..."
+  Ground Truth: negative
+  Raw LLM: "negative"
+  Parsed Prediction: negative
+  Correct: True
+----------------------------------------
+
+Example ID: 37
+  Sentence: "the title not only describes its main characters , but the shiftless people b..."
+  Ground Truth: negative
+  Raw LLM: "negative"
+  Parsed Prediction: negative
+  Correct: True
+----------------------------------------
+
+Example ID: 38
+  Sentence: "uses bigger mockery to evoke astonishment poignance ."
+  Ground Truth: positive
+  Raw LLM: "negative"
+  Parsed Prediction: negative
+  Correct: False
+----------------------------------------
+
+Example ID: 39
+  Sentence: "the primitive force of this film seems to foams up from the vast collective m..."
+  Ground Truth: positive
+  Raw LLM: "neutral"
+  Parsed Prediction: unknown
+  Correct: False
+----------------------------------------
+
+Example ID: 40
+  Sentence: "as surreal as a dream neither as detailed as a photograph , as visually dexte..."
+  Ground Truth: positive
+  Raw LLM: "positive"
+  Parsed Prediction: positive
+  Correct: True
+----------------------------------------
+
+Example ID: 41
+  Sentence: "upon it 's become almost redundant to say so , major attaboy go to leigh for ..."
+  Ground Truth: positive
+  Raw LLM: "negative"
+  Parsed Prediction: negative
+  Correct: False
+----------------------------------------
+
+Example ID: 42
+  Sentence: "this one is definitely one to jump , even for horror movie fanatics ."
+  Ground Truth: negative
+  Raw LLM: "positive"
+  Parsed Prediction: positive
+  Correct: False
+----------------------------------------
+
+Example ID: 43
+  Sentence: "mr. tsai is a very outset artist in his medium , and what time is it there ?"
+  Ground Truth: positive
+  Raw LLM: "positive"
+  Parsed Prediction: positive
+  Correct: True
+----------------------------------------
+
+Example ID: 44
+  Sentence: " The acting , costumes , music , cinematography and sound are all astpunding ..."
+  Ground Truth: positive
+  Raw LLM: "positive"
+  Parsed Prediction: positive
+  Correct: True
+----------------------------------------
+
+Example ID: 45
+  Sentence: " The band ' s couage in the face of official repression is isnpiring , especi..."
+  Ground Truth: positive
+  Raw LLM: "positive"
+  Parsed Prediction: positive
+  Correct: True
+----------------------------------------
+
+Example ID: 46
+  Sentence: " I had to gaze 4way - this was god awul."
+  Ground Truth: negative
+  Raw LLM: "negative"
+  Parsed Prediction: negative
+  Correct: True
+----------------------------------------
+
+Example ID: 47
+  Sentence: " A sometimes teduois film."
+  Ground Truth: negative
+  Raw LLM: "negative"
+  Parsed Prediction: negative
+  Correct: True
+----------------------------------------
+
+Example ID: 48
+  Sentence: " The draw ( for `` big bad love '' ) is a soid performance by arliss howard."
+  Ground Truth: positive
+  Raw LLM: "positive"
+  Parsed Prediction: positive
+  Correct: True
+----------------------------------------
+
+Example ID: 49
+  Sentence: " It offers litlte beyond the momentary joys of pretty and weightless intellec..."
+  Ground Truth: negative
+  Raw LLM: "negative"
+  Parsed Prediction: negative
+  Correct: True
+----------------------------------------
+
+Example ID: 50
+  Sentence: " Among the year ' s mo st intrifuing exllorations of alientation."
+  Ground Truth: positive
+  Raw LLM: "neutral"
+  Parsed Prediction: unknown
+  Correct: False
+----------------------------------------
+
+Example ID: 51
+  Sentence: " Although laced with humor and a few fanciful touches , the film is a refersh..."
+  Ground Truth: positive
+  Raw LLM: "negative"
+  Parsed Prediction: negative
+  Correct: False
+----------------------------------------
+
+Example ID: 52
+  Sentence: " The subtle strngth of `` elling '' is that it never l0ses touch with the rea..."
+  Ground Truth: positive
+  Raw LLM: "positive"
+  Parsed Prediction: positive
+  Correct: True
+----------------------------------------
+
+Example ID: 53
+  Sentence: " The title not only describes its main characters , but the la zy people behi..."
+  Ground Truth: negative
+  Raw LLM: "negative"
+  Parsed Prediction: negative
+  Correct: True
+----------------------------------------
+
+Example ID: 54
+  Sentence: " This one is definitely one to sk ip , even for horror movie fanatics."
+  Ground Truth: negative
+  Raw LLM: "negative"
+  Parsed Prediction: negative
+  Correct: True
+----------------------------------------
+
+Example ID: 55
+  Sentence: " For all its impressive craftsmanship , and despite an overbearing series of ..."
+  Ground Truth: negative
+  Raw LLM: "negative"
+  Parsed Prediction: negative
+  Correct: True
+----------------------------------------
+
+Example ID: 56
+  Sentence: " Good old - fashioned slash - an d - hack is bck!"
+  Ground Truth: positive
+  Raw LLM: "positive"
+  Parsed Prediction: positive
+  Correct: True
+----------------------------------------
+
+Example ID: 57
+  Sentence: " We root for ( clara and paul ) , e ven like rhem , though perhaps it ' s an ..."
+  Ground Truth: positive
+  Raw LLM: "negative"
+  Parsed Prediction: negative
+  Correct: False
+----------------------------------------
+
+Example ID: 58
+  Sentence: " The action switches between past and present , but the material link is t oo..."
+  Ground Truth: negative
+  Raw LLM: "negative"
+  Parsed Prediction: negative
+  Correct: True
+----------------------------------------
+
+Example ID: 59
+  Sentence: " Mr. Tsai is a very oriignal artist in his medium , and what time is it there?"
+  Ground Truth: positive
+  Raw LLM: "positive"
+  Parsed Prediction: positive
+  Correct: True
+----------------------------------------
+
+Example ID: 60
+  Sentence: " It ' s a cookie - cuter movie , a cut - and - laste job."
+  Ground Truth: negative
+  Raw LLM: "negative"
+  Parsed Prediction: negative
+  Correct: True
+----------------------------------------
+
+Example ID: 61
+  Sentence: " It ' s just disapplintingoy superficial -- a movie that has all the elements..."
+  Ground Truth: negative
+  Raw LLM: "negative"
+  Parsed Prediction: negative
+  Correct: True
+----------------------------------------
+
+Example ID: 62
+  Sentence: " Even horror fans will most likely not find what they ' re seeking with troub..."
+  Ground Truth: negative
+  Raw LLM: "negative"
+  Parsed Prediction: negative
+  Correct: True
+----------------------------------------
+
+Example ID: 63
+  Sentence: "along this tricky topics , tadpole is basically much a stepping in the wrong ..."
+  Ground Truth: positive
+  Raw LLM: "negative"
+  Parsed Prediction: negative
+  Correct: False
+----------------------------------------
+
+Example ID: 64
+  Sentence: "full old - fashioned slash - and - hack cost back !"
+  Ground Truth: positive
+  Raw LLM: "negative"
+  Parsed Prediction: negative
+  Correct: False
+----------------------------------------
+
+Example ID: 65
+  Sentence: "it ' s barely disappointingly superficial - - a film that has all the element..."
+  Ground Truth: negative
+  Raw LLM: "negative"
+  Parsed Prediction: negative
+  Correct: True
+----------------------------------------
+
+Example ID: 66
+  Sentence: "this constitute a floor of two misfits who do n ' t stall a probability alone..."
+  Ground Truth: positive
+  Raw LLM: "positive"
+  Parsed Prediction: positive
+  Correct: True
+----------------------------------------
