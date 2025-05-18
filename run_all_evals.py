@@ -169,6 +169,11 @@ def main():
         args.subset = 0
         print("Using full dataset (subset=0)")
     
+    # Determine subset sizes for each evaluation type
+    advglue_subset = args.advglue_subset if args.advglue_subset is not None else args.subset
+    truthfulqa_subset = args.truthfulqa_subset if args.truthfulqa_subset is not None else args.subset
+    harmfulqa_subset = args.harmfulqa_subset if args.harmfulqa_subset is not None else args.subset
+    
     # Create timestamp for this run
     timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
     run_dir = os.path.join(args.output_dir, f"run_{timestamp}")
@@ -204,11 +209,6 @@ def main():
     # Calculate total number of evaluations
     total_evaluations = 0
     evaluations_to_run = []
-    
-    # Determine subset sizes for each evaluation type
-    advglue_subset = args.advglue_subset if args.advglue_subset is not None else args.subset
-    truthfulqa_subset = args.truthfulqa_subset if args.truthfulqa_subset is not None else args.subset
-    harmfulqa_subset = args.harmfulqa_subset if args.harmfulqa_subset is not None else args.subset
     
     for model in args.models:
         model_dir = os.path.join(run_dir, model.replace(":", "_"))
