@@ -219,7 +219,7 @@ def get_task_prompt(example: Dict[str, Any], task_name: str) -> str:
     
     return prompt
 
-def get_llm_prediction_ollama(example: Dict[str, Any], task_name: str, model_name: str = "llama3:8b-instruct", mock_mode: bool = False, instruction: str = "", no_truncate: bool = False) -> str:
+def get_llm_prediction_ollama(example: Dict[str, Any], task_name: str, model_name: str = "llama3:8b-instruct", mock_mode: bool = False, instruction: str = "", no_truncate: bool = False, host_url: str = "http://localhost:11434") -> str:
     """
     Get a prediction from an Ollama LLM for any GLUE task.
     Can run in mock mode for testing without an actual LLM.
@@ -231,6 +231,7 @@ def get_llm_prediction_ollama(example: Dict[str, Any], task_name: str, model_nam
         mock_mode (bool): If True, use mock implementation instead of calling Ollama API.
         instruction (str): Optional custom instruction to add to the prompt (e.g., 'Be truthful').
         no_truncate (bool): If True, disable truncation of text in the output.
+        host_url (str): The Ollama API endpoint URL.
 
     Returns:
         str: The predicted label or an error/unknown string.
@@ -295,6 +296,9 @@ def get_llm_prediction_ollama(example: Dict[str, Any], task_name: str, model_nam
     else:
         # --- Actual Ollama API call ---
         try:
+            # Configure Ollama client with the specified host URL
+            ollama.host = host_url
+            
             response = ollama.chat(
                 model=model_name,
                 messages=[{'role': 'user', 'content': prompt}],
@@ -481,6 +485,8 @@ if __name__ == "__main__":
                         help="Disable truncation of text in the output")
     parser.add_argument("--output", type=str, default="",
                         help="Save evaluation output to the specified file")
+    parser.add_argument("--host", type=str, default="http://localhost:11434",
+                        help="Ollama API endpoint URL (default: http://localhost:11434)")
     
     args = parser.parse_args()
     
@@ -539,7 +545,8 @@ if __name__ == "__main__":
                 model_name=args.model, 
                 mock_mode=args.mock,
                 instruction=args.instruction,
-                no_truncate=args.no_truncate
+                no_truncate=args.no_truncate,
+                host_url=args.host
             )
             
             # Parse the potentially messy response from the LLM

@@ -259,6 +259,8 @@ python run_all_evals.py [options]
 - `--sequential`: Use sequential (non-random) subset selection
 - `--mock`: Run all evaluations in mock mode without calling Ollama API
 - `--no-progress`: Disable progress bars even if tqdm is available
+- `--model-host`: Ollama API endpoint URL for target models (default: http://localhost:11434)
+- `--judge-host`: Ollama API endpoint URL for judge model (default: same as --model-host)
 
 #### Examples
 Evaluate all three models with default settings:
@@ -284,6 +286,16 @@ python run_all_evals.py --skip-advglue --skip-truthfulqa
 Use balanced category selection with sequential ordering:
 ```bash
 python run_all_evals.py --balanced --sequential
+```
+
+Use a remote Ollama server for model evaluation:
+```bash
+python run_all_evals.py --model-host http://remote-server:11434
+```
+
+Use different Ollama servers for target models and judge model:
+```bash
+python run_all_evals.py --model-host http://model-server:11434 --judge-host http://judge-server:11434
 ```
 
 #### Progress Tracking Features

@@ -161,6 +161,10 @@ def main():
     parser.add_argument("--sequential", action="store_true", help="Use sequential (non-random) subset selection")
     parser.add_argument("--mock", action="store_true", help="Run all evaluations in mock mode without calling Ollama API")
     parser.add_argument("--no-progress", action="store_true", help="Disable progress bars even if tqdm is available")
+    parser.add_argument("--model-host", type=str, default="http://localhost:11434",
+                        help="Ollama API endpoint URL for target models (default: http://localhost:11434)")
+    parser.add_argument("--judge-host", type=str, default=None,
+                        help="Ollama API endpoint URL for judge model (default: same as --model-host)")
     
     args = parser.parse_args()
     
@@ -174,16 +178,26 @@ def main():
     truthfulqa_subset = args.truthfulqa_subset if args.truthfulqa_subset is not None else args.subset
     harmfulqa_subset = args.harmfulqa_subset if args.harmfulqa_subset is not None else args.subset
     
+    # If judge-host is not specified, use the same as model-host
+    if args.judge_host is None:
+        args.judge_host = args.model_host
+    
     # Create timestamp for this run
     timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
     run_dir = os.path.join(args.output_dir, f"run_{timestamp}")
     create_output_dir(run_dir)
+    
+    # Set judge host to model host if not specified
+    if args.judge_host is None:
+        args.judge_host = args.model_host
     
     # Save run configuration
     with open(os.path.join(run_dir, "run_config.txt"), "w") as f:
         f.write(f"Run timestamp: {timestamp}\n")
         f.write(f"Models: {', '.join(args.models)}\n")
         f.write(f"Judge model: {args.judge_model}\n")
+        f.write(f"Model host: {args.model_host}\n")
+        f.write(f"Judge host: {args.judge_host}\n")
         f.write(f"Default subset size: {args.subset}\n")
         f.write(f"AdvGLUE subset size: {advglue_subset}\n")
         f.write(f"TruthfulQA subset size: {truthfulqa_subset}\n")
@@ -225,7 +239,7 @@ def main():
                 'output': os.path.join(model_dir, "advglue_results.txt"),
                 'judge_model': None,
                 'subset_size': advglue_subset,
-                'extra_args': ["--task", "all"]
+                'extra_args': ["--task", "all", "--host", args.model_host]
             })
         
         # TruthfulQA evaluation
@@ -239,7 +253,7 @@ def main():
                 'output': os.path.join(model_dir, "truthfulqa_results.txt"),
                 'judge_model': None,
                 'subset_size': truthfulqa_subset,
-                'extra_args': []
+                'extra_args': ["--host", args.model_host]
             })
         
         # HarmfulQA evaluation
@@ -253,7 +267,7 @@ def main():
                 'output': os.path.join(model_dir, "harmfulqa_results.txt"),
                 'judge_model': args.judge_model,
                 'subset_size': harmfulqa_subset,
-                'extra_args': []
+                'extra_args': ["--model-host", args.model_host, "--judge-host", args.judge_host]
             })
     
     # Run all evaluations with progress tracking

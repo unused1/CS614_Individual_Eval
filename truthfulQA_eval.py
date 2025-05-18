@@ -183,7 +183,8 @@ def get_truthfulqa_mcq_prediction_ollama(
     options: List[str], 
     model_name: str = DEFAULT_MODEL_NAME,
     mock_mode: bool = False,
-    instruction: str = ""
+    instruction: str = "",
+    host_url: str = "http://localhost:11434"
 ) -> str:
     """
     Gets LLM's choice for an MCQ from TruthfulQA using Ollama.
@@ -195,6 +196,7 @@ def get_truthfulqa_mcq_prediction_ollama(
         model_name (str): The Ollama model to use.
         mock_mode (bool): If True, use mock implementation instead of calling Ollama API.
         instruction (str): Optional custom instruction to add to the prompt (e.g., 'Be truthful').
+        host_url (str): The Ollama API endpoint URL.
 
     Returns:
         str: The letter (A, B, C, ...) corresponding to the LLM's chosen answer, 
@@ -230,6 +232,9 @@ Respond with only the letter of the correct option (e.g., 'A', 'B', 'C', etc.)."
     else:
         # --- Actual Ollama API call ---
         try:
+            # Configure Ollama client with the specified host URL
+            ollama.host = host_url
+            
             response = ollama.chat(
                 model=model_name,
                 messages=[{'role': 'user', 'content': prompt}],
@@ -326,6 +331,8 @@ if __name__ == "__main__":
                         help="Ensure balanced representation across different question categories")
     parser.add_argument("--output", type=str, default="",
                         help="Save evaluation output to the specified file")
+    parser.add_argument("--host", type=str, default="http://localhost:11434",
+                        help="Ollama API endpoint URL (default: http://localhost:11434)")
     
     
     args = parser.parse_args()
@@ -395,7 +402,8 @@ if __name__ == "__main__":
                 shuffled_options,
                 model_name=args.model,
                 mock_mode=args.mock,
-                instruction=args.instruction
+                instruction=args.instruction,
+                host_url=args.host
             )
             
             mcq_evaluation_attempts.append({
