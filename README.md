@@ -411,4 +411,4 @@ This project is provided as-is for educational and research purposes.
 12. Chi, J., Karn, U., Zhan, H., Smith, E., Rando, J., Zhang, Y., Plawiak, K., Coudert, Z. D., Upasani, K., & Pasupuleti, M. (2024). Llama Guard 3 Vision: Safeguarding Human-AI Image Understanding Conversations (No. arXiv:2411.10414; Version 1). arXiv. https://doi.org/10.48550/arXiv.2411.10414
 13. Declare-lab/red-instruct. (2025). [Python]. Deep Cognition and Language Research (DeCLaRe) Lab. https://github.com/declare-lab/red-instruct (Original work published 2023)
 14. Download Llama. (n.d.). Llama. Retrieved 17 May 2025, from https://www.llama.com/llama-downloads/
-
+15. Run LLM inference on Cloud Run GPUs with Gemma 3 and Ollama  |  Cloud Run Documentation  |  Google Cloud. (n.d.). Retrieved 18 May 2025, from https://cloud.google.com/run/docs/tutorials/gpu-gemma-with-ollama?authuser=1

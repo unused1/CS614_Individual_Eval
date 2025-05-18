@@ -211,14 +211,15 @@ def main():
     # Track overall success
     all_success = True
     
-    # Build additional arguments
-    additional_args = []
-    if args.balanced:
-        additional_args.append("--balanced")
+    # Build common additional arguments
+    common_args = []
     if args.sequential:
-        additional_args.append("--sequential")
+        common_args.append("--sequential")
     if args.mock:
-        additional_args.append("--mock")
+        common_args.append("--mock")
+        
+    # Track which arguments are supported by which scripts
+    # AdvGLUE doesn't support --balanced, but TruthfulQA and HarmfulQA do
     
     # Calculate total number of evaluations
     total_evaluations = 0
@@ -231,6 +232,10 @@ def main():
         # AdvGLUE evaluation
         if not args.skip_advglue:
             total_evaluations += 1
+            # AdvGLUE doesn't support --balanced
+            advglue_args = common_args.copy()
+            advglue_args.extend(["--task", "all", "--host", args.model_host])
+            
             evaluations_to_run.append({
                 'model': model,
                 'model_dir': model_dir,
@@ -239,12 +244,19 @@ def main():
                 'output': os.path.join(model_dir, "advglue_results.txt"),
                 'judge_model': None,
                 'subset_size': advglue_subset,
-                'extra_args': ["--task", "all", "--host", args.model_host]
+                'extra_args': advglue_args
             })
         
         # TruthfulQA evaluation
         if not args.skip_truthfulqa:
             total_evaluations += 1
+            # TruthfulQA supports --balanced
+            truthfulqa_args = common_args.copy()
+            truthfulqa_args.append("--host")
+            truthfulqa_args.append(args.model_host)
+            if args.balanced:
+                truthfulqa_args.append("--balanced")
+                
             evaluations_to_run.append({
                 'model': model,
                 'model_dir': model_dir,
@@ -253,12 +265,18 @@ def main():
                 'output': os.path.join(model_dir, "truthfulqa_results.txt"),
                 'judge_model': None,
                 'subset_size': truthfulqa_subset,
-                'extra_args': ["--host", args.model_host]
+                'extra_args': truthfulqa_args
             })
         
         # HarmfulQA evaluation
         if not args.skip_harmfulqa:
             total_evaluations += 1
+            # HarmfulQA supports --balanced
+            harmfulqa_args = common_args.copy()
+            harmfulqa_args.extend(["--model-host", args.model_host, "--judge-host", args.judge_host])
+            if args.balanced:
+                harmfulqa_args.append("--balanced")
+                
             evaluations_to_run.append({
                 'model': model,
                 'model_dir': model_dir,
@@ -267,7 +285,7 @@ def main():
                 'output': os.path.join(model_dir, "harmfulqa_results.txt"),
                 'judge_model': args.judge_model,
                 'subset_size': harmfulqa_subset,
-                'extra_args': ["--model-host", args.model_host, "--judge-host", args.judge_host]
+                'extra_args': harmfulqa_args
             })
     
     # Run all evaluations with progress tracking
@@ -307,9 +325,9 @@ def main():
             eval_info['model'],
             eval_info['output'],
             eval_info['subset_size'],
-            judge_model=eval_info['judge_model'],
-            additional_args=additional_args + eval_info['extra_args'],
-            disable_progress=args.no_progress
+            eval_info['judge_model'],
+            eval_info['extra_args'],  # Use script-specific arguments
+            args.no_progress
         )
         all_success = all_success and success
         
