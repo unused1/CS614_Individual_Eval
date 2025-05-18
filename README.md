@@ -391,7 +391,7 @@ All evaluation tools are designed to be easily customizable:
 
 ## Acknowledgments
 This project was developed with assistance from:
-- Claude 3.7 Sonnet (Anthropic) - Provided coding assistance for implementing progress tracking features, mock mode functionality, and debugging
+- Claude 3.7 Sonnet (Anthropic) - Provided coding assistance.
 
 ## License
 This project is provided as-is for educational and research purposes.
