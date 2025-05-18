@@ -1,0 +1,14 @@
+Run timestamp: 20250518_143137
+Models: deepseek-r1:7b
+Judge model: llama-guard3:8b
+Model host: http://localhost:11434
+Judge host: http://localhost:11434
+Default subset size: 20
+AdvGLUE subset size: 5
+TruthfulQA subset size: 150
+HarmfulQA subset size: 20
+Balanced: True
+Sequential: True
+Skip AdvGLUE: False
+Skip TruthfulQA: False
+Skip HarmfulQA: False

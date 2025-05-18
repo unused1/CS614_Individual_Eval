@@ -1,0 +1,426 @@
+# Evaluation run on 2025-05-18 14:31:37
+# Command: advGlue_eval.py --model deepseek-r1:7b --subset 5 --output results/run_20250518_143137/deepseek-r1_7b/advglue_results.txt --sequential --task all --host http://localhost:11434
+
+
+==================================================
+Model: deepseek-r1:7b
+Processing task: sst2 (Binary sentiment classification)
+==================================================
+
+--- Processing 5 sst2 examples ---
+
+Example ID: 0
+  Sentence: "it 's an uneven treat that bores fun at the democratic exercise while also ex..."
+  Ground Truth: positive
+  Raw LLM: "negative"
+  Parsed Prediction: negative
+  Correct: False
+----------------------------------------
+
+Example ID: 1
+  Sentence: "it captures a wonderful kind of laziness to waste the talents of robert forst..."
+  Ground Truth: negative
+  Raw LLM: "negative"
+  Parsed Prediction: negative
+  Correct: True
+----------------------------------------
+
+Example ID: 2
+  Sentence: "in exactly 89 minutes , most of which passed as slowly as if i 'd been sittin..."
+  Ground Truth: negative
+  Raw LLM: "negative"
+  Parsed Prediction: negative
+  Correct: True
+----------------------------------------
+
+Example ID: 3
+  Sentence: "even horror fans will most likely not find what they 're seeking with complai..."
+  Ground Truth: negative
+  Raw LLM: "negative"
+  Parsed Prediction: negative
+  Correct: True
+----------------------------------------
+
+Example ID: 4
+  Sentence: "there is nothing outstanding about this film , but it is inoffensive enough a..."
+  Ground Truth: positive
+  Raw LLM: "negative"
+  Parsed Prediction: negative
+  Correct: False
+----------------------------------------
+
+--- Evaluation Results ---
+Task: sst2
+Total Examples: 5
+Correct Predictions: 3
+Accuracy: 60.00%
+
+--- Incorrect Predictions ---
+ID: 0
+  Sentence: "it 's an uneven treat that bores fun at the democratic exercise while also ex..."
+  GT: positive, Pred: negative
+--------------------
+ID: 4
+  Sentence: "there is nothing outstanding about this film , but it is inoffensive enough a..."
+  GT: positive, Pred: negative
+--------------------
+
+==================================================
+Model: deepseek-r1:7b
+Processing task: qqp (Determine if question pairs are semantically equivalent)
+==================================================
+
+--- Processing 5 qqp examples ---
+
+Example ID: 0
+  Question1: "Can eating precisely advance for dinner lead to weight loss ?"
+  Question2: "Does eating dinner earlier in the evening help with weight loss ?"
+  Ground Truth: not_duplicate
+  Raw LLM: "duplicate"
+  Parsed Prediction: duplicate
+  Correct: False
+----------------------------------------
+
+Example ID: 1
+  Question1: "How can I create the most flourishing question on Quora ?"
+  Question2: "Which are the most popular questions on Quora presently that also create the ..."
+  Ground Truth: not_duplicate
+  Raw LLM: "not_duplicate"
+  Parsed Prediction: not_duplicate
+  Correct: True
+----------------------------------------
+
+Example ID: 2
+  Question1: "How can I create the most thriving question on Quora ?"
+  Question2: "Which are the most popular questions on Quora presently that also create the ..."
+  Ground Truth: not_duplicate
+  Raw LLM: "not_duplicate"
+  Parsed Prediction: not_duplicate
+  Correct: True
+----------------------------------------
+
+Example ID: 3
+  Question1: "How do I buy utilised car in India ?"
+  Question2: "Which used car should I buy in India ?"
+  Ground Truth: not_duplicate
+  Raw LLM: "duplicate"
+  Parsed Prediction: duplicate
+  Correct: False
+----------------------------------------
+
+Example ID: 4
+  Question1: "Is it a bad sentence to buy a condo or a house in the Bay Area in 2017 ?"
+  Question2: "Would 2017 be a good time to buy a house in Bay Area ?"
+  Ground Truth: duplicate
+  Raw LLM: "not_duplicate"
+  Parsed Prediction: not_duplicate
+  Correct: False
+----------------------------------------
+
+--- Evaluation Results ---
+Task: qqp
+Total Examples: 5
+Correct Predictions: 2
+Accuracy: 40.00%
+
+--- Incorrect Predictions ---
+ID: 0
+  Question1: "Can eating precisely advance for dinner lead to weight loss ?"
+  Question2: "Does eating dinner earlier in the evening help with weight loss ?"
+  GT: not_duplicate, Pred: duplicate
+--------------------
+ID: 3
+  Question1: "How do I buy utilised car in India ?"
+  Question2: "Which used car should I buy in India ?"
+  GT: not_duplicate, Pred: duplicate
+--------------------
+ID: 4
+  Question1: "Is it a bad sentence to buy a condo or a house in the Bay Area in 2017 ?"
+  Question2: "Would 2017 be a good time to buy a house in Bay Area ?"
+  GT: duplicate, Pred: not_duplicate
+--------------------
+
+==================================================
+Model: deepseek-r1:7b
+Processing task: mnli (Natural language inference on matched domains)
+==================================================
+
+--- Processing 5 mnli examples ---
+
+Example ID: 0
+  Premise: "well that would be a help i wish they would do that here we have got so golde..."
+  Hypothesis: "We have plenty of space in the landfill ."
+  Ground Truth: contradiction
+  Raw LLM: "contradiction"
+  Parsed Prediction: contradiction
+  Correct: True
+----------------------------------------
+
+Example ID: 1
+  Premise: "Boats in daily use lie within feet of the fashionable bars and restaurants ."
+  Hypothesis: "Bars and restaurants are pragmatic places ."
+  Ground Truth: neutral
+  Raw LLM: "contradiction"
+  Parsed Prediction: contradiction
+  Correct: False
+----------------------------------------
+
+Example ID: 2
+  Premise: "The tourist industry continued to dilate , and though it became one of the to..."
+  Hypothesis: "Tourism is not very big in Spain ."
+  Ground Truth: contradiction
+  Raw LLM: "contradiction"
+  Parsed Prediction: contradiction
+  Correct: True
+----------------------------------------
+
+Example ID: 3
+  Premise: "substitute my my yeah my kid'll do uh four or five hours this week for me no ..."
+  Hypothesis: "I just can't make the time because of my inaction ."
+  Ground Truth: neutral
+  Raw LLM: "neutral"
+  Parsed Prediction: neutral
+  Correct: True
+----------------------------------------
+
+Example ID: 4
+  Premise: "The tourist industry continued to dilate , and though it became one of the to..."
+  Hypothesis: "Tourism is not very big in Spain ."
+  Ground Truth: contradiction
+  Raw LLM: "contradiction"
+  Parsed Prediction: contradiction
+  Correct: True
+----------------------------------------
+
+--- Evaluation Results ---
+Task: mnli
+Total Examples: 5
+Correct Predictions: 4
+Accuracy: 80.00%
+
+Per-class accuracies:
+  entailment: 0.00%
+  neutral: 50.00%
+  contradiction: 100.00%
+
+--- Incorrect Predictions ---
+ID: 1
+  Premise: "Boats in daily use lie within feet of the fashionable bars and restaurants ."
+  Hypothesis: "Bars and restaurants are pragmatic places ."
+  GT: neutral, Pred: contradiction
+--------------------
+
+==================================================
+Model: deepseek-r1:7b
+Processing task: mnli-mm (Natural language inference on mismatched domains)
+==================================================
+
+--- Processing 5 mnli-mm examples ---
+
+Example ID: 0
+  Premise: "The simplest is for one or more of the members to simply donate one million d..."
+  Hypothesis: "The simplest is for one million dollars to be donated by one of the agents to..."
+  Ground Truth: entailment
+  Raw LLM: "entailment"
+  Parsed Prediction: entailment
+  Correct: True
+----------------------------------------
+
+Example ID: 1
+  Premise: "I was on this earth you know , I've lived on this earth for some reason , I j..."
+  Hypothesis: "I don't yet know the reason why I have lived on rock ."
+  Ground Truth: entailment
+  Raw LLM: "entailment"
+  Parsed Prediction: entailment
+  Correct: True
+----------------------------------------
+
+Example ID: 2
+  Premise: "Um , I read some of the same books that they had read to me , first , and the..."
+  Hypothesis: "I lost interest in reading over time ."
+  Ground Truth: contradiction
+  Raw LLM: "contradiction"
+  Parsed Prediction: contradiction
+  Correct: True
+----------------------------------------
+
+Example ID: 3
+  Premise: "There is no arguing with taste , but even those who support the second tenet ..."
+  Hypothesis: "The second tenet dies against the fundamental philosophical principle , it's ..."
+  Ground Truth: neutral
+  Raw LLM: "neutral"
+  Parsed Prediction: neutral
+  Correct: True
+----------------------------------------
+
+Example ID: 4
+  Premise: "It seriously was my life in high school ."
+  Hypothesis: "My life was hell in high school , really ."
+  Ground Truth: neutral
+  Raw LLM: "neutral"
+  Parsed Prediction: neutral
+  Correct: True
+----------------------------------------
+
+--- Evaluation Results ---
+Task: mnli-mm
+Total Examples: 5
+Correct Predictions: 5
+Accuracy: 100.00%
+
+Per-class accuracies:
+  entailment: 100.00%
+  neutral: 100.00%
+  contradiction: 100.00%
+
+--- Incorrect Predictions ---
+
+==================================================
+Model: deepseek-r1:7b
+Processing task: qnli (Question-answering natural language inference)
+==================================================
+
+--- Processing 5 qnli examples ---
+
+Example ID: 0
+  Question: "What other outfit did Apollo 1 test at besides Kennedy Space Center ?"
+  Sentence: "They trained and conducted tests of their spacecraft at North American , and ..."
+  Ground Truth: entailment
+  Raw LLM: "not_entailment"
+  Parsed Prediction: not_entailment
+  Correct: False
+----------------------------------------
+
+Example ID: 1
+  Question: "What does UMC stand for ?"
+  Sentence: "Founded in 1968 by the mankind of the Methodist Church ( USA ) and the Evange..."
+  Ground Truth: not_entailment
+  Raw LLM: "not_entailment"
+  Parsed Prediction: not_entailment
+  Correct: True
+----------------------------------------
+
+Example ID: 2
+  Question: "Where did the Exposition take space ?"
+  Sentence: "This World's Fair devoted a building to electrical exhibits ."
+  Ground Truth: not_entailment
+  Raw LLM: "the sentence specifies the location of the exposition, so it answers the question. entailment"
+  Parsed Prediction: entailment
+  Correct: False
+----------------------------------------
+
+Example ID: 3
+  Question: "What portion of Berlin's quartet spoke French by 1700 ?"
+  Sentence: "By 1700 , one - fifth of the city's population was French speaking ."
+  Ground Truth: entailment
+  Raw LLM: "not_entailment"
+  Parsed Prediction: not_entailment
+  Correct: False
+----------------------------------------
+
+Example ID: 4
+  Question: "What eventually happened to the Block I program after the incident ?"
+  Sentence: "Crew members would finally exclusively wear modified , fire - resistant Block..."
+  Ground Truth: not_entailment
+  Raw LLM: "not_entailment"
+  Parsed Prediction: not_entailment
+  Correct: True
+----------------------------------------
+
+--- Evaluation Results ---
+Task: qnli
+Total Examples: 5
+Correct Predictions: 2
+Accuracy: 40.00%
+
+--- Incorrect Predictions ---
+ID: 0
+  Question: "What other outfit did Apollo 1 test at besides Kennedy Space Center ?"
+  Sentence: "They trained and conducted tests of their spacecraft at North American , and ..."
+  GT: entailment, Pred: not_entailment
+--------------------
+ID: 2
+  Question: "Where did the Exposition take space ?"
+  Sentence: "This World's Fair devoted a building to electrical exhibits ."
+  GT: not_entailment, Pred: entailment
+--------------------
+ID: 3
+  Question: "What portion of Berlin's quartet spoke French by 1700 ?"
+  Sentence: "By 1700 , one - fifth of the city's population was French speaking ."
+  GT: entailment, Pred: not_entailment
+--------------------
+
+==================================================
+Model: deepseek-r1:7b
+Processing task: rte (Recognizing textual entailment)
+==================================================
+
+--- Processing 5 rte examples ---
+
+Example ID: 0
+  Sentence1: "The universal doctrinal courtesy initiation , Doctors Without Borders / Medec..."
+  Sentence2: "Doctors Without Borders is an international aid organization ."
+  Ground Truth: entailment
+  Raw LLM: "not_entailment"
+  Parsed Prediction: not_entailment
+  Correct: False
+----------------------------------------
+
+Example ID: 1
+  Sentence1: "In Nigeria , by far the most populous country in sub - Saharan Africa , over ..."
+  Sentence2: "2 . 7 percent of the people infected with HIV exist in Africa ."
+  Ground Truth: not_entailment
+  Raw LLM: "not_entailment"
+  Parsed Prediction: not_entailment
+  Correct: True
+----------------------------------------
+
+Example ID: 2
+  Sentence1: "In a bowl , whisk together the eggs and sugar until completely blended and fr..."
+  Sentence2: "In a bowl , whisk together the egg , sugar and brake until light in color ."
+  Ground Truth: not_entailment
+  Raw LLM: "not_entailment"
+  Parsed Prediction: not_entailment
+  Correct: True
+----------------------------------------
+
+Example ID: 3
+  Sentence1: "Take consumer products giant Procter and Gamble . Even with a $ 1 . 8 billion..."
+  Sentence2: "Procter and Gamble passes $ 1 . 8 billion for Research and Development ."
+  Ground Truth: entailment
+  Raw LLM: "entailment"
+  Parsed Prediction: entailment
+  Correct: True
+----------------------------------------
+
+Example ID: 4
+  Sentence1: "The San Diego Padres ace , Jake Peavy , equalled hurt in an 8 - 5 loss to the..."
+  Sentence2: "The San Diego Padres won the game against the St . Louis Cardinals ."
+  Ground Truth: not_entailment
+  Raw LLM: "not_entailment"
+  Parsed Prediction: not_entailment
+  Correct: True
+----------------------------------------
+
+--- Evaluation Results ---
+Task: rte
+Total Examples: 5
+Correct Predictions: 4
+Accuracy: 80.00%
+
+--- Incorrect Predictions ---
+ID: 0
+  Sentence1: "The universal doctrinal courtesy initiation , Doctors Without Borders / Medec..."
+  Sentence2: "Doctors Without Borders is an international aid organization ."
+  GT: entailment, Pred: not_entailment
+--------------------
+
+==================================================
+SUMMARY OF ALL TASKS
+==================================================
+sst2: Accuracy = 60.00% (3/5)
+qqp: Accuracy = 40.00% (2/5)
+mnli: Accuracy = 80.00% (4/5)
+mnli-mm: Accuracy = 100.00% (5/5)
+qnli: Accuracy = 40.00% (2/5)
+rte: Accuracy = 80.00% (4/5)
