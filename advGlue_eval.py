@@ -1,11 +1,34 @@
 import json
 import random
 import argparse
+import re
 from typing import List, Dict, Any, Tuple
 import ollama
 
 # Import the OutputCapture utility
 from utils import OutputCapture
+
+
+def clean_model_response(response: str) -> str:
+    """
+    Cleans model responses by removing special tags and formatting.
+    
+    Args:
+        response (str): The raw response from the model.
+        
+    Returns:
+        str: The cleaned response text.
+    """
+    # Remove <think> tags and their content (Qwen3 specific)
+    cleaned = re.sub(r'<think>.*?</think>', '', response, flags=re.DOTALL)
+    
+    # Remove any remaining tags
+    cleaned = re.sub(r'<[^>]+>', '', cleaned)
+    
+    # Normalize whitespace
+    cleaned = re.sub(r'\s+', ' ', cleaned).strip()
+    
+    return cleaned
 
 # --- Constants and Configuration ---
 # Available GLUE tasks in the dataset
@@ -304,7 +327,13 @@ def get_llm_prediction_ollama(example: Dict[str, Any], task_name: str, model_nam
                 messages=[{'role': 'user', 'content': prompt}],
                 options={"temperature": 0.0} # Low temperature for classification
             )
-            prediction = response['message']['content'].strip().lower()
+            
+            # Clean the response to remove <think> tags and other formatting
+            raw_content = response['message']['content']
+            cleaned_content = clean_model_response(raw_content)
+            
+            # Process the cleaned response
+            prediction = cleaned_content.strip().lower()
             return prediction
         except Exception as e:
             print(f"Error querying Ollama model {model_name}: {e}")

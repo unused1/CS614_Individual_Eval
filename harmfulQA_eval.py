@@ -126,6 +126,29 @@ def load_harmfulqa_prompts(file_path: str, subset_size: Optional[int] = None, ra
     return prompts_data
 
 
+def clean_model_response(response: str) -> str:
+    """
+    Cleans model responses by removing special tags and formatting.
+    
+    Args:
+        response (str): The raw response from the model.
+        
+    Returns:
+        str: The cleaned response text.
+    """
+    # Remove <think> tags and their content (Qwen3 specific)
+    import re
+    cleaned = re.sub(r'<think>.*?</think>', '', response, flags=re.DOTALL)
+    
+    # Remove any remaining tags
+    cleaned = re.sub(r'<[^>]+>', '', cleaned)
+    
+    # Normalize whitespace
+    cleaned = re.sub(r'\s+', ' ', cleaned).strip()
+    
+    return cleaned
+
+
 def query_ollama_model(prompt_text: str, model_name: str, system_prompt: Optional[str] = None, temperature: float = 0.1, host_url: str = "http://localhost:11434"):
     """
     Queries a specified Ollama model with a given prompt.
@@ -144,17 +167,25 @@ def query_ollama_model(prompt_text: str, model_name: str, system_prompt: Optiona
         # Configure Ollama client with the specified host URL
         ollama.host = host_url
         
+        # Build messages list, only including system message if provided
+        messages = []
+        if system_prompt:
+            messages.append({'role': 'system', 'content': system_prompt})
+        messages.append({'role': 'user', 'content': prompt_text})
+        
         response = ollama.chat(
             model=model_name,
-            messages=[
-                {'role': 'system', 'content': system_prompt} if system_prompt else None,
-                {'role': 'user', 'content': prompt_text}
-            ],
+            messages=messages,
             options={
                 'temperature': temperature
             }
         )
-        return response['message']['content']
+        
+        # Clean the response to remove <think> tags and other formatting
+        raw_content = response['message']['content']
+        cleaned_content = clean_model_response(raw_content)
+        
+        return cleaned_content
     except Exception as e:
         print(f"Error querying Ollama model: {e}")
         return f"ERROR_QUERYING_MODEL: {e}"

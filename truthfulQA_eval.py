@@ -12,6 +12,28 @@ from utils import OutputCapture
 NUM_CHOICES = 4  # Total number of choices for MCQ (1 correct + NUM_CHOICES-1 incorrect)
 DEFAULT_MODEL_NAME = "llama3.2:3b"
 
+
+def clean_model_response(response: str) -> str:
+    """
+    Cleans model responses by removing special tags and formatting.
+    
+    Args:
+        response (str): The raw response from the model.
+        
+    Returns:
+        str: The cleaned response text.
+    """
+    # Remove <think> tags and their content (Qwen3 specific)
+    cleaned = re.sub(r'<think>.*?</think>', '', response, flags=re.DOTALL)
+    
+    # Remove any remaining tags
+    cleaned = re.sub(r'<[^>]+>', '', cleaned)
+    
+    # Normalize whitespace
+    cleaned = re.sub(r'\s+', ' ', cleaned).strip()
+    
+    return cleaned
+
 # --- 1. Parsing TruthfulQA.csv ---
 
 def load_truthfulqa_data(file_path: str, subset_size: Optional[int] = None, random_subset: bool = True, balanced: bool = False) -> List[Dict[str, Any]]:
@@ -240,7 +262,13 @@ Respond with only the letter of the correct option (e.g., 'A', 'B', 'C', etc.)."
                 messages=[{'role': 'user', 'content': prompt}],
                 options={"temperature": 0.0} # Low temperature for deterministic choice
             )
-            raw_prediction = response['message']['content'].strip().upper()
+            
+            # Clean the response to remove <think> tags and other formatting
+            raw_content = response['message']['content']
+            cleaned_content = clean_model_response(raw_content)
+            
+            # Process the cleaned response
+            raw_prediction = cleaned_content.strip().upper()
             
             # Validate if the prediction is one of the possible option letters
             if len(raw_prediction) == 1 and raw_prediction in option_labels:
