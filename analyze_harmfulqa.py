@@ -3,12 +3,91 @@
 
 import json
 import os
+import random
+import argparse
 from collections import Counter
 import pprint
 
+def display_prompt_by_id(data, prompt_id):
+    """Display a specific prompt by its ID."""
+    try:
+        # Convert prompt_id to integer if it's a string
+        prompt_id = int(prompt_id) if isinstance(prompt_id, str) else prompt_id
+        
+        for item in data:
+            if item.get('id') == prompt_id:
+                print(f"\nPrompt ID: {prompt_id}")
+                print(f"Topic: {item.get('topic', 'N/A')}")
+                print(f"Subtopic: {item.get('subtopic', 'N/A')}")
+                print(f"Question: {item.get('question', 'N/A')}")
+                
+                # Check if there are conversations
+                if 'blue_conversations' in item:
+                    print(f"\nBlue Conversations: {len(item['blue_conversations'])}")
+                if 'red_conversations' in item:
+                    print(f"\nRed Conversations: {len(item['red_conversations'])}")
+                    
+                return True
+        print(f"\nNo prompt found with ID: {prompt_id}")
+        return False
+    except Exception as e:
+        print(f"\nError finding prompt with ID {prompt_id}: {e}")
+        return False
+
+
+def sample_prompts_from_topic(data, topic, sample_size=5):
+    """Sample a specified number of prompts from a given topic."""
+    try:
+        # Find all prompts that match the topic
+        matching_prompts = []
+        for item in data:
+            # Check both topic and subtopic fields
+            item_topic = item.get('topic', '')
+            item_subtopic = item.get('subtopic', '')
+            
+            if (isinstance(item_topic, str) and topic.lower() in item_topic.lower()) or \
+               (isinstance(item_subtopic, str) and topic.lower() in item_subtopic.lower()):
+                matching_prompts.append(item)
+        
+        if not matching_prompts:
+            print(f"\nNo prompts found for topic: {topic}")
+            return False
+        
+        # Adjust sample size if necessary
+        actual_sample_size = min(sample_size, len(matching_prompts))
+        samples = random.sample(matching_prompts, actual_sample_size)
+        
+        print(f"\nSampled {actual_sample_size} prompts from topic '{topic}' (out of {len(matching_prompts)} matching prompts):")
+        for i, item in enumerate(samples, 1):
+            print(f"\n{i}. Prompt ID: {item.get('id')}")
+            print(f"   Topic: {item.get('topic', 'N/A')}")
+            print(f"   Subtopic: {item.get('subtopic', 'N/A')}")
+            print(f"   Question: {item.get('question', 'N/A')}")
+        
+        return True
+    except Exception as e:
+        print(f"\nError sampling prompts for topic {topic}: {e}")
+        return False
+
+
 def main():
+    # Set up command-line arguments
+    parser = argparse.ArgumentParser(description="Analyze the HarmfulQA dataset and display prompts.")
+    parser.add_argument("--dataset", type=str, default="dataset/data_for_hub.json",
+                        help="Path to the HarmfulQA dataset JSON file")
+    parser.add_argument("--analyze", action="store_true",
+                        help="Analyze the dataset structure and categories")
+    parser.add_argument("--id", type=str,
+                        help="Display a specific prompt by its ID")
+    parser.add_argument("--topic", type=str,
+                        help="Sample prompts from a specific topic")
+    parser.add_argument("--sample-size", type=int, default=5,
+                        help="Number of prompts to sample when using --topic (default: 5)")
+    
+    args = parser.parse_args()
+    
     # Path to the HarmfulQA dataset
-    dataset_path = "dataset/data_for_hub.json"
+    dataset_path = args.dataset
     
     # Check if the file exists
     if not os.path.exists(dataset_path):
@@ -19,12 +98,25 @@ def main():
     with open(dataset_path, 'r') as f:
         data = json.load(f)
     
-    print(f"Total prompts in dataset: {len(data)}")
+    # Handle specific command-line options
+    if args.id:
+        # Display a specific prompt by ID
+        display_prompt_by_id(data, args.id)
+        return
     
-    # First, let's examine the structure of the first item
-    print("\nDataset structure sample:")
-    if data:
-        pprint.pprint(data[0])
+    if args.topic:
+        # Sample prompts from a specific topic
+        sample_prompts_from_topic(data, args.topic, args.sample_size)
+        return
+    
+    # If no specific command is given or --analyze is specified, perform analysis
+    if not (args.id or args.topic) or args.analyze:
+        print(f"Total prompts in dataset: {len(data)}")
+        
+        # First, let's examine the structure of the first item
+        print("\nDataset structure sample:")
+        if data:
+            pprint.pprint(data[0])
     
     # Look for any field that might contain category/topic information
     print("\nExamining all fields in the dataset...")
