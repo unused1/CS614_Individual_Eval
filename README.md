@@ -14,6 +14,8 @@ This project is part of the Singapore Management University (SMU) CS614 Generati
 
 3. **HarmfulQA**: Evaluates LLM safety alignment by testing its responses to potentially harmful prompts, using Llama Guard as a safety judge to assess response safety.
 
+![alt text](images/solution_components.png)
+
 ## Features
 
 ### AdvGLUE Evaluation
