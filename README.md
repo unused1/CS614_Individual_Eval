@@ -386,14 +386,14 @@ All evaluation tools are designed to be easily customizable:
 4. **Custom Evaluation Metrics**: Modify the `evaluate_safety_alignment` function to include additional safety metrics
 
 ## Implementation Details
-- Both tools include mock implementations for LLM predictions that can be replaced with actual API calls
+- All tools include mock implementations for LLM predictions that can be replaced with actual API calls
 - Response parsing is robust to handle variations in LLM outputs
 - Evaluation metrics are task-specific, with special handling for different categories
 - Command-line arguments provide flexibility in configuration without code changes
 
 ## Acknowledgments
 This project was developed with assistance from:
-- Claude 3.7 Sonnet (Anthropic) - Provided coding assistance for implementing progress tracking features, mock mode functionality, and debugging
+- Claude 3.7 Sonnet (Anthropic) - Provided coding assistance for implementing features, mock mode functionality, and debugging
 
 ## License
 This project is provided as-is for educational and research purposes.
