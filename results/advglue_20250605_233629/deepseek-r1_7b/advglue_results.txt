@@ -1,0 +1,59 @@
+AdvGLUE SST-2 Evaluation Results
+=====================================
+Model: deepseek-r1:7b
+Timestamp: 2025-06-05T23:36:29.055253
+Configuration: {
+  "num_predict": 100,
+  "max_tokens": null,
+  "no_think_instruction": false,
+  "no_think_system": false,
+  "nothink_param": false
+}
+
+Results:
+--------
+Total Examples: 148
+Evaluated: 5
+Correct: 1
+Incorrect: 4
+Failed: 0
+Accuracy: 20.00%
+Average Response Time: 0.10s
+
+Detailed Predictions:
+-------------------
+
+Example 1:
+  Text: it 's an uneven treat that bores fun at the democratic exercise while also examining its significanc...
+  True: positive (Label 1)
+  Predicted: A - negative
+  Correct: No
+  Response Time: 0.10s
+
+Example 2:
+  Text: a bidders , franco family tragedy .
+  True: positive (Label 1)
+  Predicted: A - negative
+  Correct: No
+  Response Time: 0.10s
+
+Example 3:
+  Text:  The action switches between past and present , but the material link is t oo tenulus to anchor the ...
+  True: negative (Label 0)
+  Predicted: A - negative
+  Correct: Yes
+  Response Time: 0.10s
+
+Example 4:
+  Text: grave old-fashioned slash-and-hack is back ! 
+  True: positive (Label 1)
+  Predicted: A - negative
+  Correct: No
+  Response Time: 0.10s
+
+Example 5:
+  Text: allows us to hope that nolan is poised to embark a major career as a commercial yet inventive filmma...
+  True: positive (Label 1)
+  Predicted: A - negative
+  Correct: No
+  Response Time: 0.10s

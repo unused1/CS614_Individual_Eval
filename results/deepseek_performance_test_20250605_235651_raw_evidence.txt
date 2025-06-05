@@ -1,0 +1,185 @@
+Deepseek R1 Performance Test - Raw Evidence
+============================================================
+Timestamp: 2025-06-05T23:57:18.293227
+Model: deepseek-r1:7b
+Prompt: What is the capital of France? Answer with just the city name.
+============================================================
+
+
+Test: baseline
+----------------------------------------
+Options: {'temperature': 0.0}
+Duration: 5.21s
+Success: True
+
+RAW RESPONSE (length: 1423):
+```
+<think>
+Okay, so I need to figure out what the capital of France is. Hmm, I remember that capitals are usually cities where a country's government is located. I think France has been in Europe for a long time, and Paris comes to mind as a major city there. But wait, isn't there another city called Paris? Yeah, definitely. So maybe it's not just one person named Paris but the whole city.
+
+I'm pretty sure that Paris is the capital because I've heard people talk about it in news and stuff. But let me think if there are any other capitals of France besides Paris. No, I don't recall hearing about another city being the capital. Maybe I should consider if there's a possibility of another city taking over, but historically, Paris has been the capital for a long time.
+
+I also remember that France is a country in Western Europe, and Paris is its largest city by area and one of the most populous in Europe. It makes sense that it would be the capital since it's so central to the country's political and economic activities. Plus, I think the Eiffel Tower is there too, which is a big symbol associated with the capital.
+
+Wait, could there be any confusion between Paris and another city? Maybe not, because other cities in France like Lyon or Marseille are much smaller and don't have the same status as Paris. So yeah, I'm pretty confident that Paris is the capital of France.
+</think>
+
+The capital of France is Paris.
+```
+
+CLEANED RESPONSE (length: 31):
+```
+The capital of France is Paris.
+```
+
+============================================================
+
+Test: num_predict_100
+----------------------------------------
+Options: {'temperature': 0.0, 'num_predict': 100}
+Duration: 1.62s
+Success: True
+
+RAW RESPONSE (length: 451):
+```
+<think>
+Okay, so I need to figure out what the capital of France is. Hmm, I remember that capitals are usually cities where a country's government is located. I think France has been in Europe for a long time, and Paris comes to mind as a major city there. But wait, isn't there another city called Paris? Yeah, definitely. So maybe it's not just one person named Paris but the whole city.
+
+I'm pretty sure that Paris is the capital because I've heard
+```
+
+CLEANED RESPONSE (length: 442):
+```
+Okay, so I need to figure out what the capital of France is. Hmm, I remember that capitals are usually cities where a country's government is located. I think France has been in Europe for a long time, and Paris comes to mind as a major city there. But wait, isn't there another city called Paris? Yeah, definitely. So maybe it's not just one person named Paris but the whole city. I'm pretty sure that Paris is the capital because I've heard
+```
+
+============================================================
+
+Test: max_tokens_100
+----------------------------------------
+Options: {'temperature': 0.0, 'max_tokens': 100}
+Duration: 4.97s
+Success: True
+
+RAW RESPONSE (length: 1423):
+```
+<think>
+Okay, so I need to figure out what the capital of France is. Hmm, I remember that capitals are usually cities where a country's government is located. I think France has been in Europe for a long time, and Paris comes to mind as a major city there. But wait, isn't there another city called Paris? Yeah, definitely. So maybe it's not just one person named Paris but the whole city.
+
+I'm pretty sure that Paris is the capital because I've heard people talk about it in news and stuff. But let me think if there are any other capitals of France besides Paris. No, I don't recall hearing about another city being the capital. Maybe I should consider if there's a possibility of another city taking over, but historically, Paris has been the capital for a long time.
+
+I also remember that France is a country in Western Europe, and Paris is its largest city by area and one of the most populous in Europe. It makes sense that it would be the capital since it's so central to the country's political and economic activities. Plus, I think the Eiffel Tower is there too, which is a big symbol associated with the capital.
+
+Wait, could there be any confusion between Paris and another city? Maybe not, because other cities in France like Lyon or Marseille are much smaller and don't have the same status as Paris. So yeah, I'm pretty confident that Paris is the capital of France.
+</think>
+
+The capital of France is Paris.
+```
+
+CLEANED RESPONSE (length: 31):
+```
+The capital of France is Paris.
+```
+
+============================================================
+
+Test: instruction_no_think
+----------------------------------------
+Options: {'temperature': 0.0}
+Duration: 2.19s
+Success: True
+
+RAW RESPONSE (length: 572):
+```
+<think>
+Okay, so I need to figure out the capital of France. Hmm, I remember that France has a lot of cities and Paris is one of them. But wait, isn't there another city called something like... maybe Beauvais or Créteil? No, those don't sound right. Let me think about it differently. I know that Paris is famous for landmarks like the Eiffel Tower and the Louvre Museum. Those are definitely in Paris. Also, when people talk about France, they often mention Paris as a major city. So putting this together, I'm pretty sure Paris is the capital of France.
+</think>
+
+Paris
+```
+
+CLEANED RESPONSE (length: 5):
+```
+Paris
+```
+
+============================================================
+
+Test: system_no_think
+----------------------------------------
+Options: {'temperature': 0.0}
+Duration: 5.55s
+Success: True
+
+RAW RESPONSE (length: 1539):
+```
+<think>
+Okay, so I need to figure out what the capital of France is. Hmm, I remember learning a bit about countries and their capitals in school, but let me try to recall more accurately. 
+
+First off, I know that Paris is a major city in France. It's famous for landmarks like the Eiffel Tower, the Louvre Museum, and Notre-Dame Cathedral. But wait, is it also the capital? I think so because I've heard people refer to it as such often. 
+
+I'm pretty sure that while Paris is the largest city and a major political center in France, there's another city that serves as the official capital. Maybe it's somewhere else like Beauvais or Orléans? Or could it be Versailles? No, I think those are just significant cities but not the main capital.
+
+Wait, no, I'm mixing things up. The term "capital" can sometimes refer to both political and economic capitals. The political capital is usually where the government's main office is located. So in France, I believe the government's seat is in Paris because it's a bigger city with more administrative resources. 
+
+But then why do people talk about the historical or cultural capital? That might be a different thing. For example, many tourists go to places like Avignon for Roman history or Lille for its contributions to literature and art. But when it comes to government functions, Paris is definitely where they're done.
+
+So putting it all together, even though I'm a bit confused about the exact term, I think the capital of France is indeed Paris.
+</think>
+
+The capital of France is Paris.
+```
+
+CLEANED RESPONSE (length: 31):
+```
+The capital of France is Paris.
+```
+
+============================================================
+
+Test: nothink_true
+----------------------------------------
+Options: {'temperature': 0.0, 'nothink': True}
+Duration: 5.20s
+Success: True
+
+RAW RESPONSE (length: 1423):
+```
+<think>
+Okay, so I need to figure out what the capital of France is. Hmm, I remember that capitals are usually cities where a country's government is located. I think France has been in Europe for a long time, and Paris comes to mind as a major city there. But wait, isn't there another city called Paris? Yeah, definitely. So maybe it's not just one person named Paris but the whole city.
+
+I'm pretty sure that Paris is the capital because I've heard people talk about it in news and stuff. But let me think if there are any other capitals of France besides Paris. No, I don't recall hearing about another city being the capital. Maybe I should consider if there's a possibility of another city taking over, but historically, Paris has been the capital for a long time.
+
+I also remember that France is a country in Western Europe, and Paris is its largest city by area and one of the most populous in Europe. It makes sense that it would be the capital since it's so central to the country's political and economic activities. Plus, I think the Eiffel Tower is there too, which is a big symbol associated with the capital.
+
+Wait, could there be any confusion between Paris and another city? Maybe not, because other cities in France like Lyon or Marseille are much smaller and don't have the same status as Paris. So yeah, I'm pretty confident that Paris is the capital of France.
+</think>
+
+The capital of France is Paris.
+```
+
+CLEANED RESPONSE (length: 31):
+```
+The capital of France is Paris.
+```
+
+============================================================
+
+Test: combined_approach
+----------------------------------------
+Options: {'temperature': 0.0, 'num_predict': 100}
+Duration: 1.77s
+Success: True
+
+RAW RESPONSE (length: 443):
+```
+<think>
+Okay, so I need to figure out what the capital of France is. Hmm, I remember learning a bit about Europe's capitals in school, but let me think carefully. I know that Paris is famous for landmarks like the Eiffel Tower and the Louvre Museum. People often visit Paris when they go to France because it's such an important city. But wait, isn't there another big city nearby? Maybe Lyon or Marseille? No, those don't sound right. I think
+```
+
+CLEANED RESPONSE (length: 435):
+```
+Okay, so I need to figure out what the capital of France is. Hmm, I remember learning a bit about Europe's capitals in school, but let me think carefully. I know that Paris is famous for landmarks like the Eiffel Tower and the Louvre Museum. People often visit Paris when they go to France because it's such an important city. But wait, isn't there another big city nearby? Maybe Lyon or Marseille? No, those don't sound right. I think
+```
+
+============================================================

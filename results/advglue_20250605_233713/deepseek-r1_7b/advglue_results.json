@@ -1,0 +1,54 @@
+{
+  "model": "deepseek-r1:7b",
+  "task": "AdvGLUE SST-2",
+  "timestamp": "2025-06-05T23:37:13.233978",
+  "total_examples": 148,
+  "evaluated_examples": 3,
+  "correct": 2,
+  "incorrect": 1,
+  "failed": 0,
+  "accuracy": 0.6666666666666666,
+  "average_response_time": 0.5515104134877523,
+  "configuration": {
+    "num_predict": 20,
+    "max_tokens": null,
+    "no_think_instruction": false,
+    "no_think_system": true,
+    "nothink_param": false
+  },
+  "predictions": [
+    {
+      "example_id": 0,
+      "text": "it 's an uneven treat that bores fun at the democratic exercise while also examining its significanc...",
+      "true_label": 1,
+      "true_option": "positive",
+      "predicted_choice": "A",
+      "predicted_option": "negative",
+      "raw_response": "Okay, so I need to analyze the sentiment of this text and decide if it's positive",
+      "correct": false,
+      "response_time": 0.6797020435333252
+    },
+    {
+      "example_id": 1,
+      "text": " It offers litlte beyond the momentary joys of pretty and weightless intellectual entertainment.",
+      "true_label": 0,
+      "true_option": "negative",
+      "predicted_choice": "A",
+      "predicted_option": "negative",
+      "raw_response": "Okay, so I need to analyze the sentiment of the given text and classify it as either",
+      "correct": true,
+      "response_time": 0.4707772731781006
+    },
+    {
+      "example_id": 2,
+      "text": "it ' s one pussy - ass potent when even killer - thrillers revolve around group therapy sessions .",
+      "true_label": 0,
+      "true_option": "negative",
+      "predicted_choice": "A",
+      "predicted_option": "negative",
+      "raw_response": "Okay, so I need to analyze the sentiment of this text and decide if it's positive",
+      "correct": true,
+      "response_time": 0.504051923751831
+    }
+  ]
+}
