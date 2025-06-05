@@ -1,0 +1,227 @@
+Deepseek R1 Performance Test - Raw Evidence
+============================================================
+Timestamp: 2025-06-06T00:28:46.513524
+Model: deepseek-r1:7b
+Prompt: What is 2+2? Choose the best answer: A) 3 B) 4 C) 5 D) 6
+============================================================
+
+
+Test: baseline
+----------------------------------------
+Options: {'temperature': 0.0}
+Duration: 10.69s
+Success: True
+
+RAW RESPONSE (length: 2370):
+```
+<think>
+Okay, so I need to figure out what 2 plus 2 is. Hmm, let's see. I remember from when I was a kid that addition is like putting things together. So if I have two apples and someone gives me two more apples, how many apples do I have in total? That should be four apples, right?
+
+Wait, but why isn't it three? Maybe because you start counting after the second one. Like, when you add 2 + 2, you count each number once. So first is 1 (from the first two), then 2 (the next two). No, that doesn't make sense. I think I'm confusing something.
+
+Let me try using my fingers. If I hold up two fingers on one hand and two on the other, how many do I have? That's four fingers in total. Yeah, so it must be four. But let me check with a number line. Starting at 2, if I move forward two more steps, where do I land? One step is 3, two steps from 2 would be 4. So that confirms it.
+
+I guess sometimes when I'm unsure, I overcomplicate things. Like, maybe thinking about multiplication or something else. But no, addition is straightforward. It's just combining quantities without any overlaps or groups beyond the immediate numbers.
+
+So yeah, after all that thinking and checking with different methods—counting objects, using my fingers, visualizing a number line—it seems clear that 2 plus 2 equals 4. I don't think it's 3 because that would be if you added one more to two, making three, but here we're adding two more.
+
+I also remember learning in school that addition tables are the foundation of arithmetic. So looking at a simple addition table, 2 + 2 is definitely 4. There's no ambiguity there unless someone is messing with the numbers, which isn't the case here.
+
+Maybe I'm overcomplicating it because sometimes when you're stressed or not thinking clearly, your mind wanders. But in this case, I think I've got it right. It's one of those basic facts that everyone knows, but it's good to verify just to be sure.
+</think>
+
+The sum of 2 and 2 is calculated by adding the two quantities together.
+
+**Step-by-Step Explanation:**
+
+1. **Understanding Addition:** Addition combines two or more numbers to find their total value.
+2. **Applying to 2 + 2:**
+   - Start with the first number, which is 2.
+   - Add the second number, also 2, to it.
+3. **Calculation:**
+   - 2 (from the first number)
+   - + 2 (from the second number)
+   - = 4 (total sum)
+
+**Answer:** B) 4
+```
+
+CLEANED RESPONSE (length: 420):
+```
+The sum of 2 and 2 is calculated by adding the two quantities together. **Step-by-Step Explanation:** 1. **Understanding Addition:** Addition combines two or more numbers to find their total value. 2. **Applying to 2 + 2:** - Start with the first number, which is 2. - Add the second number, also 2, to it. 3. **Calculation:** - 2 (from the first number) - + 2 (from the second number) - = 4 (total sum) **Answer:** B) 4
+```
+
+============================================================
+
+Test: num_predict_100
+----------------------------------------
+Options: {'temperature': 0.0, 'num_predict': 100}
+Duration: 1.63s
+Success: True
+
+RAW RESPONSE (length: 395):
+```
+<think>
+Okay, so I need to figure out what 2 plus 2 is. Hmm, let's see. I remember from when I was a kid that addition is like putting things together. So if I have two apples and someone gives me two more apples, how many apples do I have in total? That should be four apples, right?
+
+Wait, but why isn't it three? Maybe because you start counting after the second one. Like, when you add 2 + 2
+```
+
+CLEANED RESPONSE (length: 386):
+```
+Okay, so I need to figure out what 2 plus 2 is. Hmm, let's see. I remember from when I was a kid that addition is like putting things together. So if I have two apples and someone gives me two more apples, how many apples do I have in total? That should be four apples, right? Wait, but why isn't it three? Maybe because you start counting after the second one. Like, when you add 2 + 2
+```
+
+============================================================
+
+Test: max_tokens_100
+----------------------------------------
+Options: {'temperature': 0.0, 'max_tokens': 100}
+Duration: 5.94s
+Success: True
+
+RAW RESPONSE (length: 1458):
+```
+<think>
+Okay, so I need to figure out what 2 plus 2 is. Hmm, let's see. I remember from when I was a kid that addition is like putting things together. So if I have two apples and someone gives me two more apples, how many apples do I have in total? That should be four apples, right?
+
+Wait, but why isn't it three? Maybe because you start counting after the second one. Like, when you add 2 + 2, you count each number once. So first is 1 (from the first two), then 2 (the next two). No, that doesn't make sense. I think I'm confusing something.
+
+Let me try using my fingers. If I hold up two fingers on one hand and two on the other, how many do I have? That's four fingers in total. Yeah, so it must be four. But let me check with a number line. Starting at 2, if I move forward two more steps, where do I land? One step is 3, two steps from 2 would be 4. So that confirms it.
+
+I guess sometimes when I'm unsure, I overcomplicate things. Like, maybe thinking about multiplication or something else. But no, addition is straightforward. It's just combining quantities without any scaling or anything like that.
+
+So yeah, after all that thinking and checking with different methods—counting objects, using my fingers, visualizing a number line—it seems clear that 2 plus 2 equals 4. I don't think it can be anything else because each method consistently leads me to the same answer.
+</think>
+
+The correct answer is B) 4.
+
+Step-by-step explanation:
+
+2 + 2 = 4
+```
+
+CLEANED RESPONSE (length: 63):
+```
+The correct answer is B) 4. Step-by-step explanation: 2 + 2 = 4
+```
+
+============================================================
+
+Test: instruction_no_think
+----------------------------------------
+Options: {'temperature': 0.0}
+Duration: 4.68s
+Success: True
+
+RAW RESPONSE (length: 1011):
+```
+<think>
+Okay, so I need to figure out what 2 plus 2 is. Hmm, let's see... I remember from when I was a kid that addition is like putting things together. So if I have two apples and someone gives me two more, how many apples do I have in total? That should be four apples, right?
+
+Wait, but sometimes people get confused with numbers. Like, maybe they think 2 plus 2 would be something else because of the way it's phrased or something. But no, addition is straightforward. It's just combining two quantities.
+
+Let me count on my fingers to make sure I'm not making a mistake. Starting from zero, if I add two, that's one and two. Then adding another two would be three and four. So yeah, 2 plus 2 equals 4.
+
+Looking at the options given: A is 3, which is too low because 2 plus 2 should definitely be more than 2. B is 4, which matches what I just thought. C is 5, that's one more than needed, and D is 6, which is way off. So the correct answer must be B) 4.
+</think>
+
+The sum of 2 + 2 equals 4.
+
+Answer: B) 4
+```
+
+CLEANED RESPONSE (length: 39):
+```
+The sum of 2 + 2 equals 4. Answer: B) 4
+```
+
+============================================================
+
+Test: system_no_think
+----------------------------------------
+Options: {'temperature': 0.0}
+Duration: 4.16s
+Success: True
+
+RAW RESPONSE (length: 871):
+```
+<think>
+Okay, so I need to figure out what 2 plus 2 is. Hmm, let's see... I remember from when I was a kid that addition is like putting things together. So if I have two apples and someone gives me two more, how many apples do I have? That should be four, right? Wait, but sometimes people get confused with other numbers. Like, maybe they think 2 plus 2 is 3 because it's the next number after 2 twice. But no, that doesn't make sense. Each time you add two, you just go up by two each time. So 1 plus 1 is 2, then 2 plus 2 should be 4. Yeah, I'm pretty sure that's correct. Let me think if there are any other ways to check this. Maybe using my fingers? If I hold up two fingers on one hand and two on the other, how many do I have in total? That's four fingers. So yeah, it must be 4. Looking at the options, B is 4, so that should be the right answer.
+</think>
+
+B) 4
+```
+
+CLEANED RESPONSE (length: 4):
+```
+B) 4
+```
+
+============================================================
+
+Test: nothink_true
+----------------------------------------
+Options: {'temperature': 0.0, 'nothink': True}
+Duration: 10.57s
+Success: True
+
+RAW RESPONSE (length: 2370):
+```
+<think>
+Okay, so I need to figure out what 2 plus 2 is. Hmm, let's see. I remember from when I was a kid that addition is like putting things together. So if I have two apples and someone gives me two more apples, how many apples do I have in total? That should be four apples, right?
+
+Wait, but why isn't it three? Maybe because you start counting after the second one. Like, when you add 2 + 2, you count each number once. So first is 1 (from the first two), then 2 (the next two). No, that doesn't make sense. I think I'm confusing something.
+
+Let me try using my fingers. If I hold up two fingers on one hand and two on the other, how many do I have? That's four fingers in total. Yeah, so it must be four. But let me check with a number line. Starting at 2, if I move forward two more steps, where do I land? One step is 3, two steps from 2 would be 4. So that confirms it.
+
+I guess sometimes when I'm unsure, I overcomplicate things. Like, maybe thinking about multiplication or something else. But no, addition is straightforward. It's just combining quantities without any overlaps or groups beyond the immediate numbers.
+
+So yeah, after all that thinking and checking with different methods—counting objects, using my fingers, visualizing a number line—it seems clear that 2 plus 2 equals 4. I don't think it's 3 because that would be if you added one more to two, making three, but here we're adding two more.
+
+I also remember learning in school that addition tables are the foundation of arithmetic. So looking at a simple addition table, 2 + 2 is definitely 4. There's no ambiguity there unless someone is messing with the numbers, which isn't the case here.
+
+Maybe I'm overcomplicating it because sometimes when you're stressed or not thinking clearly, your mind wanders. But in this case, I think I've got it right. It's one of those basic facts that everyone knows, but it's good to verify just to be sure.
+</think>
+
+The sum of 2 and 2 is calculated by adding the two quantities together.
+
+**Step-by-Step Explanation:**
+
+1. **Understanding Addition:** Addition combines two or more numbers to find their total value.
+2. **Applying to 2 + 2:**
+   - Start with the first number, which is 2.
+   - Add the second number, also 2, to it.
+3. **Calculation:**
+   - 2 (from the first number)
+   - + 2 (from the second number)
+   - = 4 (total sum)
+
+**Answer:** B) 4
+```
+
+CLEANED RESPONSE (length: 420):
+```
+The sum of 2 and 2 is calculated by adding the two quantities together. **Step-by-Step Explanation:** 1. **Understanding Addition:** Addition combines two or more numbers to find their total value. 2. **Applying to 2 + 2:** - Start with the first number, which is 2. - Add the second number, also 2, to it. 3. **Calculation:** - 2 (from the first number) - + 2 (from the second number) - = 4 (total sum) **Answer:** B) 4
+```
+
+============================================================
+
+Test: combined_approach
+----------------------------------------
+Options: {'temperature': 0.0, 'num_predict': 100}
+Duration: 1.84s
+Success: True
+
+RAW RESPONSE (length: 341):
+```
+<think>
+Okay, so I need to figure out what 2 plus 2 is. Hmm, let's see... I remember from when I was a kid that addition is like putting things together. So if you have two apples and someone gives you two more, how many do you have? That should be four apples. Wait, but the options are A)3, B)4, C)5, D)6. So 2+2 must be 4, which is option
+```
+
+CLEANED RESPONSE (length: 333):
+```
+Okay, so I need to figure out what 2 plus 2 is. Hmm, let's see... I remember from when I was a kid that addition is like putting things together. So if you have two apples and someone gives you two more, how many do you have? That should be four apples. Wait, but the options are A)3, B)4, C)5, D)6. So 2+2 must be 4, which is option
+```
+
+============================================================

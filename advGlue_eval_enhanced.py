@@ -133,7 +133,7 @@ def query_model(
         Tuple of (response, duration_in_seconds)
     """
     if mock:
-        return "A", 0.1
+        return "A", 0.1, "A"
     
     try:
         start_time = time.time()
@@ -148,7 +148,7 @@ def query_model(
         if no_think_system:
             messages.append({
                 'role': 'system', 
-                'content': 'Answer directly with just A or B. Do not show any thinking process or explanation.'
+                'content': 'Answer directly with just A or B. No thinking process or explanation.'
             })
         
         # Modify prompt if using no_think_instruction
@@ -180,18 +180,18 @@ def query_model(
         end_time = time.time()
         duration = end_time - start_time
         
-        # Extract and clean response
+        # Extract response
         response_text = response['message']['content']
         cleaned_response = clean_model_response(response_text)
         
         print(f"Model response (cleaned): {cleaned_response}")
         print(f"Response time: {duration:.2f}s")
         
-        return cleaned_response, duration
+        return cleaned_response, duration, response_text
         
     except Exception as e:
         print(f"Error querying model: {e}")
-        return "", 0.0
+        return "", 0.0, ""
 
 def evaluate_model(
     model_name: str,
@@ -255,7 +255,7 @@ def evaluate_model(
         prompt = create_sentiment_prompt(text, options, model_name)
         
         # Query model
-        response, duration = query_model(
+        response, duration, raw_response = query_model(
             prompt, model_name, host_url,
             num_predict=num_predict,
             max_tokens=max_tokens,
@@ -293,7 +293,9 @@ def evaluate_model(
             'true_option': options[label],
             'predicted_choice': choice,
             'predicted_option': options[predicted_idx] if choice else None,
-            'raw_response': response[:200] + "..." if len(response) > 200 else response,
+            'cleaned_response': response[:200] + "..." if len(response) > 200 else response,
+            'raw_response_with_think': raw_response[:500] + "..." if len(raw_response) > 500 else raw_response,
+            'contains_think_tags': '<think>' in raw_response,
             'correct': is_correct,
             'response_time': duration
         }

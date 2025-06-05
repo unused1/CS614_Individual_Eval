@@ -1,0 +1,45 @@
+AdvGLUE SST-2 Evaluation Results
+=====================================
+Model: deepseek-r1:7b
+Timestamp: 2025-06-06T00:29:13.428588
+Configuration: {
+  "num_predict": null,
+  "max_tokens": null,
+  "no_think_instruction": false,
+  "no_think_system": false,
+  "nothink_param": false
+}
+
+Results:
+--------
+Total Examples: 148
+Evaluated: 3
+Correct: 2
+Incorrect: 1
+Failed: 0
+Accuracy: 66.67%
+Average Response Time: 5.53s
+
+Detailed Predictions:
+-------------------
+
+Example 1:
+  Text: it 's an uneven treat that bores fun at the democratic exercise while also examining its significanc...
+  True: positive (Label 1)
+  Predicted: A - negative
+  Correct: No
+  Response Time: 7.50s
+
+Example 2:
+  Text:  It offers litlte beyond the momentary joys of pretty and weightless intellectual entertainment.
+  True: negative (Label 0)
+  Predicted: A - negative
+  Correct: Yes
+  Response Time: 4.55s
+
+Example 3:
+  Text: it ' s one pussy - ass potent when even killer - thrillers revolve around group therapy sessions .
+  True: negative (Label 0)
+  Predicted: A - negative
+  Correct: Yes
+  Response Time: 4.54s

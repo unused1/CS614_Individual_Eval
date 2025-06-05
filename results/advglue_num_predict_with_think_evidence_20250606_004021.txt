@@ -1,0 +1,38 @@
+AdvGLUE SST-2 Evaluation Results
+=====================================
+Model: deepseek-r1:7b
+Timestamp: 2025-06-06T00:40:21.667745
+Configuration: {
+  "num_predict": 100,
+  "max_tokens": null,
+  "no_think_instruction": false,
+  "no_think_system": false,
+  "nothink_param": false
+}
+
+Results:
+--------
+Total Examples: 148
+Evaluated: 2
+Correct: 0
+Incorrect: 2
+Failed: 0
+Accuracy: 0.00%
+Average Response Time: 1.87s
+
+Detailed Predictions:
+-------------------
+
+Example 1:
+  Text: it 's an uneven treat that bores fun at the democratic exercise while also examining its significanc...
+  True: positive (Label 1)
+  Predicted: A - negative
+  Correct: No
+  Response Time: 1.93s
+
+Example 2:
+  Text: the draw ( for `` huge bad want '' ) is a sound performed by arliss howard .
+  True: positive (Label 1)
+  Predicted: A - negative
+  Correct: No
+  Response Time: 1.81s

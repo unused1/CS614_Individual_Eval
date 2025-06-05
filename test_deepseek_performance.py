@@ -159,7 +159,7 @@ def run_all_tests(prompt: str, host_url: str = DEFAULT_OLLAMA_HOST) -> Dict[str,
     # Test 4: With instruction not to think
     print("\n" + "="*50)
     print("TEST 4: WITH INSTRUCTION NOT TO THINK")
-    no_think_prompt = "Do not show your thinking process. Answer directly without explanation. " + prompt
+    no_think_prompt = "Do not think. Answer directly without explanation. " + prompt
     result = test_model_with_config(
         prompt=no_think_prompt,
         config_name="instruction_no_think",
@@ -176,7 +176,7 @@ def run_all_tests(prompt: str, host_url: str = DEFAULT_OLLAMA_HOST) -> Dict[str,
         config_name="system_no_think",
         host_url=host_url,
         temperature=0.0,
-        system_prompt="You must answer directly without showing any thinking process or explanation. Be concise."
+        system_prompt="You must answer directly without thinking or explanation. Be concise."
     )
     results.append(result)
     

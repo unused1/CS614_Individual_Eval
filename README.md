@@ -391,6 +391,95 @@ All evaluation tools are designed to be easily customizable:
 - Evaluation metrics are task-specific, with special handling for different categories
 - Command-line arguments provide flexibility in configuration without code changes
 
+## Journal: Deepseek R1 Performance Optimization
+
+### Problem Statement
+During benchmarking evaluations, the Deepseek R1 model exhibited significantly slower response times and occasional system unresponsiveness when running through Ollama. This performance bottleneck required reducing test sizes and splitting evaluations into separate runs, impacting evaluation efficiency.
+
+### Hypothesis
+Based on Deepseek R1's nature as a reasoning model, we hypothesized that the performance issues stemmed from extensive reasoning processes that generate verbose outputs for each prompt, leading to longer processing times and resource consumption.
+
+### Methodology
+To investigate and address this issue, we developed comprehensive testing tools and conducted systematic experiments:
+
+1. **Performance Testing Script** (`test_deepseek_performance.py`): Tests 7 different optimization approaches
+2. **Enhanced Evaluation Script** (`advGlue_eval_enhanced.py`): Configurable evaluation with performance parameters
+3. **Model Comparison Tool** (`compare_models_raw.py`): Cross-model response analysis
+4. **Evidence Collection**: Captured raw model outputs including internal reasoning processes
+
+### Key Findings
+
+#### 1. Verbose Output Due to Reasoning Process
+**Evidence**: `model_comparison_20250606_000656_detailed.txt`
+
+Comparative analysis revealed significant differences in response characteristics:
+- **Deepseek R1**: 2,370 characters (10.69s response time)
+- **Mistral 7B**: 28 characters (2.46s response time) 
+- **Llama3 Instruct**: 27 characters (14.23s response time)
+
+**Critical Discovery**: Deepseek R1 wraps its reasoning process in `<think>` tags, resulting in responses 85x longer than other models for simple tasks.
+
+#### 2. Parameter Effectiveness Analysis
+**Evidence**: `deepseek_performance_test_20250605_235651_raw_evidence.txt`
+
+Testing revealed differential effectiveness of Ollama parameters:
+
+| Parameter | Effect | Response Time | Status |
+|-----------|--------|---------------|---------|
+| `num_predict=100` | ✅ Effective | ~1.6s (68% faster) | Truncates reasoning mid-process |
+| `max_tokens=100` | ❌ No effect | ~5s (baseline) | Parameter ignored by Ollama |
+| `nothink=true` | ❌ No effect | ~5s (baseline) | Parameter not supported |
+
+**Key Insight**: Only `num_predict` parameter successfully limits Deepseek R1's output length and improves performance with Ollama.
+
+#### 3. Instruction-Based Thinking Suppression
+**Evidence**: Multiple evaluation runs with thinking instruction variants
+
+Attempts to suppress reasoning through prompt engineering showed inconsistent results:
+
+| Approach | Implementation | Thinking Length | Effectiveness |
+|----------|----------------|-----------------|---------------|
+| User instruction | "Do not show your thinking process..." | ~570-1011 chars | Partial reduction |
+| System prompt | "Answer directly without thinking..." | ~871-1539 chars | Inconsistent |
+| Combined approach | User instruction + `num_predict` | ~341-443 chars | Most effective |
+
+**Critical Finding**: Deepseek R1 continues generating `<think>` tags regardless of explicit instructions not to think, but instruction length can influence reasoning verbosity.
+
+#### 4. Performance Optimization Results
+**Evidence**: `advglue_*_evidence_*.json` files
+
+Benchmark evaluation performance improvements:
+
+| Configuration | Avg Response Time | Performance Gain | Trade-offs |
+|---------------|-------------------|------------------|------------|
+| Baseline | 5.5s | - | Complete reasoning, full answers |
+| `num_predict=100` | 1.8s | 67% faster | Truncated reasoning, incomplete answers |
+| `num_predict=150-200` | 2.0s | 64% faster | Balanced approach (recommended) |
+
+### Implications and Recommendations
+
+#### For Deepseek R1 Optimization:
+1. **Use `num_predict` parameter**: Most effective approach for speed improvement
+2. **Optimal range**: 150-200 tokens for classification tasks balances speed and completeness
+3. **Accept reasoning overhead**: Model architecture requires reasoning process; focus on limiting output length
+
+#### For Evaluation Design:
+1. **Implement response cleaning**: Remove `<think>` tags for evaluation consistency
+2. **Adjust expectations**: Factor in 3-5x slower baseline performance compared to standard models
+3. **Use smaller test sets**: Reduce evaluation subset sizes to prevent system timeout
+
+#### For Future Research:
+1. **Investigate reasoning quality**: Analyze whether truncated reasoning affects answer accuracy
+2. **Compare reasoning models**: Test other reasoning-based models for similar patterns
+3. **Develop reasoning-aware evaluation protocols**: Create benchmarks that account for reasoning overhead
+
+### Tools and Evidence
+- **Performance Guide**: `DEEPSEEK_PERFORMANCE_GUIDE.md` - Comprehensive usage instructions
+- **Raw Evidence**: All `*_evidence_*.txt` files contain complete reasoning traces
+- **Comparison Data**: Cross-model analysis demonstrating reasoning model characteristics
+
+This research demonstrates that Deepseek R1's performance characteristics are fundamentally different from traditional language models due to its explicit reasoning architecture, requiring specialized optimization approaches for efficient evaluation.
+
 ## Acknowledgments
 This project was developed with assistance from:
 - Claude 3.7 Sonnet (Anthropic) - Provided coding assistance for implementing features, mock mode functionality, and debugging
