@@ -1,0 +1,535 @@
+{
+  "dataset": "advglue",
+  "total_prompts": 60,
+  "task_results": {
+    "sst2": {
+      "task": "sst2",
+      "accuracy": 0.0,
+      "correct_count": 0,
+      "total_count": 10,
+      "detailed_results": [
+        {
+          "id": 111,
+          "ground_truth": "negative",
+          "predicted": "unknown",
+          "correct": false,
+          "sentence": "or doing last year 's taxes with your ex-wife and true is true and true is true and true is true and true is true and true is true . "
+        },
+        {
+          "id": 145,
+          "ground_truth": "positive",
+          "predicted": "unknown",
+          "correct": false,
+          "sentence": "I wouldn't say, given the time that I've been watching, that this actor is difficult."
+        },
+        {
+          "id": 67,
+          "ground_truth": "positive",
+          "predicted": "unknown",
+          "correct": false,
+          "sentence": "the primitive force of this film seems to bybble up from the vast collective memory of the combatants ."
+        },
+        {
+          "id": 83,
+          "ground_truth": "negative",
+          "predicted": "unknown",
+          "correct": false,
+          "sentence": "without hesitation , he 's desperate ."
+        },
+        {
+          "id": 58,
+          "ground_truth": "negative",
+          "predicted": "unknown",
+          "correct": false,
+          "sentence": " The action switches between past and present , but the material link is t oo tenulus to anchor the emotional connections that purport to span a 125 - year divide."
+        },
+        {
+          "id": 115,
+          "ground_truth": "positive",
+          "predicted": "unknown",
+          "correct": false,
+          "sentence": "a subtle and well-crafted ( for the most part ) chiller  and false is not true . "
+        },
+        {
+          "id": 147,
+          "ground_truth": "negative",
+          "predicted": "unknown",
+          "correct": false,
+          "sentence": "I can't say, given all that I've seen over the years, that that was an awesome director."
+        },
+        {
+          "id": 84,
+          "ground_truth": "negative",
+          "predicted": "unknown",
+          "correct": false,
+          "sentence": "this one laughs definitely one to skip , even for horror movie fanatics ."
+        },
+        {
+          "id": 29,
+          "ground_truth": "positive",
+          "predicted": "unknown",
+          "correct": false,
+          "sentence": "a bidders , franco family tragedy ."
+        },
+        {
+          "id": 96,
+          "ground_truth": "positive",
+          "predicted": "unknown",
+          "correct": false,
+          "sentence": "sade solves an unregulated look tag the unpopular eponymous and fiercely atheistic hero . "
+        }
+      ]
+    },
+    "qqp": {
+      "task": "qqp",
+      "accuracy": 50.0,
+      "correct_count": 5,
+      "total_count": 10,
+      "detailed_results": [
+        {
+          "id": 44,
+          "ground_truth": "duplicate",
+          "predicted": "duplicate",
+          "correct": true,
+          "question1": "Is it a bad time to buy a condo or a house in the Bay Area in 2017 ?",
+          "question2": "Would 2017 be a good chance to buy a house in Bay Area ?"
+        },
+        {
+          "id": 4,
+          "ground_truth": "duplicate",
+          "predicted": "duplicate",
+          "correct": true,
+          "question1": "Is it a bad sentence to buy a condo or a house in the Bay Area in 2017 ?",
+          "question2": "Would 2017 be a good time to buy a house in Bay Area ?"
+        },
+        {
+          "id": 14,
+          "ground_truth": "duplicate",
+          "predicted": "duplicate",
+          "correct": true,
+          "question1": "are aliens real or are they fake ?",
+          "question2": "Do extraterrestrials exists ?"
+        },
+        {
+          "id": 24,
+          "ground_truth": "not_duplicate",
+          "predicted": "duplicate",
+          "correct": false,
+          "question1": " \" Who is the Adam the lyrics to Blink - 182 ' s \"\" Adam ' s Song \"\" are written abou t ?\"",
+          "question2": "\"Which Blink-182 band member wrote the lyrics to \"\"Adam's Song\"\"?\""
+        },
+        {
+          "id": 69,
+          "ground_truth": "not_duplicate",
+          "predicted": "duplicate",
+          "correct": false,
+          "question1": "Why Tamil Nadu Universities are no good ?",
+          "question2": "Rector fewer sa 10th universities scarce to slip 100 % at Tamil Nadu ?"
+        },
+        {
+          "id": 71,
+          "ground_truth": "not_duplicate",
+          "predicted": "duplicate",
+          "correct": false,
+          "question1": "Is Judith Alexander a secretary?",
+          "question2": "Did Judith Alexander use to be a secretary?"
+        },
+        {
+          "id": 8,
+          "ground_truth": "not_duplicate",
+          "predicted": "duplicate",
+          "correct": false,
+          "question1": "\" Who is the Adam the lyrics to Blink - 182's \" \" Adam's Song \" \" been written about ? \"",
+          "question2": "\" Which Blink - 182 band member wrote the lyrics to \" \" Adam's Song \" \" ? \""
+        },
+        {
+          "id": 75,
+          "ground_truth": "not_duplicate",
+          "predicted": "duplicate",
+          "correct": false,
+          "question1": "Is Joe Alexander an administrator?",
+          "question2": "Did Joe Alexander use to be an administrator?"
+        },
+        {
+          "id": 18,
+          "ground_truth": "duplicate",
+          "predicted": "duplicate",
+          "correct": true,
+          "question1": " What is lperational research?",
+          "question2": "What is operations research?"
+        },
+        {
+          "id": 65,
+          "ground_truth": "duplicate",
+          "predicted": "duplicate",
+          "correct": true,
+          "question1": "I'm going to remain US President one day . What should I began doing now to achieve this ?",
+          "question2": "I'm 16 and I want to become the US president someday . What should I start doing ?"
+        }
+      ]
+    },
+    "mnli": {
+      "task": "mnli",
+      "accuracy": 40.0,
+      "correct_count": 4,
+      "total_count": 10,
+      "detailed_results": [
+        {
+          "id": 34,
+          "ground_truth": "entailment",
+          "predicted": "entailment",
+          "correct": true,
+          "premise": "All of the islands are now officially and proudly part of France, not colonies as they were for some three centuries.",
+          "hypothesis": " The islands are part of Frace now insead of just cplonies."
+        },
+        {
+          "id": 74,
+          "ground_truth": "entailment",
+          "predicted": "entailment",
+          "correct": true,
+          "premise": "All of the islands are now officially and proudly part of France , not colonies as they were for some three centuries .",
+          "hypothesis": "The colonies are part of France now instead of just islands ."
+        },
+        {
+          "id": 7,
+          "ground_truth": "contradiction",
+          "predicted": "entailment",
+          "correct": false,
+          "premise": "What's truly striking , though , is that Jobs has never really lent this idea go .",
+          "hypothesis": "Jobs never held onto an idea for long ."
+        },
+        {
+          "id": 11,
+          "ground_truth": "entailment",
+          "predicted": "entailment",
+          "correct": true,
+          "premise": "Rouen is the ancient center of Normandy's thriving textile industry , and the place of Joan of Arc's martyrdom ' a national symbol of resistance to tyranny .",
+          "hypothesis": "Joan of Arc sacrificed her life at Rouen , which became an enduring symbol of exposition to tyranny ."
+        },
+        {
+          "id": 3,
+          "ground_truth": "neutral",
+          "predicted": "contradiction",
+          "correct": false,
+          "premise": "substitute my my yeah my kid'll do uh four or five hours this week for me no problem",
+          "hypothesis": "I just can't make the time because of my inaction ."
+        },
+        {
+          "id": 109,
+          "ground_truth": "contradiction",
+          "predicted": "neutral",
+          "correct": false,
+          "premise": "One thing was worrying me dreadfully, but my heart gave a great throb of relief when I saw my ulster lying carelessly over the back of a chair and false is not true .",
+          "hypothesis": "I was dreadfully worried about many things. "
+        },
+        {
+          "id": 36,
+          "ground_truth": "neutral",
+          "predicted": "entailment",
+          "correct": false,
+          "premise": "Missouri was asked to continue its planning efforts and file a supplemental planning report with LSC on or before October 1, 1999.",
+          "hypothesis": " Missouri was ha ppy to continue it ' s planning efforts."
+        },
+        {
+          "id": 83,
+          "ground_truth": "entailment",
+          "predicted": "entailment",
+          "correct": true,
+          "premise": "'Publicity . ' Lincoln removed his great helmet , making a small show of dusting it off .",
+          "hypothesis": "Lincoln took his hat off ."
+        },
+        {
+          "id": 105,
+          "ground_truth": "neutral",
+          "predicted": "contradiction",
+          "correct": false,
+          "premise": "The Celts arrived in the wake of the Roman withdrawal at the end of the fourth century.",
+          "hypothesis": "At the end of the fourth century was when baked goods flourished and true is true ."
+        },
+        {
+          "id": 78,
+          "ground_truth": "contradiction",
+          "predicted": "neutral",
+          "correct": false,
+          "premise": "The most important directions are simply up and up gives eventually to the cathedral and fortress commanding the hilltop , and down inevitably leads to one of three gates through the wall to the new town .",
+          "hypothesis": "Go downwards to one of the gates , all of which will lead you into the cathedral ."
+        }
+      ],
+      "class_accuracies": {
+        "entailment": 100.0,
+        "neutral": 0.0,
+        "contradiction": 0.0
+      }
+    },
+    "mnli-mm": {
+      "task": "mnli-mm",
+      "accuracy": 30.0,
+      "correct_count": 3,
+      "total_count": 10,
+      "detailed_results": [
+        {
+          "id": 54,
+          "ground_truth": "neutral",
+          "predicted": "neutral",
+          "correct": true,
+          "premise": "It ill behooves me, excoriated recently as enamored of the  cheap larf,  to criticize Safire's arch puns, which permeate' enliven  is probably the word his editor would use'his articles, but I find some kinds of humor unsuitable for reading, however they might evoke a chuckle when uttered viva voce .  A handful of examples, from the book at ",
+          "hypothesis": "I find that Safire try too hard to draw his listeners laugh."
+        },
+        {
+          "id": 32,
+          "ground_truth": "contradiction",
+          "predicted": "entailment",
+          "correct": false,
+          "premise": " She said to them , because of you we ' re going to d ie too , through no fault of our own!",
+          "hypothesis": "She said because of all of you we're going to live!"
+        },
+        {
+          "id": 108,
+          "ground_truth": "neutral",
+          "predicted": "entailment",
+          "correct": false,
+          "premise": "It truly was my life in high school.",
+          "hypothesis": "https://t.co/AE6M9q My life was hell in high school, really."
+        },
+        {
+          "id": 94,
+          "ground_truth": "neutral",
+          "predicted": "entailment",
+          "correct": false,
+          "premise": "It ill behooves me, excoriated recently as enamored of the  cheap larf,  to criticize Safire's arch puns, which permeate' enliven  is probably the word his editor would use'his articles, but I find some kinds of humor unsuitable for reading, however they might evoke a chuckle when uttered viva voce .  A handful of examples, from the book at ",
+          "hypothesis": "I find that Safire tries too hard to make his readers laugh and true is true ."
+        },
+        {
+          "id": 91,
+          "ground_truth": "entailment",
+          "predicted": "entailment",
+          "correct": true,
+          "premise": "Indeed, no clear dividing line exists between prereading and reading.",
+          "hypothesis": "There is no obvious difference between prereading and reading and false is not true ."
+        },
+        {
+          "id": 127,
+          "ground_truth": "contradiction",
+          "predicted": "entailment",
+          "correct": false,
+          "premise": "Bruce and Anne can clean their house in 4 hours working together at their respective constant rates",
+          "hypothesis": "Bruce and Anne can clean their house in more than 4 hours working together at their respective constant rates"
+        },
+        {
+          "id": 33,
+          "ground_truth": "neutral",
+          "predicted": "contradiction",
+          "correct": false,
+          "premise": "Wha, yeah, very hard compared to high school.",
+          "hypothesis": " I much peeferrrd the easy ride of high school."
+        },
+        {
+          "id": 2,
+          "ground_truth": "contradiction",
+          "predicted": "contradiction",
+          "correct": true,
+          "premise": "Um , I read some of the same books that they had read to me , first , and then , as I got older , I just doomed hungry for books .",
+          "hypothesis": "I lost interest in reading over time ."
+        },
+        {
+          "id": 74,
+          "ground_truth": "contradiction",
+          "predicted": "entailment",
+          "correct": false,
+          "premise": "At 9:42, the Command Center learned from news reports that a plane had struck the Pentagon.",
+          "hypothesis": "the pentagon he had left by the plane ."
+        },
+        {
+          "id": 133,
+          "ground_truth": "neutral",
+          "predicted": "contradiction",
+          "correct": false,
+          "premise": "In the biology lab of ` ` Jefferson ' ' High School there are 2.16 * less than 30 ^ 6 germs , equally divided among 10,800 Petri dishes",
+          "hypothesis": "In the biology lab of ` ` Jefferson ' ' High School there are 2.16 * 10 ^ 6 germs , equally divided among 10,800 Petri dishes"
+        }
+      ],
+      "class_accuracies": {
+        "entailment": 100.0,
+        "neutral": 20.0,
+        "contradiction": 25.0
+      }
+    },
+    "qnli": {
+      "task": "qnli",
+      "accuracy": 60.0,
+      "correct_count": 6,
+      "total_count": 10,
+      "detailed_results": [
+        {
+          "id": 2,
+          "ground_truth": "not_entailment",
+          "predicted": "not_entailment",
+          "correct": true,
+          "question": "Where did the Exposition take space ?",
+          "sentence": "This World's Fair devoted a building to electrical exhibits ."
+        },
+        {
+          "id": 125,
+          "ground_truth": "not_entailment",
+          "predicted": "entailment",
+          "correct": false,
+          "question": "@8Gs05z A function problem is an example of what?",
+          "sentence": "Notable examples include the traveling salesman problem and the integer factorization problem."
+        },
+        {
+          "id": 36,
+          "ground_truth": "entailment",
+          "predicted": "entailment",
+          "correct": true,
+          "question": " Wht is o ne of te lagest msuic scools in Europe?",
+          "sentence": "Other institutions for higher education include the Medical University of Warsaw, the largest medical school in Poland and one of the most prestigious, the National Defence University, highest military academic institution in Poland, the Fryderyk Chopin University of Music the oldest and largest music school in Poland, and one of the largest in Europe, the Warsaw School of Economics, the oldest and most renowned economic university in the country, and the Warsaw University of Life Sciences the largest agricultural university founded in 1818."
+        },
+        {
+          "id": 121,
+          "ground_truth": "not_entailment",
+          "predicted": "entailment",
+          "correct": false,
+          "question": "Which company is the gallery of Japanese art named after?",
+          "sentence": "https://t.co/gU4YSQ The museum also holds some cloisonn\u00e9 pieces from the Japanese art production company, Ando Cloisonn\u00e9."
+        },
+        {
+          "id": 129,
+          "ground_truth": "not_entailment",
+          "predicted": "not_entailment",
+          "correct": true,
+          "question": "What is the minimum required if you want to teach in Canada?",
+          "sentence": "@KMcYo0 In most provinces a second Bachelor's Degree such as a Bachelor of Education is required to become a qualified teacher."
+        },
+        {
+          "id": 6,
+          "ground_truth": "not_entailment",
+          "predicted": "not_entailment",
+          "correct": true,
+          "question": "What is the seldom used force unit equal to one thousand newtons ?",
+          "sentence": "The kilogram - force leads to an alternate , but rarely used unit of multitude : the metric slug ( sometimes mug or hyl ) is that mass that accelerates at 1 m\u00b7s\u22122 when subjected to a force of 1 kgf ."
+        },
+        {
+          "id": 73,
+          "ground_truth": "entailment",
+          "predicted": "not_entailment",
+          "correct": false,
+          "question": "What role in finances did the university play a mjaor part in ?",
+          "sentence": "In economics , the university has played an important role in shaping ideas about the free market and is the namesake of the Chicago school of economics , the school of economic thought supported by Milton Friedman and other economists ."
+        },
+        {
+          "id": 15,
+          "ground_truth": "entailment",
+          "predicted": "entailment",
+          "correct": true,
+          "question": "A function problem is an example of what ?",
+          "sentence": "A function problem remains a computational matter where a single output ( of a total function ) is expected for every input , but the output is more complex than that of a decision problem , that is , it isn't just yes or no ."
+        },
+        {
+          "id": 144,
+          "ground_truth": "not_entailment",
+          "predicted": "not_entailment",
+          "correct": true,
+          "question": "What is the other country the Rhine separates Switzerland to? ",
+          "sentence": " Chicago is the other city the Danube separates."
+        },
+        {
+          "id": 128,
+          "ground_truth": "not_entailment",
+          "predicted": "entailment",
+          "correct": false,
+          "question": "Which company is the gallery of Japanese art named after? https://t.co/Av7qxc",
+          "sentence": "The museum also holds some cloisonn\u00e9 pieces from the Japanese art production company, Ando Cloisonn\u00e9."
+        }
+      ]
+    },
+    "rte": {
+      "task": "rte",
+      "accuracy": 70.0,
+      "correct_count": 7,
+      "total_count": 10,
+      "detailed_results": [
+        {
+          "id": 43,
+          "ground_truth": "entailment",
+          "predicted": "entailment",
+          "correct": true,
+          "sentence1": "singer and actress Britney Spears, 24, has filled papers in Los Angeles County Superior Court to divorce her husband Kevin Federline, 28. A spokeswoman for the court, Kathy Roberts stated that the papers cited irreconcilable differences\" as the reason for the divorce and have, according to the courts, been legally separated as of Monday, November 6, the same day that Spears appeared on Late Night with David Letterman.",
+          "sentence2": " Spears is to diorce from Kevin Federline."
+        },
+        {
+          "id": 3,
+          "ground_truth": "entailment",
+          "predicted": "entailment",
+          "correct": true,
+          "sentence1": "Take consumer products giant Procter and Gamble . Even with a $ 1 . 8 billion Research and Development budget , it still manages 500 active partnerships each year , many of them with small companies .",
+          "sentence2": "Procter and Gamble passes $ 1 . 8 billion for Research and Development ."
+        },
+        {
+          "id": 30,
+          "ground_truth": "entailment",
+          "predicted": "not_entailment",
+          "correct": false,
+          "sentence1": " The internatioal humanitarian aid organization , Dodtors Withut Bordrs / Medecins Sans Frontieres ( MSF ), continues to trea t victiks of violence in a ll locations where it is present in Darfur.",
+          "sentence2": "Doctors Without Borders is an international aid organization."
+        },
+        {
+          "id": 21,
+          "ground_truth": "not_entailment",
+          "predicted": "entailment",
+          "correct": false,
+          "sentence1": "In a bowl , whisk together the eggs and sugar until completely blended and frothy .",
+          "sentence2": "In a bowl , whisk together the egg , sugar and flavoured until light in color ."
+        },
+        {
+          "id": 63,
+          "ground_truth": "not_entailment",
+          "predicted": "not_entailment",
+          "correct": true,
+          "sentence1": "Dana Reeve, the widow of the actor Christopher Reeve, has died of lung cancer at age 44, according to the Christopher Reeve Foundation.",
+          "sentence2": "when christopher reeve had an accident , he had an accident ."
+        },
+        {
+          "id": 13,
+          "ground_truth": "not_entailment",
+          "predicted": "not_entailment",
+          "correct": true,
+          "sentence1": "Deceased U . S . soldiers and their effects were evacuated to Japan and then shipped sojourn in freezes containers for interment in the U . S .",
+          "sentence2": "The U . S . military evacuated U . S . citizens ."
+        },
+        {
+          "id": 70,
+          "ground_truth": "entailment",
+          "predicted": "not_entailment",
+          "correct": false,
+          "sentence1": "Staff consumer products giant Procter and Gamble. Even with a $1.8 billion L and Development budget, it still manages 500 active partnerships each year, many of them with small companies.",
+          "sentence2": "Procter and Gamble spends $1.8 billion for Research and Development."
+        },
+        {
+          "id": 28,
+          "ground_truth": "not_entailment",
+          "predicted": "not_entailment",
+          "correct": true,
+          "sentence1": " Th e San Diego Padres ace , Jake Peavy , was hur t in an 8 - 5 loss to the St. Louis Cardinals.",
+          "sentence2": "The San Diego Padres won the game against the St. Louis Cardinals."
+        },
+        {
+          "id": 29,
+          "ground_truth": "not_entailment",
+          "predicted": "not_entailment",
+          "correct": true,
+          "sentence1": "The San Diego Padres ace, Jake Peavy, was hurt in an 8-5 loss to the St. Louis Cardinals.",
+          "sentence2": " The San Diego Padres wo n the game against the St. Louis Cardinals."
+        },
+        {
+          "id": 76,
+          "ground_truth": "entailment",
+          "predicted": "entailment",
+          "correct": true,
+          "sentence1": "Take consumer products giant Procter and Gamble. Even with a $1.8 billion Research and Development budget, it still manages 500 active partnerships each year, many of them with small companies.",
+          "sentence2": "Procter and Gamble spends $1 and true is true ."
+        }
+      ]
+    }
+  },
+  "overall_accuracy": 41.66666666666667
+}

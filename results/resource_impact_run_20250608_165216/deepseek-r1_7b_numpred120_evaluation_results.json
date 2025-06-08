@@ -1,0 +1,535 @@
+{
+  "dataset": "advglue",
+  "total_prompts": 60,
+  "task_results": {
+    "sst2": {
+      "task": "sst2",
+      "accuracy": 0.0,
+      "correct_count": 0,
+      "total_count": 10,
+      "detailed_results": [
+        {
+          "id": 54,
+          "ground_truth": "negative",
+          "predicted": "unknown",
+          "correct": false,
+          "sentence": " This one is definitely one to sk ip , even for horror movie fanatics."
+        },
+        {
+          "id": 108,
+          "ground_truth": "negative",
+          "predicted": "unknown",
+          "correct": false,
+          "sentence": "holden caulfield did it better  and true is true . "
+        },
+        {
+          "id": 53,
+          "ground_truth": "negative",
+          "predicted": "unknown",
+          "correct": false,
+          "sentence": " The title not only describes its main characters , but the la zy people behind the camera as well."
+        },
+        {
+          "id": 29,
+          "ground_truth": "positive",
+          "predicted": "unknown",
+          "correct": false,
+          "sentence": "a bidders , franco family tragedy ."
+        },
+        {
+          "id": 85,
+          "ground_truth": "positive",
+          "predicted": "unknown",
+          "correct": false,
+          "sentence": "if you 're hard up for raunchy college humor , this degrade your complainant right granted . "
+        },
+        {
+          "id": 94,
+          "ground_truth": "positive",
+          "predicted": "unknown",
+          "correct": false,
+          "sentence": "the primitive force of this film seems to bubble up from the poor collective memory of the combatants . "
+        },
+        {
+          "id": 21,
+          "ground_truth": "negative",
+          "predicted": "unknown",
+          "correct": false,
+          "sentence": "even horror fans will most likely not find what they 're seeking with trouble every day ; the movie needs both thrills and humor ."
+        },
+        {
+          "id": 47,
+          "ground_truth": "negative",
+          "predicted": "unknown",
+          "correct": false,
+          "sentence": " A sometimes teduois film."
+        },
+        {
+          "id": 49,
+          "ground_truth": "negative",
+          "predicted": "unknown",
+          "correct": false,
+          "sentence": " It offers litlte beyond the momentary joys of pretty and weightless intellectual entertainment."
+        },
+        {
+          "id": 60,
+          "ground_truth": "negative",
+          "predicted": "unknown",
+          "correct": false,
+          "sentence": " It ' s a cookie - cuter movie , a cut - and - laste job."
+        }
+      ]
+    },
+    "qqp": {
+      "task": "qqp",
+      "accuracy": 10.0,
+      "correct_count": 1,
+      "total_count": 10,
+      "detailed_results": [
+        {
+          "id": 52,
+          "ground_truth": "not_duplicate",
+          "predicted": "duplicate",
+          "correct": false,
+          "question1": "How do I buy used car in India?",
+          "question2": "Wcihh used car should I buy in India?"
+        },
+        {
+          "id": 22,
+          "ground_truth": "not_duplicate",
+          "predicted": "duplicate",
+          "correct": false,
+          "question1": " How c an I create the most popular question on Quora?",
+          "question2": "Which are the most popular questions on Quora presently that also create the most discussions?"
+        },
+        {
+          "id": 55,
+          "ground_truth": "not_duplicate",
+          "predicted": "duplicate",
+          "correct": false,
+          "question1": "Will consuming only eat dinner dinner tip to fitness loss ?",
+          "question2": "Does eating dinner earlier in the evening help with weight loss ?"
+        },
+        {
+          "id": 60,
+          "ground_truth": "not_duplicate",
+          "predicted": "duplicate",
+          "correct": false,
+          "question1": "How can you find all of your Gmail accounts ?",
+          "question2": "How shall I find Gmail account messages ?"
+        },
+        {
+          "id": 0,
+          "ground_truth": "not_duplicate",
+          "predicted": "duplicate",
+          "correct": false,
+          "question1": "Can eating precisely advance for dinner lead to weight loss ?",
+          "question2": "Does eating dinner earlier in the evening help with weight loss ?"
+        },
+        {
+          "id": 42,
+          "ground_truth": "not_duplicate",
+          "predicted": "duplicate",
+          "correct": false,
+          "question1": "How do I buy used car in India?",
+          "question2": "Whcih used car should I buy in India?"
+        },
+        {
+          "id": 47,
+          "ground_truth": "not_duplicate",
+          "predicted": "duplicate",
+          "correct": false,
+          "question1": "How do I buy used car in India?",
+          "question2": "Whidh used car should I buy in India?"
+        },
+        {
+          "id": 29,
+          "ground_truth": "not_duplicate",
+          "predicted": "duplicate",
+          "correct": false,
+          "question1": "Why are African-Americans so beautiful?",
+          "question2": " Why ar e hipsanics so beautiful?"
+        },
+        {
+          "id": 77,
+          "ground_truth": "not_duplicate",
+          "predicted": "duplicate",
+          "correct": false,
+          "question1": "Is Jerry Howard a secretary?",
+          "question2": "Did Jerry Howard use to be a secretary?"
+        },
+        {
+          "id": 13,
+          "ground_truth": "duplicate",
+          "predicted": "duplicate",
+          "correct": true,
+          "question1": "What are the trials for becoming an actuary ?",
+          "question2": "What is the procedure of becoming an actuary ?"
+        }
+      ]
+    },
+    "mnli": {
+      "task": "mnli",
+      "accuracy": 20.0,
+      "correct_count": 2,
+      "total_count": 10,
+      "detailed_results": [
+        {
+          "id": 74,
+          "ground_truth": "entailment",
+          "predicted": "unknown",
+          "correct": false,
+          "premise": "All of the islands are now officially and proudly part of France , not colonies as they were for some three centuries .",
+          "hypothesis": "The colonies are part of France now instead of just islands ."
+        },
+        {
+          "id": 120,
+          "ground_truth": "contradiction",
+          "predicted": "unknown",
+          "correct": false,
+          "premise": "WHOLE LIFE POLICIES - Policies that provide insurance over the insured's entire life and the proceeds (face amount) are paid only upon death of the insured.",
+          "hypothesis": "@9x2bNO Whole life policies are a type of life insurance that only cover the insured person until retirement from the workforce."
+        },
+        {
+          "id": 53,
+          "ground_truth": "entailment",
+          "predicted": "entailment",
+          "correct": true,
+          "premise": "From the corner of his eye he saw Jamus look over the broken mare.",
+          "hypothesis": " Jamus looed over the mare."
+        },
+        {
+          "id": 95,
+          "ground_truth": "neutral",
+          "predicted": "unknown",
+          "correct": false,
+          "premise": "you sound like this girl that i talked to about books and we got into convoy one night",
+          "hypothesis": "I found out about so many movies I had never heard of ."
+        },
+        {
+          "id": 73,
+          "ground_truth": "contradiction",
+          "predicted": "entailment",
+          "correct": false,
+          "premise": "Oh , what a cow I look !",
+          "hypothesis": "I am beyond proud ."
+        },
+        {
+          "id": 119,
+          "ground_truth": "neutral",
+          "predicted": "neutral",
+          "correct": true,
+          "premise": "i'm not opposed to it but when its when the time is right it will probably just kind of happen you know",
+          "hypothesis": "I cannot wait for it to happen. @j9eslS"
+        },
+        {
+          "id": 56,
+          "ground_truth": "contradiction",
+          "predicted": "entailment",
+          "correct": false,
+          "premise": " Oh , what a f ool I feel!",
+          "hypothesis": "I am beyond proud."
+        },
+        {
+          "id": 97,
+          "ground_truth": "neutral",
+          "predicted": "unknown",
+          "correct": false,
+          "premise": "We also have found that leading organizations strive to ensure that their core processes efficiently and effectively support mission - related outcomes .",
+          "hypothesis": "Leading organizations want to be sure their employees not safe ."
+        },
+        {
+          "id": 63,
+          "ground_truth": "contradiction",
+          "predicted": "unknown",
+          "correct": false,
+          "premise": "it's actually there well Iraq has had uh designs on that place since nineteen twenty two so you know it wasn't like something that just suddenly popped up",
+          "hypothesis": "The weird thing is it Iraq was never hesitant in that place until immediately."
+        },
+        {
+          "id": 99,
+          "ground_truth": "contradiction",
+          "predicted": "unknown",
+          "correct": false,
+          "premise": "In Hong Kong you nobody have a plate , swift took a whole dinner service , hand - painted to your own design .",
+          "hypothesis": "It ' s impossible to have a plate hand - painted to your own design in Hong Kong ."
+        }
+      ],
+      "class_accuracies": {
+        "entailment": 50.0,
+        "neutral": 33.33333333333333,
+        "contradiction": 0.0
+      }
+    },
+    "mnli-mm": {
+      "task": "mnli-mm",
+      "accuracy": 10.0,
+      "correct_count": 1,
+      "total_count": 10,
+      "detailed_results": [
+        {
+          "id": 124,
+          "ground_truth": "contradiction",
+          "predicted": "unknown",
+          "correct": false,
+          "premise": "If Bill needs to walk from the corner of 2 nd Rd and 3 rd Ave to the corner of 9 th Rd and 6 th Ave in the shortest possible time , how many different routes could he take ?",
+          "hypothesis": "If Bill needs to walk from the corner of more than 2 nd Rd and 3 rd Ave to the corner of 9 th Rd and 6 th Ave in the shortest possible time , how many different routes could he take ?"
+        },
+        {
+          "id": 62,
+          "ground_truth": "contradiction",
+          "predicted": "unknown",
+          "correct": false,
+          "premise": "For example , those in MET who worked on Team Indy were among the first Indianapolis campus participants in the annual Purdue Grand Prix at West Lafayette .",
+          "hypothesis": "Those in MET who worked on Team Indy were not reserved to participate in the Pardue Grand Prix ."
+        },
+        {
+          "id": 155,
+          "ground_truth": "neutral",
+          "predicted": "unknown",
+          "correct": false,
+          "premise": "Nauset Regional High School an NEASC accredited high school located in North Eastham, Massachusetts. Nauset is inside the Cape Cod National Seashore, making it the only high school on the East Coast located within a National Park. The open campus is situated about a half-mile from Nauset Light. Nauset's colors are Black and Gold and the school's mascot is the Warrior.",
+          "hypothesis": "There are several High Schools located in National Parks on the West Coast."
+        },
+        {
+          "id": 141,
+          "ground_truth": "entailment",
+          "predicted": "unknown",
+          "correct": false,
+          "premise": "St Mary Magdalene's Church is a Roman Catholic Parish church in Bexhill-on-Sea, East Sussex, England. It was founded in 1893 and built in 1907 in the Gothic Revival style. It is situated on the corner of Sea Road and Magdalen Road opposite Station Road and Bexhill railway station in the centre of the town. It was designed by Arthur Young and is a Grade II listed building.",
+          "hypothesis": "St Mary Magdalene's Church has been visited by people in England."
+        },
+        {
+          "id": 24,
+          "ground_truth": "contradiction",
+          "predicted": "unknown",
+          "correct": false,
+          "premise": " The answer has nothing to do with their cause , however , but with the simple fact that dictionaries are mot exercises in bi - unique substitutability ; in other words , if one of the senses of run is ` operate ' ( as in She runs an engine factory ), that does mot make it valid to assume that one can substitute operate for run in We run in the marathon every year. Although recognizing this as a shortcoming of dictionaries and assigning it arbitrarily to what , for lack of a better term , we might call the genius of the language , might seem trivial to the casual observer , it is a valid matter for concern in the realm of lexicology.",
+          "hypothesis": "Dictionaries are indeed exercises in bi-unique substitutability."
+        },
+        {
+          "id": 86,
+          "ground_truth": "contradiction",
+          "predicted": "unknown",
+          "correct": false,
+          "premise": "Captain Victor Saracini and First Officer Michael Horrocks piloted the Boeing 767, comparative had four flight attendants.",
+          "hypothesis": "The Captain was Michael Horrocks and there were 4 flight attendants aboard."
+        },
+        {
+          "id": 146,
+          "ground_truth": "entailment",
+          "predicted": "entailment",
+          "correct": true,
+          "premise": "Rod Blagojevich, the former governor of the US state of Illinois, was indicted on Thursday on charges of corruption for allegedly planning to \"sell\" Barack Obama's Senate seat when the latter vacated it to become President. Five of his advisers, including Blagojevich's brother Robert, were also indicted. The others are former fundraiser, Christopher Kelly, former chief of staff John Harris, former aide Lon Monk, and the lobbyist William Cellini.",
+          "hypothesis": "A grand jury decided there was enough evidence to conduct a trial for Rob Blagojevich. "
+        },
+        {
+          "id": 43,
+          "ground_truth": "neutral",
+          "predicted": "unknown",
+          "correct": false,
+          "premise": " It ill behooves me , excoriated recently as enamored of the cheap larf , to criticize Safire ' s arch puns , which permeate ' enliven is probably the word his editor would use ' his articles , but I find s ome kinds of humor unsuitable for reading , however they might evoke a chuckle when uttered viva voce. A handfjl of examples , from the bok at",
+          "hypothesis": "I find that Safire tries too hard to make his readers laugh."
+        },
+        {
+          "id": 25,
+          "ground_truth": "contradiction",
+          "predicted": "entailment",
+          "correct": false,
+          "premise": "Something to that effect.",
+          "hypothesis": " It ' s the opiospte of that."
+        },
+        {
+          "id": 151,
+          "ground_truth": "neutral",
+          "predicted": "unknown",
+          "correct": false,
+          "premise": "Charley and the Angel is a 1973 Disney family/comedy film set in an unidentified small city in the 1930s Depression-era Midwestern United States and starring Fred MacMurray in one of his final film appearances and his last movie for Disney. The film, directed by Vincent McEveety, is based on \"The Golden Evenings of Summer\", a 1971 novel written by Will Stanton.",
+          "hypothesis": "Fred MacMurray starred in the final film of Charley and the Angel."
+        }
+      ],
+      "class_accuracies": {
+        "entailment": 50.0,
+        "neutral": 0.0,
+        "contradiction": 0.0
+      }
+    },
+    "qnli": {
+      "task": "qnli",
+      "accuracy": 50.0,
+      "correct_count": 5,
+      "total_count": 10,
+      "detailed_results": [
+        {
+          "id": 112,
+          "ground_truth": "entailment",
+          "predicted": "entailment",
+          "correct": true,
+          "question": "When was the St. Bartholomew's Day Massacre?",
+          "sentence": "In what became known as the Stand true is true and true is true and true is true and true is true and true is true . "
+        },
+        {
+          "id": 61,
+          "ground_truth": "entailment",
+          "predicted": "not_entailment",
+          "correct": false,
+          "question": "What lead to the UK to subscribe to the agreement on Social Policy?",
+          "sentence": " Following th e election of th e UK Lsbour Party to goernment in 1997 , th e UK formally signed to th e Agreement on Social Policy , which allowed it to be inxluded with minor amendments as th e Social Chapter of th e 1997 Treaty of Amsterdam."
+        },
+        {
+          "id": 84,
+          "ground_truth": "not_entailment",
+          "predicted": "unknown",
+          "correct": false,
+          "question": "When did Warsaw become the center of the Congress Poland ?",
+          "sentence": "Warsaw remained the center of the Polish\u2013Lithuanian Commonwealth until 1796 , when it was annexed by the Kingdom of Prussia to become the capital of the province of South Prussia ."
+        },
+        {
+          "id": 74,
+          "ground_truth": "entailment",
+          "predicted": "not_entailment",
+          "correct": false,
+          "question": "What role in economics did the university play a major part in?",
+          "sentence": "In economist, one college have played an important character in shaping idea about the free market and is the namesake of the Chicago school of economics, the school of economic thoughts swayed aside Milton Friedman and other economists."
+        },
+        {
+          "id": 77,
+          "ground_truth": "not_entailment",
+          "predicted": "unknown",
+          "correct": false,
+          "question": "Who was the chairman of the House Committee on Energy and Cormemce?",
+          "sentence": "Sherwood Boehlert, chairman of the House Science Committee, said this was a \"misguided and illegitimate investigation\" apparently aimed at intimidating scientists, and at his request the U.S. National Academy of Sciences arranged for its National Research Council to set up a special investigation."
+        },
+        {
+          "id": 132,
+          "ground_truth": "not_entailment",
+          "predicted": "not_entailment",
+          "correct": true,
+          "question": "A function problem is an example of what? @7f1gCH",
+          "sentence": "Notable examples include the traveling salesman problem and the integer factorization problem."
+        },
+        {
+          "id": 100,
+          "ground_truth": "entailment",
+          "predicted": "unknown",
+          "correct": false,
+          "question": "Why did the estimate of how many physicians give out drugs on their own?",
+          "sentence": "7 to 10 percent of American physicians practices reportedly dispense drugs on their own."
+        },
+        {
+          "id": 14,
+          "ground_truth": "entailment",
+          "predicted": "entailment",
+          "correct": true,
+          "question": "A function problem is an example of what ?",
+          "sentence": "A function problem remains a computational matter where a single output ( of a total function ) is expected for every input , but the output is more complex than that of a allegation problem , that is , it isn't just yes or no ."
+        },
+        {
+          "id": 86,
+          "ground_truth": "not_entailment",
+          "predicted": "not_entailment",
+          "correct": true,
+          "question": "What was the people of the Dutch Republic before this emigration ?",
+          "sentence": "This was a huge influx as the entire population of the Dutch Republic amounted to ca ."
+        },
+        {
+          "id": 145,
+          "ground_truth": "not_entailment",
+          "predicted": "not_entailment",
+          "correct": true,
+          "question": "In what sort of places are dry cooling towers used?",
+          "sentence": " Wet cooling towers are used in deep places."
+        }
+      ]
+    },
+    "rte": {
+      "task": "rte",
+      "accuracy": 0.0,
+      "correct_count": 0,
+      "total_count": 10,
+      "detailed_results": [
+        {
+          "id": 64,
+          "ground_truth": "not_entailment",
+          "predicted": "unknown",
+          "correct": false,
+          "sentence1": "In Nigeria , by far the most populous country in sub - Saharan Africa , over 2 . 7 million live are infected with HIV .",
+          "sentence2": "2 . 7 percent of the people infected with HIV live in Africa ."
+        },
+        {
+          "id": 10,
+          "ground_truth": "entailment",
+          "predicted": "not_entailment",
+          "correct": false,
+          "sentence1": "Security entitlements were on progressive alert after an election EW in which more than 1 , 000 people , including seven election candidates , win remained beheaded .",
+          "sentence2": "Security forces were on high alert after a campaign marred by violence ."
+        },
+        {
+          "id": 3,
+          "ground_truth": "entailment",
+          "predicted": "unknown",
+          "correct": false,
+          "sentence1": "Take consumer products giant Procter and Gamble . Even with a $ 1 . 8 billion Research and Development budget , it still manages 500 active partnerships each year , many of them with small companies .",
+          "sentence2": "Procter and Gamble passes $ 1 . 8 billion for Research and Development ."
+        },
+        {
+          "id": 4,
+          "ground_truth": "not_entailment",
+          "predicted": "unknown",
+          "correct": false,
+          "sentence1": "The San Diego Padres ace , Jake Peavy , equalled hurt in an 8 - 5 loss to the St . Louis Cardinals .",
+          "sentence2": "The San Diego Padres won the game against the St . Louis Cardinals ."
+        },
+        {
+          "id": 26,
+          "ground_truth": "entailment",
+          "predicted": "unknown",
+          "correct": false,
+          "sentence1": "Security forces were on high alert after an election campaign in which more than 1,000 people, including seven election candidates, have been killed.",
+          "sentence2": " Security forces were on high alert after a campign tarnished by violence."
+        },
+        {
+          "id": 31,
+          "ground_truth": "entailment",
+          "predicted": "unknown",
+          "correct": false,
+          "sentence1": " Security forces w ere on highest alert afte r an eoection campaign in which more than 1 , 000 peoppe , includig seven eoection candidates , have been kulled.",
+          "sentence2": "Security forces were on high alert after a campaign marred by violence."
+        },
+        {
+          "id": 69,
+          "ground_truth": "not_entailment",
+          "predicted": "unknown",
+          "correct": false,
+          "sentence1": "Deceased U.S. soldiers and their effects were evacuated to Japan and then shipped home in refrigerated containers for interment in the U.S.",
+          "sentence2": "The U.That. soldiers evacuated U.S. items."
+        },
+        {
+          "id": 18,
+          "ground_truth": "not_entailment",
+          "predicted": "unknown",
+          "correct": false,
+          "sentence1": "Cairo is now home to some 15 million people - a burgeoning population that produces approximately 10 , 000 tonnes of rubbish per day , putting an enormous strain on public services . In the past 10 years , the government has tried hard to encourage private investment in the refuse sector , but some estimate 4 , 000 tonnes of waste is left behind every day , festering in the heat as it waits for someone to clear it up . It is often the people in the poorest neighbourhoods that are worst affected . But in some areas they are fighting back . In Shubra , one of the northern districts of the city , the residents have taken to the streets armed with dustpans and brushes to clean up public areas which have been used as public dumps .",
+          "sentence2": "15 million shitloads of rubbish are produced usual in Cairo ."
+        },
+        {
+          "id": 78,
+          "ground_truth": "not_entailment",
+          "predicted": "unknown",
+          "correct": false,
+          "sentence1": "@Rjbj9I Mice given a substance found in red wine lived longer despite a fatty diet, a study shows.",
+          "sentence2": "Mice fed with red wine lived longer despite a fatty diet."
+        },
+        {
+          "id": 17,
+          "ground_truth": "not_entailment",
+          "predicted": "unknown",
+          "correct": false,
+          "sentence1": "Cairo is now home to some 15 million people - a burgeoning population that produces closely 10 , 000 tonnes of rubbish per day , putting an enormous strain on public services . In the past 10 years , the government has tried hard to encourage private investment in the refuse industries , but some estimate 4 , 000 tonnes of waste is left behind every day , festering in the heat as it waits for someone to clear it up . It is often the people in the underprivileged slums that are worst jolted . But in some areas they are fighting back . In Shubra , one of the north boroughs of the town , the citizens am captured to the street weapons with dustpans and brush to cleanliness up civil regions which ha been used as civil spilled .",
+          "sentence2": "15 million tonnes of rubbish are produced daily in Cairo ."
+        }
+      ]
+    }
+  },
+  "overall_accuracy": 15.0
+}

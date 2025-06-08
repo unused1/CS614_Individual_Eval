@@ -1,0 +1,2442 @@
+{
+  "timestamp": "20250608_165216",
+  "num_prompts": 60,
+  "dataset": "advglue",
+  "models": [
+    "deepseek-r1:7b"
+  ],
+  "output_directory": "results/resource_impact_run_20250608_165216",
+  "mitigations": {
+    "num_predict": 120,
+    "think_efficient": false
+  },
+  "model_results": {
+    "deepseek-r1:7b": {
+      "prompts": [
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 0,
+          "prompt": "Classify the sentiment of this text as positive or negative: ' This one is definitely one to sk ip ,...",
+          "success": true,
+          "duration": 2.211522102355957,
+          "response_length": 542,
+          "tokens_generated": 95,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I need to classify the sentiment of the given text. The text says, \"This one is definitely one to skip, even for horror movie fanatics.\" \n\nFirst, let me break down what each part mean...",
+          "response_text": "<think>\nOkay, so I need to classify the sentiment of the given text. The text says, \"This one is definitely one to skip, even for horror movie fanatics.\" \n\nFirst, let me break down what each part means. The speaker starts with \"This one\" referring to a particular horror movie they're talking about. Then they say it's \"definitely one to skip,\" which I think means people should avoid watching it. They add that this is especially true for someone who is a \"horror movie fanatic.\" \n\nSo, the person is saying that even someone who loves horror",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 1,
+          "prompt": "Classify the sentiment of this text as positive or negative: 'holden caulfield did it better  and tr...",
+          "success": true,
+          "duration": 2.2161309719085693,
+          "response_length": 522,
+          "tokens_generated": 91,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I need to figure out whether the sentence \"Holden Caulfield did it better and true is true.\" has a positive or negative sentiment. Let me break this down step by step.\n\nFirst, I'll lo...",
+          "response_text": "<think>\nOkay, so I need to figure out whether the sentence \"Holden Caulfield did it better and true is true.\" has a positive or negative sentiment. Let me break this down step by step.\n\nFirst, I'll look at each part of the sentence separately. The first part says \"Holden Caulfield did it better.\" Now, Holden Caulfield was known for his sharp wit and sarcastic remarks in literature, especially from \"Fahrenheit 451.\" So when someone refers to him as doing something well, even if it's just \"did it better,\" that might be",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 2,
+          "prompt": "Classify the sentiment of this text as positive or negative: ' The title not only describes its main...",
+          "success": true,
+          "duration": 2.2099649906158447,
+          "response_length": 582,
+          "tokens_generated": 99,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I need to figure out whether the given sentence has a positive or negative sentiment. The sentence is: \"The title not only describes its main characters, but the lazy people behind th...",
+          "response_text": "<think>\nOkay, so I need to figure out whether the given sentence has a positive or negative sentiment. The sentence is: \"The title not only describes its main characters, but the lazy people behind the camera as well.\" \n\nFirst, let me break it down. The sentence starts by talking about the title of something\u2014maybe a movie or book\u2014and mentions that it's describing both the main characters and also some people behind the camera who are lazy.\n\nI know that in media, the people behind the camera include directors, writers, and other crew members. If someone is described as \"lazy,\"",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 3,
+          "prompt": "Classify the sentiment of this text as positive or negative: 'a bidders , franco family tragedy .'",
+          "success": true,
+          "duration": 2.2047951221466064,
+          "response_length": 546,
+          "tokens_generated": 95,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I need to figure out whether the sentence \"a bidders , franco family tragedy .\" is positive or negative. Let me break it down.\n\nFirst, looking at the words individually. \"A bidders\" \u2013...",
+          "response_text": "<think>\nOkay, so I need to figure out whether the sentence \"a bidders , franco family tragedy .\" is positive or negative. Let me break it down.\n\nFirst, looking at the words individually. \"A bidders\" \u2013 that could be a noun phrase referring to people involved in bidding, maybe for something like an auction or a contract. Bidding usually implies some kind of competition or effort, so on its own, I might not get much from that word alone.\n\nThen there's \", franco family tragedy.\" The comma probably separates two parts of the sentence. \"Francesca",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 4,
+          "prompt": "Classify the sentiment of this text as positive or negative: 'if you 're hard up for raunchy college...",
+          "success": true,
+          "duration": 2.1628921031951904,
+          "response_length": 532,
+          "tokens_generated": 88,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I need to figure out whether the given text has a positive or negative sentiment. The text is: \"if you're hard up for raunchy college humor, this degrade your complainant right grante...",
+          "response_text": "<think>\nOkay, so I need to figure out whether the given text has a positive or negative sentiment. The text is: \"if you're hard up for raunchy college humor, this degrade your complainant right granted.\" \n\nFirst, I'll break down the sentence. It starts with an if-statement talking about being in need of raunchy college humor. Then it says \"this\" refers to something that degrades a complainant and ends with \"right granted,\" which is a bit unclear.\n\nI know that \"raunchy college humor\" typically implies something edgy or possibly",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 5,
+          "prompt": "Classify the sentiment of this text as positive or negative: 'the primitive force of this film seems...",
+          "success": true,
+          "duration": 2.2450599670410156,
+          "response_length": 601,
+          "tokens_generated": 97,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I need to figure out whether the given sentence has a positive or negative sentiment. The sentence is: \"the primitive force of this film seems to bubble up from the poor collective me...",
+          "response_text": "<think>\nOkay, so I need to figure out whether the given sentence has a positive or negative sentiment. The sentence is: \"the primitive force of this film seems to bubble up from the poor collective memory of the combatants.\"\n\nFirst, let me break down the sentence. It's talking about a film's primitive force and how it comes from the combatants' poor collective memory. Hmm, so \"primitive force\" could be interpreted in different ways. Primitive can mean basic or fundamental, but sometimes it might carry negative connotations depending on context.\n\nThe phrase \"bubble up\" suggests that something is",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 6,
+          "prompt": "Classify the sentiment of this text as positive or negative: 'even horror fans will most likely not ...",
+          "success": true,
+          "duration": 2.2432360649108887,
+          "response_length": 592,
+          "tokens_generated": 101,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I need to classify the sentiment of the given text as either positive or negative. The text is: \"even horror fans will most likely not find what they're seeking with trouble every day...",
+          "response_text": "<think>\nOkay, so I need to classify the sentiment of the given text as either positive or negative. The text is: \"even horror fans will most likely not find what they're seeking with trouble every day; the movie needs both thrills and humor.\"\n\nFirst, let me break down the sentence. It starts by saying that even horror fans won't find what they're seeking because of trouble every day. That sounds like a negative statement about the movie's content or quality from the perspective of horror fans.\n\nThen it mentions that the movie needs both thrills and humor. Thrills are usually associated",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 7,
+          "prompt": "Classify the sentiment of this text as positive or negative: ' A sometimes teduois film.'",
+          "success": true,
+          "duration": 2.2329680919647217,
+          "response_length": 567,
+          "tokens_generated": 95,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I need to classify the sentiment of the text \"A sometimes tedious film.\" as either positive or negative. Let me break this down step by step.\n\nFirst, looking at the sentence itself: \"...",
+          "response_text": "<think>\nOkay, so I need to classify the sentiment of the text \"A sometimes tedious film.\" as either positive or negative. Let me break this down step by step.\n\nFirst, looking at the sentence itself: \"A sometimes tedious film.\" The word \"sometimes\" suggests that there are instances where something is true, but it doesn't specify whether those instances are positive or negative. Then we have \"tedious,\" which means something is boring or tedious. So, if a film is described as tedious, does that mean the speaker thinks it's bad?\n\nWell, in general, when someone says",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 8,
+          "prompt": "Classify the sentiment of this text as positive or negative: ' It offers litlte beyond the momentary...",
+          "success": true,
+          "duration": 2.1665751934051514,
+          "response_length": 570,
+          "tokens_generated": 91,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I need to classify the sentiment of the given text. The text is: \"It offers little beyond the momentary joys of pretty and weightless intellectual entertainment.\" \n\nFirst, I'll break ...",
+          "response_text": "<think>\nOkay, so I need to classify the sentiment of the given text. The text is: \"It offers little beyond the momentary joys of pretty and weightless intellectual entertainment.\" \n\nFirst, I'll break down the sentence to understand its components. The main verb here seems to be \"offers,\" which suggests an evaluation or judgment about what something provides. Then there's \"little\" \u2013 that indicates a small amount or not much significance. \n\nNext, it says \"beyond the momentary joys.\" So, beyond just those brief pleasures, this text is saying that there's little else.",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 9,
+          "prompt": "Classify the sentiment of this text as positive or negative: ' It ' s a cookie - cuter movie , a cut...",
+          "success": true,
+          "duration": 2.179279088973999,
+          "response_length": 477,
+          "tokens_generated": 93,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I need to classify the sentiment of the given text as either positive or negative. The text is: \"It's a cookie - cuter movie, a cut - and - laste job.\" Hmm, let me break this down.\n\nF...",
+          "response_text": "<think>\nOkay, so I need to classify the sentiment of the given text as either positive or negative. The text is: \"It's a cookie - cuter movie, a cut - and - laste job.\" Hmm, let me break this down.\n\nFirst, looking at the words used here. The first part says \"a cookie - cuter movie.\" That seems to be describing something as both a cookie (which could refer to a type of food) and a \"cuter\" movie. Wait, that doesn't quite make sense because a movie can't be a cookie. Maybe it",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 10,
+          "prompt": "Are these two questions asking the same thing? Question 1: 'How do I buy used car in India?' Questio...",
+          "success": true,
+          "duration": 2.2826311588287354,
+          "response_length": 523,
+          "tokens_generated": 96,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I need to figure out if these two questions are essentially asking the same thing. Let me break it down step by step.\n\nFirst, looking at Question 1: \"How do I buy a used car in India?...",
+          "response_text": "<think>\nOkay, so I need to figure out if these two questions are essentially asking the same thing. Let me break it down step by step.\n\nFirst, looking at Question 1: \"How do I buy a used car in India?\" This is pretty straightforward. The user wants to know the process or steps involved in purchasing a second-hand vehicle in India. They're seeking information on how to go about buying one, which could include things like where to find cars, what to look for, costs, etc.\n\nNow, Question 2: \"Wcihh used car should I buy in",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 11,
+          "prompt": "Are these two questions asking the same thing? Question 1: ' How c an I create the most popular ques...",
+          "success": true,
+          "duration": 2.267210006713867,
+          "response_length": 568,
+          "tokens_generated": 101,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I need to figure out if these two questions are asking the same thing. Let me read them again.\n\nQuestion 1 is asking how someone can create the most popular question on Quora. Questio...",
+          "response_text": "<think>\nOkay, so I need to figure out if these two questions are asking the same thing. Let me read them again.\n\nQuestion 1 is asking how someone can create the most popular question on Quora. Question 2 is asking which are the most popular questions currently that also create the most discussions.\n\nHmm, at first glance, they seem related but maybe not exactly the same. Let's break it down.\n\nQuestion 1 is about creating a popular question from scratch. It's more about the process or strategy to make your question go viral on Quora. So someone might be asking for",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 12,
+          "prompt": "Are these two questions asking the same thing? Question 1: 'Will consuming only eat dinner dinner ti...",
+          "success": true,
+          "duration": 2.2637789249420166,
+          "response_length": 566,
+          "tokens_generated": 99,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I need to figure out if these two questions are essentially asking the same thing. Let me read them again.\n\nQuestion 1 is: \"Will consuming only eat dinner dinner tip to fitness loss?\"...",
+          "response_text": "<think>\nOkay, so I need to figure out if these two questions are essentially asking the same thing. Let me read them again.\n\nQuestion 1 is: \"Will consuming only eat dinner dinner tip to fitness loss?\" Hmm, that's a bit confusingly worded. Maybe it means whether eating only dinner will lead to weight gain or not. The user might be concerned about their diet and how it affects their fitness goals.\n\nQuestion 2 is: \"Does eating dinner earlier in the evening help with weight loss?\" This one seems more straightforward. It's asking if timing dinner earlier can aid in",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 13,
+          "prompt": "Are these two questions asking the same thing? Question 1: 'How can you find all of your Gmail accou...",
+          "success": true,
+          "duration": 2.226933002471924,
+          "response_length": 561,
+          "tokens_generated": 100,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I need to figure out if these two questions are essentially asking the same thing. Let me break it down step by step.\n\nFirst, looking at Question 1: \"How can you find all of your Gmai...",
+          "response_text": "<think>\nOkay, so I need to figure out if these two questions are essentially asking the same thing. Let me break it down step by step.\n\nFirst, looking at Question 1: \"How can you find all of your Gmail accounts?\" The user is asking about methods to locate their Gmail accounts. This could involve checking their email app, web browser, or maybe even settings on their device. They might be trying to recover an account they've lost access to or just want to know where their accounts are stored.\n\nNow, Question 2: \"How shall I find Gmail account messages?\" Here",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 14,
+          "prompt": "Are these two questions asking the same thing? Question 1: 'Can eating precisely advance for dinner ...",
+          "success": true,
+          "duration": 2.262132167816162,
+          "response_length": 521,
+          "tokens_generated": 93,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I need to figure out if these two questions are essentially asking the same thing. Let me read them again.\n\nQuestion 1 is: \"Can eating precisely advance for dinner lead to weight loss...",
+          "response_text": "<think>\nOkay, so I need to figure out if these two questions are essentially asking the same thing. Let me read them again.\n\nQuestion 1 is: \"Can eating precisely advance for dinner lead to weight loss?\" Hmm, that's a bit unclear. The word \"advance\" might mean different things here. Maybe it's a typo or not phrased correctly. It could be trying to say something like \"plan the time for dinner\" or maybe \"ate at precise times.\" But I'm not sure.\n\nQuestion 2 is: \"Does eating dinner earlier in the evening help with weight",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 15,
+          "prompt": "Are these two questions asking the same thing? Question 1: 'How do I buy used car in India?' Questio...",
+          "success": true,
+          "duration": 2.2013487815856934,
+          "response_length": 534,
+          "tokens_generated": 98,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I need to figure out if these two questions are essentially asking the same thing. The first question is \"How do I buy a used car in India?\" and the second one is \"Which used car shou...",
+          "response_text": "<think>\nOkay, so I need to figure out if these two questions are essentially asking the same thing. The first question is \"How do I buy a used car in India?\" and the second one is \"Which used car should I buy in India?\" Hmm, let me break this down.\n\nFirst, looking at Question 1: It's asking for steps or advice on purchasing a used car in India. That makes sense because when someone asks how to buy something, they're typically seeking guidance on the process\u2014like where to look, what to do, maybe some tips or considerations.\n\nNow,",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 16,
+          "prompt": "Are these two questions asking the same thing? Question 1: 'How do I buy used car in India?' Questio...",
+          "success": true,
+          "duration": 2.2269608974456787,
+          "response_length": 514,
+          "tokens_generated": 98,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I need to figure out if these two questions are essentially asking the same thing. The first question is \"How do I buy a used car in India?\" and the second one is \"Which used car shou...",
+          "response_text": "<think>\nOkay, so I need to figure out if these two questions are essentially asking the same thing. The first question is \"How do I buy a used car in India?\" and the second one is \"Which used car should I buy in India?\" Hmm, let me break this down.\n\nFirst, looking at Question 1: \"How do I buy a used car in India?\" This seems straightforward. It's asking for steps or advice on purchasing a used vehicle in India. The user wants to know the process\u2014maybe where to start, what to look for, how to negotiate prices,",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 17,
+          "prompt": "Are these two questions asking the same thing? Question 1: 'Why are African-Americans so beautiful?'...",
+          "success": true,
+          "duration": 2.1935341358184814,
+          "response_length": 499,
+          "tokens_generated": 83,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, I need to figure out if these two questions are essentially asking the same thing. The first question is \"Why are African-Americans so beautiful?\" and the second one is \"Why are hipsanic...",
+          "response_text": "<think>\nOkay, I need to figure out if these two questions are essentially asking the same thing. The first question is \"Why are African-Americans so beautiful?\" and the second one is \"Why are hipsanics so beautiful?\" Hmm, let me break this down.\n\nFirst off, I know that \"African-Americans\" refers to people of African descent in North America, while \"Hipsanics\" isn't a term I'm familiar with. Wait, maybe it's a typo? Could it be \"Hispanics\"? That would make more sense because \"Latino\" or \"Spanish",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 18,
+          "prompt": "Are these two questions asking the same thing? Question 1: 'Is Jerry Howard a secretary?' Question 2...",
+          "success": true,
+          "duration": 2.193608283996582,
+          "response_length": 587,
+          "tokens_generated": 99,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I have this question where someone is asking if two statements are essentially the same. The first statement is \"Is Jerry Howard a secretary?\" and the second one is \"Did Jerry Howard ...",
+          "response_text": "<think>\nOkay, so I have this question where someone is asking if two statements are essentially the same. The first statement is \"Is Jerry Howard a secretary?\" and the second one is \"Did Jerry Howard use to be a secretary?\" They want me to answer with just 'yes' or 'no'. \n\nAlright, let's break this down. I need to figure out whether these two questions are asking for the same information. The first question is straightforward\u2014it's asking if Jerry Howard currently holds the position of secretary. It's a present tense question about his current role.\n\nThe second question is slightly",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 19,
+          "prompt": "Are these two questions asking the same thing? Question 1: 'What are the trials for becoming an actu...",
+          "success": true,
+          "duration": 2.2137680053710938,
+          "response_length": 532,
+          "tokens_generated": 95,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I need to figure out if these two questions are essentially asking the same thing. The first question is \"What are the trials for becoming an actuary?\" and the second one is \"What is ...",
+          "response_text": "<think>\nOkay, so I need to figure out if these two questions are essentially asking the same thing. The first question is \"What are the trials for becoming an actuary?\" and the second one is \"What is the procedure of becoming an actuary?\" Hmm, let me break this down.\n\nFirst off, both questions are about what someone needs to do to become an actuary. That's a good start because they're on the same topic. Now, looking at the first part: \"trials\" versus \"procedure.\" I'm not entirely sure if these words mean exactly the same thing",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 20,
+          "prompt": "Given the premise: 'All of the islands are now officially and proudly part of France , not colonies ...",
+          "success": true,
+          "duration": 2.286515951156616,
+          "response_length": 614,
+          "tokens_generated": 103,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I'm trying to figure out whether the hypothesis follows from the premise given. The premise is that all the islands are now officially and proudly part of France, not colonies as they...",
+          "response_text": "<think>\nOkay, so I'm trying to figure out whether the hypothesis follows from the premise given. The premise is that all the islands are now officially and proudly part of France, not colonies as they were for some three centuries. The hypothesis is that the colonies are part of France now instead of just islands.\n\nFirst, let me break down what each statement is saying. The premise starts by talking about islands being part of France now, but it's clarifying that they're not colonies anymore. It says this because for three centuries, they were considered colonies. So essentially, the premise is correcting a",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 21,
+          "prompt": "Given the premise: 'WHOLE LIFE POLICIES - Policies that provide insurance over the insured's entire ...",
+          "success": true,
+          "duration": 2.3002607822418213,
+          "response_length": 643,
+          "tokens_generated": 107,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I need to figure out whether the hypothesis follows from the given premise about whole life policies. Let me start by understanding both statements.\n\nThe premise says that whole life ...",
+          "response_text": "<think>\nOkay, so I need to figure out whether the hypothesis follows from the given premise about whole life policies. Let me start by understanding both statements.\n\nThe premise says that whole life policies provide insurance over the entire life of the insured and that the proceeds are paid only upon death. So, it's clear that these policies cover the person until they pass away, with no mention of retirement.\n\nNow, the hypothesis claims that whole life policies are a type of life insurance that only cover until retirement. That means the hypothesis is stating that the coverage ends at retirement age instead of upon death.\n\nComparing",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 22,
+          "prompt": "Given the premise: 'From the corner of his eye he saw Jamus look over the broken mare.' Does the hyp...",
+          "success": true,
+          "duration": 2.2700159549713135,
+          "response_length": 578,
+          "tokens_generated": 94,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I have this question about entailment, neutrality, or contradiction between a premise and a hypothesis. The premise is: \"From the corner of his eye he saw Jamus look over the broken m...",
+          "response_text": "<think>\nOkay, so I have this question about entailment, neutrality, or contradiction between a premise and a hypothesis. The premise is: \"From the corner of his eye he saw Jamus look over the broken mare.\" And the hypothesis is: \"Jamus looked over the mare.\"\n\nFirst, I need to understand what each term means. Entailment would mean that the hypothesis must be true if the premise is true. Neutrality means the premise doesn't provide enough information to determine if the hypothesis is true or false. Contradiction means the premise makes the hypothesis impossible.\n\nLooking at",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 23,
+          "prompt": "Given the premise: 'you sound like this girl that i talked to about books and we got into convoy one...",
+          "success": true,
+          "duration": 2.2631497383117676,
+          "response_length": 554,
+          "tokens_generated": 103,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, let's try to figure this out. So, the premise is \"you sound like this girl that i talked to about books and we got into convoy one night.\" Hmm, okay, so someone is talking about how they...",
+          "response_text": "<think>\nOkay, let's try to figure this out. So, the premise is \"you sound like this girl that i talked to about books and we got into convoy one night.\" Hmm, okay, so someone is talking about how they shared a conversation with a girl where they discussed books and ended up in a convoy, maybe a book club or something similar.\n\nNow, the hypothesis is \"I found out about so many movies I had never heard of.\" So, this person is saying that through some experience, perhaps talking to others or engaging in an activity, they discovered a lot of new movies",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 24,
+          "prompt": "Given the premise: 'Oh , what a cow I look !' Does the hypothesis: 'I am beyond proud .' follow? Ans...",
+          "success": true,
+          "duration": 2.2347171306610107,
+          "response_length": 582,
+          "tokens_generated": 91,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I have this question here where someone says, \"Oh, what a cow I look!\" and then another person hypothesizes that they're \"beyond proud.\" The task is to figure out if the hypothesis fo...",
+          "response_text": "<think>\nOkay, so I have this question here where someone says, \"Oh, what a cow I look!\" and then another person hypothesizes that they're \"beyond proud.\" The task is to figure out if the hypothesis follows from the premise in terms of entailment, neutrality, or contradiction.\n\nFirst, I need to understand what each term means. Entailment would mean that the hypothesis must be true if the premise is true. Neutrality means there's no direct relationship; the premise doesn't necessarily support or contradict the hypothesis. Contradiction would mean the hypothesis directly opposes",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 25,
+          "prompt": "Given the premise: 'i'm not opposed to it but when its when the time is right it will probably just ...",
+          "success": true,
+          "duration": 2.2774760723114014,
+          "response_length": 514,
+          "tokens_generated": 94,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I need to figure out whether the premise \"i'm not opposed to it but when its when the time is right it will probably just kind of happen you know\" entails, is neutral with respect to,...",
+          "response_text": "<think>\nOkay, so I need to figure out whether the premise \"i'm not opposed to it but when its when the time is right it will probably just kind of happen you know\" entails, is neutral with respect to, or contradicts the hypothesis \"I cannot wait for it to happen. @j9eslS\".\n\nFirst, let me break down what each part means.\n\nThe premise starts by saying they're not opposed to something. So, they don't mind it happening at all. But then there's a qualified statement: when the time is right, it might just happen on",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 26,
+          "prompt": "Given the premise: ' Oh , what a f ool I feel!' Does the hypothesis: 'I am beyond proud.' follow? An...",
+          "success": true,
+          "duration": 2.2510838508605957,
+          "response_length": 566,
+          "tokens_generated": 90,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I have this question here where someone says, \"Oh, what a fool I feel!\" and then there's a hypothesis that they're beyond proud. The options are whether it's an entailment, neutral, o...",
+          "response_text": "<think>\nOkay, so I have this question here where someone says, \"Oh, what a fool I feel!\" and then there's a hypothesis that they're beyond proud. The options are whether it's an entailment, neutral, or contradiction.\n\nFirst, I need to understand what each term means. Entailment would mean the hypothesis necessarily follows from the premise. Neutral is when there's no clear connection\u2014maybe some possibilities but not enough to determine one way or the other. Contradiction would be if the hypothesis directly opposes the premise.\n\nSo, looking at the premise: \"Oh,",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 27,
+          "prompt": "Given the premise: 'We also have found that leading organizations strive to ensure that their core p...",
+          "success": true,
+          "duration": 2.2654190063476562,
+          "response_length": 681,
+          "tokens_generated": 103,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I'm trying to figure out whether the hypothesis \"Leading organizations want to be sure their employees are not safe.\" follows from the given premise: \"We also have found that leading ...",
+          "response_text": "<think>\nOkay, so I'm trying to figure out whether the hypothesis \"Leading organizations want to be sure their employees are not safe.\" follows from the given premise: \"We also have found that leading organizations strive to ensure that their core processes efficiently and effectively support mission-related outcomes.\"\n\nFirst, let me break down what each part is saying. The premise talks about leading organizations focusing on making sure their core processes help achieve their mission goals. So they're efficient and effective in supporting their objectives.\n\nNow, the hypothesis claims that these organizations want to make sure their employees are not safe. Wait, that doesn",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 28,
+          "prompt": "Given the premise: 'it's actually there well Iraq has had uh designs on that place since nineteen tw...",
+          "success": true,
+          "duration": 2.286400079727173,
+          "response_length": 565,
+          "tokens_generated": 98,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, I need to figure out whether the hypothesis \"The weird thing is it Iraq was never hesitant in that place until immediately.\" follows from the given premise. The premise says that Iraq ha...",
+          "response_text": "<think>\nOkay, I need to figure out whether the hypothesis \"The weird thing is it Iraq was never hesitant in that place until immediately.\" follows from the given premise. The premise says that Iraq had designs on a place since 1922, so it wasn't something sudden.\n\nFirst, let me break down what each part means. The premise mentions that Iraq had been planning or having designs on this place starting from 1922. That implies a long-term intention or plan. So the idea is that whatever was happening in that place wasn't just a recent development but something that",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 29,
+          "prompt": "Given the premise: 'In Hong Kong you nobody have a plate , swift took a whole dinner service , hand ...",
+          "success": true,
+          "duration": 2.2905070781707764,
+          "response_length": 536,
+          "tokens_generated": 95,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I'm trying to figure out whether the hypothesis \"It's impossible to have a plate hand-painted to your own design in Hong Kong\" follows from the given premise. The premise is: \"In Hong...",
+          "response_text": "<think>\nOkay, so I'm trying to figure out whether the hypothesis \"It's impossible to have a plate hand-painted to your own design in Hong Kong\" follows from the given premise. The premise is: \"In Hong Kong you nobody have a plate, swift took a whole dinner service, hand-painted to your own design.\" \n\nFirst, I need to parse what each part of the premise means. It seems like it's saying that in Hong Kong, people don't usually have plates with their own designs. The example given is \"swift took a whole dinner service,\" which might be",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 30,
+          "prompt": "Given the premise: 'If Bill needs to walk from the corner of 2 nd Rd and 3 rd Ave to the corner of 9...",
+          "success": true,
+          "duration": 2.329901933670044,
+          "response_length": 523,
+          "tokens_generated": 100,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I have this problem about Bill walking from one corner to another, and I need to figure out if the second hypothesis follows from the first premise. Let me try to break it down step b...",
+          "response_text": "<think>\nOkay, so I have this problem about Bill walking from one corner to another, and I need to figure out if the second hypothesis follows from the first premise. Let me try to break it down step by step.\n\nFirst, let's understand the original premise. It says that Bill needs to walk from the corner of 2nd Rd and 3rd Ave to the corner of 9th Rd and 6th Ave in the shortest possible time. The question is asking how many different routes he could take. I remember that when moving on a grid, like city blocks, the number",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 31,
+          "prompt": "Given the premise: 'For example , those in MET who worked on Team Indy were among the first Indianap...",
+          "success": true,
+          "duration": 2.3033320903778076,
+          "response_length": 596,
+          "tokens_generated": 105,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I'm trying to figure out whether the hypothesis follows from the given premise. The premise says that those in MET who worked on Team Indy were among the first Indianapolis campus par...",
+          "response_text": "<think>\nOkay, so I'm trying to figure out whether the hypothesis follows from the given premise. The premise says that those in MET who worked on Team Indy were among the first Indianapolis campus participants in the annual Purdue Grand Prix at West Lafayette. \n\nFirst, let me break down what each part means. The premise is talking about a group of people\u2014those in MET who worked on Team Indy\u2014and it mentions they participated in the Purdue Grand Prix event. Specifically, they were among the first to do so.\n\nNow, the hypothesis is that those same people in MET who worked on Team Indy were not",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 32,
+          "prompt": "Given the premise: 'Nauset Regional High School an NEASC accredited high school located in North Eas...",
+          "success": true,
+          "duration": 2.3419289588928223,
+          "response_length": 575,
+          "tokens_generated": 99,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I need to figure out whether the given premise supports the hypothesis that there are several high schools located in National Parks on the West Coast. Let me break this down step by ...",
+          "response_text": "<think>\nOkay, so I need to figure out whether the given premise supports the hypothesis that there are several high schools located in National Parks on the West Coast. Let me break this down step by step.\n\nFirst, let's look at the premise provided. It says that Nauset Regional High School is an NEASC accredited high school located in Northeastham, Massachusetts. It's inside the Cape Cod National Seashore, making it the only high school there on the East Coast within a National Park. The campus is near Nauset Light and has Black and Gold colors with a Warrior mascot.\n\n",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 33,
+          "prompt": "Given the premise: 'St Mary Magdalene's Church is a Roman Catholic Parish church in Bexhill-on-Sea, ...",
+          "success": true,
+          "duration": 2.3378920555114746,
+          "response_length": 511,
+          "tokens_generated": 88,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I need to figure out whether the hypothesis that St Mary Magdalene's Church has been visited by people in England follows from the given premise. Let me break this down step by step.\n...",
+          "response_text": "<think>\nOkay, so I need to figure out whether the hypothesis that St Mary Magdalene's Church has been visited by people in England follows from the given premise. Let me break this down step by step.\n\nFirst, let's look at the premise again. It says that St Mary Magdalene's Church is a Roman Catholic Parish church located in Bexhill-on-Sea, East Sussex, England. It was founded in 1893 and built in 1907 using Gothic Revival style. The church is situated on specific roads near the railway station, designed by",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 34,
+          "prompt": "Given the premise: ' The answer has nothing to do with their cause , however , but with the simple f...",
+          "success": true,
+          "duration": 2.441366672515869,
+          "response_length": 583,
+          "tokens_generated": 90,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I'm trying to figure out whether the hypothesis \"Dictionaries are indeed exercises in bi-unique substitutability\" follows from the given premise. Let me break this down step by step.\n...",
+          "response_text": "<think>\nOkay, so I'm trying to figure out whether the hypothesis \"Dictionaries are indeed exercises in bi-unique substitutability\" follows from the given premise. Let me break this down step by step.\n\nFirst, let's understand what the premise is saying. The premise states that dictionaries don't determine the meaning of words based on their usage in specific contexts like cause and effect. Instead, it points out that dictionaries are about bi-unique substitutability. Bi-unique substitutability means that each word has one and only one meaning, so you can substitute \"run\" with \"",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 35,
+          "prompt": "Given the premise: 'Captain Victor Saracini and First Officer Michael Horrocks piloted the Boeing 76...",
+          "success": true,
+          "duration": 2.256272792816162,
+          "response_length": 530,
+          "tokens_generated": 89,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I'm trying to figure out whether the hypothesis follows from the given premise. The premise says that Captain Victor Saracini and First Officer Michael Horrocks piloted a Boeing 767, ...",
+          "response_text": "<think>\nOkay, so I'm trying to figure out whether the hypothesis follows from the given premise. The premise says that Captain Victor Saracini and First Officer Michael Horrocks piloted a Boeing 767, which had four flight attendants. The hypothesis is that the Captain was Michael Horrocks and there were four flight attendants on board.\n\nFirst, I need to break down what each part of the premise means. It mentions two people: Victor Saracini as the Captain and Michael Horrocks as the First Officer. They both flew a Boeing 767,",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 36,
+          "prompt": "Given the premise: 'Rod Blagojevich, the former governor of the US state of Illinois, was indicted o...",
+          "success": true,
+          "duration": 2.3899121284484863,
+          "response_length": 557,
+          "tokens_generated": 93,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I need to figure out whether the hypothesis that a grand jury decided there was enough evidence to conduct a trial for Rod Blagojevich follows from the given premise. The options are ...",
+          "response_text": "<think>\nOkay, so I need to figure out whether the hypothesis that a grand jury decided there was enough evidence to conduct a trial for Rod Blagojevich follows from the given premise. The options are entailment, neutral, or contradiction.\n\nFirst, let me break down what's given in the premise. It says that Rod Blagojevich, who used to be the governor of Illinois, has been indicted on charges of corruption. Specifically, he was accused of planning to \"sell\" Barack Obama's Senate seat when Obama left to become President. That means Obama vacated his seat",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 37,
+          "prompt": "Given the premise: ' It ill behooves me , excoriated recently as enamored of the cheap larf , to cri...",
+          "success": true,
+          "duration": 2.338654041290283,
+          "response_length": 513,
+          "tokens_generated": 89,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I'm trying to figure out whether the hypothesis \"I find that Safire tries too hard to make his readers laugh.\" follows from the given premise. Let me break this down step by step.\n\nFi...",
+          "response_text": "<think>\nOkay, so I'm trying to figure out whether the hypothesis \"I find that Safire tries too hard to make his readers laugh.\" follows from the given premise. Let me break this down step by step.\n\nFirst, let's look at the premise again:\n\n\"It ill behooves me, excoriated recently as enamored of the cheap larf, to criticize Safire's arch puns, which permeate 'enliven is probably the word his editor would use.' His articles, but I find some kinds of humor unsuitable for reading, however they might evoke a chuck",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 38,
+          "prompt": "Given the premise: 'Something to that effect.' Does the hypothesis: ' It ' s the opiospte of that.' ...",
+          "success": true,
+          "duration": 2.2526350021362305,
+          "response_length": 594,
+          "tokens_generated": 91,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I'm trying to figure out whether the hypothesis \"It's the opposite of that.\" follows from the given premise \"Something to that effect.\" The options are entailment, neutral, or contrad...",
+          "response_text": "<think>\nOkay, so I'm trying to figure out whether the hypothesis \"It's the opposite of that.\" follows from the given premise \"Something to that effect.\" The options are entailment, neutral, or contradiction.\n\nFirst, let me break down what each term means. Entailment would mean that the hypothesis is necessarily true if the premise is true. Neutral would mean there's no relationship in terms of truth value\u2014neither follows nor contradicts. Contradiction would mean the hypothesis directly opposes the premise.\n\nThe premise is \"Something to that effect.\" That sounds like it's saying something",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 39,
+          "prompt": "Given the premise: 'Charley and the Angel is a 1973 Disney family/comedy film set in an unidentified...",
+          "success": true,
+          "duration": 2.341263771057129,
+          "response_length": 506,
+          "tokens_generated": 88,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I need to figure out whether the hypothesis \"Fred MacMurray starred in the final film of 'Charley and the Angel'\" follows from the given premise. Let me break this down step by step.\n...",
+          "response_text": "<think>\nOkay, so I need to figure out whether the hypothesis \"Fred MacMurray starred in the final film of 'Charley and the Angel'\" follows from the given premise. Let me break this down step by step.\n\nFirst, let's look at the premise again: It says that 'Charley and the Angel' is a 1973 Disney family/comedy film set in an unidentified small city in the 1930s Depression-era Midwestern United States. It also mentions that Fred MacMurray starred in one of his final film appearances and his last movie for",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 40,
+          "prompt": "Does this sentence answer the question? Question: 'When was the St. Bartholomew's Day Massacre?' Sen...",
+          "success": true,
+          "duration": 2.278048038482666,
+          "response_length": 484,
+          "tokens_generated": 81,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I need to figure out if the given sentence answers the question about when the St. Bartholomew's Day Massacre occurred. The question is asking for a specific date, right? So first, I ...",
+          "response_text": "<think>\nOkay, so I need to figure out if the given sentence answers the question about when the St. Bartholomew's Day Massacre occurred. The question is asking for a specific date, right? So first, I should recall what the Stand true refers to.\n\nI think \"St. Bartholomew's Day Massacre\" happened on July 14, 1523. That was during the Reformation when Martin Luther published his 95 Theses in Wittenberg. The Diet of Worms was a significant event where several reformers were executed.",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 41,
+          "prompt": "Does this sentence answer the question? Question: 'What lead to the UK to subscribe to the agreement...",
+          "success": true,
+          "duration": 2.310833215713501,
+          "response_length": 555,
+          "tokens_generated": 98,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I need to figure out if the given sentence answers the question about what led to the UK subscribing to the Social Policy Agreement. The question is asking for the cause or reason beh...",
+          "response_text": "<think>\nOkay, so I need to figure out if the given sentence answers the question about what led to the UK subscribing to the Social Policy Agreement. The question is asking for the cause or reason behind the UK's subscription.\n\nLooking at the sentence: It mentions that after the Labour Party won the election in 1997, the UK formally signed the Agreement on Social Policy and was included with minor amendments as part of the 1997 Treaty of Amsterdam.\n\nHmm, so the key points here are the 1997 election victory by the Labour Party leading to the signing.",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 42,
+          "prompt": "Does this sentence answer the question? Question: 'When did Warsaw become the center of the Congress...",
+          "success": true,
+          "duration": 2.296168088912964,
+          "response_length": 518,
+          "tokens_generated": 86,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I need to figure out if the given sentence answers the question: \"When did Warsaw become the center of the Congress Poland?\" The sentence provided is about Warsaw being the center unt...",
+          "response_text": "<think>\nOkay, so I need to figure out if the given sentence answers the question: \"When did Warsaw become the center of the Congress Poland?\" The sentence provided is about Warsaw being the center until 1796 and then being annexed by Prussia.\n\nFirst, let me understand what Congress Poland refers to. From what I remember, Congress Poland was a Polish state that existed from 1569 to 1795. It was divided into three parts: Galicia, Courland (which became Lithuania), and the Kingdom of Poland-Lithuania. Warsaw was the",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 43,
+          "prompt": "Does this sentence answer the question? Question: 'What role in economics did the university play a ...",
+          "success": true,
+          "duration": 2.306178092956543,
+          "response_length": 608,
+          "tokens_generated": 101,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I need to figure out if the given sentence answers the question: \"What role in economics did the university play a major part in?\" The provided sentence is: \"In economist, one college...",
+          "response_text": "<think>\nOkay, so I need to figure out if the given sentence answers the question: \"What role in economics did the university play a major part in?\" The provided sentence is: \"In economist, one college have played an important character in shaping idea about the free market and is the namesake of the Chicago school of economics, the school of economic thoughts swayed aside Milton Friedman and other economists.\"\n\nFirst, I'll break down the question. It's asking about the role a university had in economics, specifically mentioning that it played a major part. So they're looking for information on how the",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 44,
+          "prompt": "Does this sentence answer the question? Question: 'Who was the chairman of the House Committee on En...",
+          "success": true,
+          "duration": 2.301513910293579,
+          "response_length": 635,
+          "tokens_generated": 100,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I need to figure out if the given sentence answers the question: 'Who was the chairman of the House Committee on Energy and Commerce?' The sentence provided is about Sherwood Boehlert...",
+          "response_text": "<think>\nOkay, so I need to figure out if the given sentence answers the question: 'Who was the chairman of the House Committee on Energy and Commerce?' The sentence provided is about Sherwood Boehlert being chairman of the House Science Committee and mentions that he talked about a \"misguided and illegitimate investigation\" and arranged for a special investigation through the National Research Council.\n\nFirst, I should break down what's being asked. The question is specifically asking for the name of the chairman of the House Committee on Energy and Commerce. So, I'm looking for information directly related to that committee.\n\n",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 45,
+          "prompt": "Does this sentence answer the question? Question: 'A function problem is an example of what? @7f1gCH...",
+          "success": true,
+          "duration": 2.2561750411987305,
+          "response_length": 683,
+          "tokens_generated": 105,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I need to figure out if the given sentence answers the question posed. The question is asking what a function problem is an example of. The sentence provided mentions notable examples...",
+          "response_text": "<think>\nOkay, so I need to figure out if the given sentence answers the question posed. The question is asking what a function problem is an example of. The sentence provided mentions notable examples like the traveling salesman problem and integer factorization problem.\n\nFirst, I should understand what each part means. A \"function problem\" in computer science refers to a computational problem where the goal is to compute a function's output for given inputs. Examples include problems like sorting or searching algorithms.\n\nThe question is asking which category a function problem falls into. The sentence provided gives examples of specific problems, such as traveling salesman",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 46,
+          "prompt": "Does this sentence answer the question? Question: 'Why did the estimate of how many physicians give ...",
+          "success": true,
+          "duration": 2.2761459350585938,
+          "response_length": 601,
+          "tokens_generated": 98,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I need to figure out if the given sentence answers the question posed. The question is asking why a certain estimate was made about how many physicians give out drugs on their own. Th...",
+          "response_text": "<think>\nOkay, so I need to figure out if the given sentence answers the question posed. The question is asking why a certain estimate was made about how many physicians give out drugs on their own. The provided sentence states that 7 to 10 percent of American physicians' practices reportedly dispense drugs on their own.\n\nFirst, let me break down what each part means. The question is about the reason behind an estimate regarding physicians dispensing drugs independently. So it's asking for why someone would come up with that specific percentage (7-10%).\n\nThe sentence provided gives a statistic: ",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 47,
+          "prompt": "Does this sentence answer the question? Question: 'A function problem is an example of what ?' Sente...",
+          "success": true,
+          "duration": 3.1080009937286377,
+          "response_length": 580,
+          "tokens_generated": 102,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I need to figure out if the given sentence answers the question \"A function problem is an example of what?\" The sentence provided is: \"A function problem remains a computational matte...",
+          "response_text": "<think>\nOkay, so I need to figure out if the given sentence answers the question \"A function problem is an example of what?\" The sentence provided is: \"A function problem remains a computational matter where a single output (of a total function) is expected for every input, but the output is more complex than that of a allegation problem, that is, it isn't just yes or no.\"\n\nFirst, I should understand both the question and the sentence. The question is asking what category or type a function problem falls into. It's not directly asking for an example, but rather what kind of",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 48,
+          "prompt": "Does this sentence answer the question? Question: 'What was the people of the Dutch Republic before ...",
+          "success": true,
+          "duration": 3.1702117919921875,
+          "response_length": 581,
+          "tokens_generated": 104,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I need to figure out if the given sentence answers the question. The question is asking about what the people of the Dutch Republic were before this emigration happened. The sentence ...",
+          "response_text": "<think>\nOkay, so I need to figure out if the given sentence answers the question. The question is asking about what the people of the Dutch Republic were before this emigration happened. The sentence provided says that there was a huge influx because the entire population was around a certain number.\n\nHmm, wait, actually looking at it again: \"This was a huge influx as the entire population of the Dutch Republic amounted to ca.\" It seems like part of the sentence is missing after \"ca.\" Maybe it was cut off. So without knowing what comes next, I can't be sure if it answers the",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 49,
+          "prompt": "Does this sentence answer the question? Question: 'In what sort of places are dry cooling towers use...",
+          "success": true,
+          "duration": 3.227619171142578,
+          "response_length": 623,
+          "tokens_generated": 105,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I need to figure out if the given sentence answers the question. The question is asking about the types of places where dry cooling towers are used. The provided sentence says that we...",
+          "response_text": "<think>\nOkay, so I need to figure out if the given sentence answers the question. The question is asking about the types of places where dry cooling towers are used. The provided sentence says that wet cooling towers are used in deep places.\n\nFirst, let me break down what each part means. The question specifically mentions \"dry cooling towers,\" which refers to a type of cooling system typically used in power plants and large facilities for removing heat through evaporation. On the other hand, the sentence talks about \"wet cooling towers.\" I know that wet cooling towers work by circulating water through fans and heat",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 50,
+          "prompt": "Does sentence 2 follow from sentence 1? Sentence 1: 'In Nigeria , by far the most populous country i...",
+          "success": true,
+          "duration": 3.35807728767395,
+          "response_length": 497,
+          "tokens_generated": 86,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I need to figure out if sentence 2 follows from sentence 1. Let me read both sentences again carefully.\n\nSentence 1 says, \"In Nigeria, by far the most populous country in sub-Saharan ...",
+          "response_text": "<think>\nOkay, so I need to figure out if sentence 2 follows from sentence 1. Let me read both sentences again carefully.\n\nSentence 1 says, \"In Nigeria, by far the most populous country in sub-Saharan Africa, over 2.7 million live are infected with HIV.\" Wait, that seems a bit off. The phrase \"over 2.7 million live are infected\" doesn't sound quite right. Maybe it's supposed to say \"over 2.7 million people are infected,\" or perhaps the number is different? But I'll assume it's correct as given",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 51,
+          "prompt": "Does sentence 2 follow from sentence 1? Sentence 1: 'Security entitlements were on progressive alert...",
+          "success": true,
+          "duration": 3.4608492851257324,
+          "response_length": 519,
+          "tokens_generated": 85,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I need to figure out if sentence 2 follows from sentence 1. Let me start by reading both sentences carefully.\n\nSentence 1 says, \"Security entitlements were on progressive alert after ...",
+          "response_text": "<think>\nOkay, so I need to figure out if sentence 2 follows from sentence 1. Let me start by reading both sentences carefully.\n\nSentence 1 says, \"Security entitlements were on progressive alert after an election EW in which more than 1,000 people, including seven election candidates, win remained beheaded.\" Hmm, I'm not entirely sure what \"EW\" stands for here. Maybe it's a typo or abbreviation? It could be something like \"election watch\" or \"eventual winner,\" but without context, it's hard to tell. The part about ",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 52,
+          "prompt": "Does sentence 2 follow from sentence 1? Sentence 1: 'Take consumer products giant Procter and Gamble...",
+          "success": true,
+          "duration": 3.553557872772217,
+          "response_length": 518,
+          "tokens_generated": 89,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I need to figure out if sentence 2 follows from sentence 1. Let me read both sentences again carefully.\n\nSentence 1 says that Procter and Gamble is a consumer products giant with an R...",
+          "response_text": "<think>\nOkay, so I need to figure out if sentence 2 follows from sentence 1. Let me read both sentences again carefully.\n\nSentence 1 says that Procter and Gamble is a consumer products giant with an R&D budget of $1.8 billion, and despite this, they have 500 active partnerships each year, many with small companies.\n\nSentence 2 states that Procter and Gamble passes $1.8 billion for R&D.\n\nHmm, so the first sentence mentions both the R&D budget and the number of partnerships. The second sentence only talks about the",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 53,
+          "prompt": "Does sentence 2 follow from sentence 1? Sentence 1: 'The San Diego Padres ace , Jake Peavy , equalle...",
+          "success": true,
+          "duration": 3.675300121307373,
+          "response_length": 482,
+          "tokens_generated": 85,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I need to figure out if sentence 2 follows from sentence 1. Let me read both sentences again carefully.\n\nSentence 1 says: \"The San Diego Padres ace, Jake Peavy, equalled hurt in an 8-...",
+          "response_text": "<think>\nOkay, so I need to figure out if sentence 2 follows from sentence 1. Let me read both sentences again carefully.\n\nSentence 1 says: \"The San Diego Padres ace, Jake Peavy, equalled hurt in an 8-5 loss to the St. Louis Cardinals.\" Hmm, wait a minute. The word \"equalled\" here doesn't sound right. I think it's supposed to be \"equaled,\" which means to reach or match something, like scoring points. Maybe that was a typo.\n\nSo, correcting that, sentence 1 would probably say Jake",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 54,
+          "prompt": "Does sentence 2 follow from sentence 1? Sentence 1: 'Security forces were on high alert after an ele...",
+          "success": true,
+          "duration": 3.7208468914031982,
+          "response_length": 582,
+          "tokens_generated": 92,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I need to figure out if sentence 2 follows from sentence 1. Let me read both sentences again carefully.\n\nSentence 1 says that security forces were on high alert because during an elec...",
+          "response_text": "<think>\nOkay, so I need to figure out if sentence 2 follows from sentence 1. Let me read both sentences again carefully.\n\nSentence 1 says that security forces were on high alert because during an election campaign, more than 1,000 people, including seven candidates, were killed. That's a pretty specific and detailed statement\u2014numbers are given, and it mentions candidates being victims too.\n\nSentence 2 is shorter: \"Security forces were on high alert after a campaign tarnished by violence.\" It doesn't mention the numbers or the candidates specifically; it just says the campaign",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 55,
+          "prompt": "Does sentence 2 follow from sentence 1? Sentence 1: ' Security forces w ere on highest alert afte r ...",
+          "success": true,
+          "duration": 3.866914749145508,
+          "response_length": 609,
+          "tokens_generated": 100,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I need to figure out if sentence 2 follows from sentence 1. Let me start by reading both sentences carefully.\n\nSentence 1 says that security forces were on the highest alert after an ...",
+          "response_text": "<think>\nOkay, so I need to figure out if sentence 2 follows from sentence 1. Let me start by reading both sentences carefully.\n\nSentence 1 says that security forces were on the highest alert after an election campaign where more than 1,000 people, including seven candidates, were killed. So this gives specific numbers and mentions that it was a campaign against election candidates.\n\nSentence 2 states that security forces were on high alert after a campaign marred by violence. This is more general, just saying the campaign had violence without specifying who was targeted or how many people were affected",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 56,
+          "prompt": "Does sentence 2 follow from sentence 1? Sentence 1: 'Deceased U.S. soldiers and their effects were e...",
+          "success": true,
+          "duration": 3.781179904937744,
+          "response_length": 503,
+          "tokens_generated": 84,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I need to figure out if sentence 2 follows from sentence 1. Let me read both sentences again carefully.\n\nSentence 1 says: \"Deceased U.S. soldiers and their effects were evacuated to J...",
+          "response_text": "<think>\nOkay, so I need to figure out if sentence 2 follows from sentence 1. Let me read both sentences again carefully.\n\nSentence 1 says: \"Deceased U.S. soldiers and their effects were evacuated to Japan and then shipped home in refrigerated containers for interment in the U.S.\"\n\nSentence 2 is: \"The U.That. soldiers evacuated U.S. items.\"\n\nWait, there's a typo in sentence 2 with \"U.That.\" Maybe it should be \"The United That.\" or something else? Hmm, maybe that's a mistake because I don't recognize",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 57,
+          "prompt": "Does sentence 2 follow from sentence 1? Sentence 1: 'Cairo is now home to some 15 million people - a...",
+          "success": true,
+          "duration": 4.155576229095459,
+          "response_length": 570,
+          "tokens_generated": 92,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I need to figure out if sentence 2 follows from sentence 1. Let me start by reading both sentences carefully.\n\nSentence 1 talks about Cairo having a population of around 15 million pe...",
+          "response_text": "<think>\nOkay, so I need to figure out if sentence 2 follows from sentence 1. Let me start by reading both sentences carefully.\n\nSentence 1 talks about Cairo having a population of around 15 million people. It mentions that this population generates approximately 10,000 tonnes of rubbish each day, which puts a lot of strain on public services. The government has tried to encourage private investment in waste management but estimates that 4,000 tonnes are left behind daily, especially in the poorest neighborhoods. However, some areas like Shubra are fighting back by",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 58,
+          "prompt": "Does sentence 2 follow from sentence 1? Sentence 1: '@Rjbj9I Mice given a substance found in red win...",
+          "success": true,
+          "duration": 3.900575876235962,
+          "response_length": 586,
+          "tokens_generated": 102,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I need to figure out if sentence 2 follows from sentence 1. Let me read both sentences again carefully.\n\nSentence 1 says that mice given a substance found in red wine lived longer des...",
+          "response_text": "<think>\nOkay, so I need to figure out if sentence 2 follows from sentence 1. Let me read both sentences again carefully.\n\nSentence 1 says that mice given a substance found in red wine lived longer despite a fatty diet. Sentence 2 states that mice fed with red wine lived longer despite a fatty diet.\n\nHmm, the key here is understanding what each part of the sentence means. In sentence 1, \"a substance found in red wine\" probably refers to something specific extracted from red wine, like antioxidants or some compound. The study shows that when mice are given this particular substance",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        },
+        {
+          "model": "deepseek-r1:7b",
+          "prompt_id": 59,
+          "prompt": "Does sentence 2 follow from sentence 1? Sentence 1: 'Cairo is now home to some 15 million people - a...",
+          "success": true,
+          "duration": 4.252758026123047,
+          "response_length": 540,
+          "tokens_generated": 94,
+          "contains_think_tags": true,
+          "response_preview": "<think>\nOkay, so I need to figure out if sentence 2 follows from sentence 1. Let me read both sentences carefully.\n\nSentence 1 says that Cairo has a population of about 15 million people and produces ...",
+          "response_text": "<think>\nOkay, so I need to figure out if sentence 2 follows from sentence 1. Let me read both sentences carefully.\n\nSentence 1 says that Cairo has a population of about 15 million people and produces roughly 10,000 tonnes of rubbish each day. It also mentions that this waste puts a big strain on public services. The government tried to encourage private investment in waste management but still leaves about 4,000 tonnes unelected every day, which is a problem because it's left in the heat and causes issues. It points out that the under",
+          "mitigations": {
+            "num_predict": 120,
+            "think_efficient": false
+          }
+        }
+      ],
+      "summaries": [
+        {
+          "duration_seconds": 2.207515,
+          "samples_collected": 22,
+          "cpu_avg": 6.7318181818181815,
+          "cpu_peak": 22.8,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 61722.338068181816,
+          "memory_peak_mb": 61899.8125,
+          "memory_avg_percent": 50.81818181818182,
+          "memory_peak_percent": 51.0,
+          "ollama_memory_avg_mb": 147.796875,
+          "ollama_memory_peak_mb": 147.796875,
+          "ollama_memory_delta_mb": 0.0
+        },
+        {
+          "duration_seconds": 2.214012,
+          "samples_collected": 22,
+          "cpu_avg": 6.263636363636365,
+          "cpu_peak": 20.0,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 61775.931818181816,
+          "memory_peak_mb": 61850.765625,
+          "memory_avg_percent": 50.84999999999998,
+          "memory_peak_percent": 50.9,
+          "ollama_memory_avg_mb": 147.828125,
+          "ollama_memory_peak_mb": 147.828125,
+          "ollama_memory_delta_mb": 0.0
+        },
+        {
+          "duration_seconds": 2.24593,
+          "samples_collected": 22,
+          "cpu_avg": 8.445454545454547,
+          "cpu_peak": 35.0,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 61471.122869318184,
+          "memory_peak_mb": 61846.28125,
+          "memory_avg_percent": 50.627272727272725,
+          "memory_peak_percent": 50.9,
+          "ollama_cpu_avg": 0.2,
+          "ollama_cpu_peak": 0.2,
+          "ollama_memory_avg_mb": 147.83735795454547,
+          "ollama_memory_peak_mb": 147.84375,
+          "ollama_memory_delta_mb": 0.015625
+        },
+        {
+          "duration_seconds": 2.207513,
+          "samples_collected": 22,
+          "cpu_avg": 11.236363636363636,
+          "cpu_peak": 27.3,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 61343.76278409091,
+          "memory_peak_mb": 61737.90625,
+          "memory_avg_percent": 50.58181818181817,
+          "memory_peak_percent": 50.9,
+          "ollama_memory_avg_mb": 147.83735795454547,
+          "ollama_memory_peak_mb": 147.84375,
+          "ollama_memory_delta_mb": 0.046875
+        },
+        {
+          "duration_seconds": 2.108599,
+          "samples_collected": 21,
+          "cpu_avg": 14.433333333333332,
+          "cpu_peak": 25.2,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 61672.32738095238,
+          "memory_peak_mb": 61761.59375,
+          "memory_avg_percent": 50.8,
+          "memory_peak_percent": 50.9,
+          "ollama_memory_avg_mb": 147.796875,
+          "ollama_memory_peak_mb": 147.796875,
+          "ollama_memory_delta_mb": 0.0
+        },
+        {
+          "duration_seconds": 2.228877,
+          "samples_collected": 22,
+          "cpu_avg": 9.600000000000001,
+          "cpu_peak": 31.3,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 61390.443892045456,
+          "memory_peak_mb": 61743.875,
+          "memory_avg_percent": 50.627272727272725,
+          "memory_peak_percent": 50.9,
+          "ollama_cpu_avg": 0.7,
+          "ollama_cpu_peak": 0.7,
+          "ollama_memory_avg_mb": 147.8125,
+          "ollama_memory_peak_mb": 147.8125,
+          "ollama_memory_delta_mb": 0.0
+        },
+        {
+          "duration_seconds": 2.229019,
+          "samples_collected": 22,
+          "cpu_avg": 12.504545454545456,
+          "cpu_peak": 20.5,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 61397.365767045456,
+          "memory_peak_mb": 61764.03125,
+          "memory_avg_percent": 50.627272727272725,
+          "memory_peak_percent": 50.9,
+          "ollama_memory_avg_mb": 147.8125,
+          "ollama_memory_peak_mb": 147.8125,
+          "ollama_memory_delta_mb": 0.0
+        },
+        {
+          "duration_seconds": 2.229051,
+          "samples_collected": 22,
+          "cpu_avg": 13.440909090909088,
+          "cpu_peak": 23.0,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 61737.912642045456,
+          "memory_peak_mb": 61978.046875,
+          "memory_avg_percent": 50.84545454545453,
+          "memory_peak_percent": 51.0,
+          "ollama_memory_avg_mb": 147.8125,
+          "ollama_memory_peak_mb": 147.8125,
+          "ollama_memory_delta_mb": 0.0
+        },
+        {
+          "duration_seconds": 2.102407,
+          "samples_collected": 21,
+          "cpu_avg": 10.37142857142857,
+          "cpu_peak": 23.7,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 61723.28794642857,
+          "memory_peak_mb": 61956.28125,
+          "memory_avg_percent": 50.84761904761905,
+          "memory_peak_percent": 51.0,
+          "ollama_memory_avg_mb": 147.8125,
+          "ollama_memory_peak_mb": 147.8125,
+          "ollama_memory_delta_mb": 0.0
+        },
+        {
+          "duration_seconds": 2.193993,
+          "samples_collected": 22,
+          "cpu_avg": 15.049999999999999,
+          "cpu_peak": 41.1,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 62012.74502840909,
+          "memory_peak_mb": 62186.25,
+          "memory_avg_percent": 51.06363636363639,
+          "memory_peak_percent": 51.2,
+          "ollama_cpu_avg": 0.2,
+          "ollama_cpu_peak": 0.3,
+          "ollama_memory_avg_mb": 147.86860795454547,
+          "ollama_memory_peak_mb": 147.875,
+          "ollama_memory_delta_mb": 0.046875
+        },
+        {
+          "duration_seconds": 2.294082,
+          "samples_collected": 23,
+          "cpu_avg": 14.34782608695652,
+          "cpu_peak": 19.2,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 61947.430706521736,
+          "memory_peak_mb": 62171.484375,
+          "memory_avg_percent": 51.0130434782609,
+          "memory_peak_percent": 51.2,
+          "ollama_cpu_avg": 0.1,
+          "ollama_cpu_peak": 0.1,
+          "ollama_memory_avg_mb": 147.8600543478261,
+          "ollama_memory_peak_mb": 147.875,
+          "ollama_memory_delta_mb": 0.03125
+        },
+        {
+          "duration_seconds": 2.218931,
+          "samples_collected": 22,
+          "cpu_avg": 10.459090909090909,
+          "cpu_peak": 21.1,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 62011.46803977273,
+          "memory_peak_mb": 62100.546875,
+          "memory_avg_percent": 51.040909090909096,
+          "memory_peak_percent": 51.1,
+          "ollama_memory_avg_mb": 147.84375,
+          "ollama_memory_peak_mb": 147.84375,
+          "ollama_memory_delta_mb": 0.0
+        },
+        {
+          "duration_seconds": 2.224349,
+          "samples_collected": 22,
+          "cpu_avg": 8.145454545454546,
+          "cpu_peak": 19.5,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 61751.66335227273,
+          "memory_peak_mb": 62096.09375,
+          "memory_avg_percent": 50.83636363636364,
+          "memory_peak_percent": 51.1,
+          "ollama_memory_avg_mb": 147.84375,
+          "ollama_memory_peak_mb": 147.84375,
+          "ollama_memory_delta_mb": 0.0
+        },
+        {
+          "duration_seconds": 2.23397,
+          "samples_collected": 22,
+          "cpu_avg": 7.363636363636363,
+          "cpu_peak": 20.9,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 62006.55752840909,
+          "memory_peak_mb": 62120.765625,
+          "memory_avg_percent": 51.02727272727273,
+          "memory_peak_percent": 51.1,
+          "ollama_memory_avg_mb": 147.84375,
+          "ollama_memory_peak_mb": 147.84375,
+          "ollama_memory_delta_mb": 0.0
+        },
+        {
+          "duration_seconds": 2.218818,
+          "samples_collected": 22,
+          "cpu_avg": 9.386363636363638,
+          "cpu_peak": 23.3,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 61796.15340909091,
+          "memory_peak_mb": 62092.25,
+          "memory_avg_percent": 50.87272727272728,
+          "memory_peak_percent": 51.1,
+          "ollama_memory_avg_mb": 147.859375,
+          "ollama_memory_peak_mb": 147.859375,
+          "ollama_memory_delta_mb": 0.0
+        },
+        {
+          "duration_seconds": 2.213907,
+          "samples_collected": 22,
+          "cpu_avg": 10.045454545454545,
+          "cpu_peak": 19.1,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 61807.91690340909,
+          "memory_peak_mb": 62104.203125,
+          "memory_avg_percent": 50.87272727272728,
+          "memory_peak_percent": 51.1,
+          "ollama_memory_avg_mb": 147.859375,
+          "ollama_memory_peak_mb": 147.859375,
+          "ollama_memory_delta_mb": 0.0
+        },
+        {
+          "duration_seconds": 2.213298,
+          "samples_collected": 22,
+          "cpu_avg": 10.477272727272727,
+          "cpu_peak": 21.6,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 61790.619318181816,
+          "memory_peak_mb": 62134.015625,
+          "memory_avg_percent": 50.9318181818182,
+          "memory_peak_percent": 51.2,
+          "ollama_memory_avg_mb": 147.859375,
+          "ollama_memory_peak_mb": 147.859375,
+          "ollama_memory_delta_mb": 0.0
+        },
+        {
+          "duration_seconds": 2.215264,
+          "samples_collected": 22,
+          "cpu_avg": 9.85909090909091,
+          "cpu_peak": 22.6,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 62057.64488636364,
+          "memory_peak_mb": 62132.046875,
+          "memory_avg_percent": 51.10909090909093,
+          "memory_peak_percent": 51.2,
+          "ollama_memory_avg_mb": 147.859375,
+          "ollama_memory_peak_mb": 147.859375,
+          "ollama_memory_delta_mb": 0.0
+        },
+        {
+          "duration_seconds": 2.212234,
+          "samples_collected": 22,
+          "cpu_avg": 5.877272727272728,
+          "cpu_peak": 21.5,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 61461.514204545456,
+          "memory_peak_mb": 62113.921875,
+          "memory_avg_percent": 50.645454545454555,
+          "memory_peak_percent": 51.1,
+          "ollama_memory_avg_mb": 147.859375,
+          "ollama_memory_peak_mb": 147.859375,
+          "ollama_memory_delta_mb": 0.0
+        },
+        {
+          "duration_seconds": 2.213474,
+          "samples_collected": 22,
+          "cpu_avg": 12.131818181818183,
+          "cpu_peak": 21.3,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 61893.716619318184,
+          "memory_peak_mb": 62113.0625,
+          "memory_avg_percent": 50.95454545454547,
+          "memory_peak_percent": 51.1,
+          "ollama_cpu_avg": 0.1,
+          "ollama_cpu_peak": 0.1,
+          "ollama_memory_avg_mb": 147.875,
+          "ollama_memory_peak_mb": 147.875,
+          "ollama_memory_delta_mb": 0.0
+        },
+        {
+          "duration_seconds": 2.316892,
+          "samples_collected": 23,
+          "cpu_avg": 7.804347826086956,
+          "cpu_peak": 17.9,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 61806.66576086957,
+          "memory_peak_mb": 62087.671875,
+          "memory_avg_percent": 50.90434782608696,
+          "memory_peak_percent": 51.1,
+          "ollama_memory_avg_mb": 147.875,
+          "ollama_memory_peak_mb": 147.875,
+          "ollama_memory_delta_mb": 0.0
+        },
+        {
+          "duration_seconds": 2.33625,
+          "samples_collected": 23,
+          "cpu_avg": 7.48695652173913,
+          "cpu_peak": 18.0,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 61991.70516304348,
+          "memory_peak_mb": 62065.109375,
+          "memory_avg_percent": 51.05652173913043,
+          "memory_peak_percent": 51.1,
+          "ollama_memory_avg_mb": 147.875,
+          "ollama_memory_peak_mb": 147.875,
+          "ollama_memory_delta_mb": 0.0
+        },
+        {
+          "duration_seconds": 2.233635,
+          "samples_collected": 22,
+          "cpu_avg": 7.2727272727272725,
+          "cpu_peak": 18.2,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 61939.69815340909,
+          "memory_peak_mb": 62052.984375,
+          "memory_avg_percent": 51.027272727272745,
+          "memory_peak_percent": 51.1,
+          "ollama_memory_avg_mb": 147.875,
+          "ollama_memory_peak_mb": 147.875,
+          "ollama_memory_delta_mb": 0.0
+        },
+        {
+          "duration_seconds": 2.218966,
+          "samples_collected": 22,
+          "cpu_avg": 8.013636363636364,
+          "cpu_peak": 20.2,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 61611.736505681816,
+          "memory_peak_mb": 62066.328125,
+          "memory_avg_percent": 50.75454545454546,
+          "memory_peak_percent": 51.1,
+          "ollama_memory_avg_mb": 147.890625,
+          "ollama_memory_peak_mb": 147.890625,
+          "ollama_memory_delta_mb": 0.0
+        },
+        {
+          "duration_seconds": 2.224293,
+          "samples_collected": 22,
+          "cpu_avg": 8.859090909090908,
+          "cpu_peak": 19.9,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 61761.92613636364,
+          "memory_peak_mb": 62051.171875,
+          "memory_avg_percent": 50.87272727272728,
+          "memory_peak_percent": 51.1,
+          "ollama_memory_avg_mb": 147.890625,
+          "ollama_memory_peak_mb": 147.890625,
+          "ollama_memory_delta_mb": 0.0
+        },
+        {
+          "duration_seconds": 2.317617,
+          "samples_collected": 23,
+          "cpu_avg": 9.160869565217391,
+          "cpu_peak": 17.9,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 61922.49796195652,
+          "memory_peak_mb": 62046.125,
+          "memory_avg_percent": 51.02173913043478,
+          "memory_peak_percent": 51.1,
+          "ollama_memory_avg_mb": 147.890625,
+          "ollama_memory_peak_mb": 147.890625,
+          "ollama_memory_delta_mb": 0.0
+        },
+        {
+          "duration_seconds": 2.215961,
+          "samples_collected": 22,
+          "cpu_avg": 10.872727272727277,
+          "cpu_peak": 18.5,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 61930.41477272727,
+          "memory_peak_mb": 62048.5625,
+          "memory_avg_percent": 51.00909090909092,
+          "memory_peak_percent": 51.1,
+          "ollama_memory_avg_mb": 147.890625,
+          "ollama_memory_peak_mb": 147.890625,
+          "ollama_memory_delta_mb": 0.0
+        },
+        {
+          "duration_seconds": 2.224195,
+          "samples_collected": 22,
+          "cpu_avg": 8.11818181818182,
+          "cpu_peak": 17.2,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 61921.154119318184,
+          "memory_peak_mb": 62031.859375,
+          "memory_avg_percent": 51.00909090909092,
+          "memory_peak_percent": 51.1,
+          "ollama_memory_avg_mb": 147.890625,
+          "ollama_memory_peak_mb": 147.890625,
+          "ollama_memory_delta_mb": 0.0
+        },
+        {
+          "duration_seconds": 2.233233,
+          "samples_collected": 22,
+          "cpu_avg": 5.736363636363635,
+          "cpu_peak": 17.2,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 61667.845170454544,
+          "memory_peak_mb": 62061.171875,
+          "memory_avg_percent": 50.82272727272729,
+          "memory_peak_percent": 51.1,
+          "ollama_memory_avg_mb": 147.90625,
+          "ollama_memory_peak_mb": 147.90625,
+          "ollama_memory_delta_mb": 0.0
+        },
+        {
+          "duration_seconds": 2.326532,
+          "samples_collected": 23,
+          "cpu_avg": 4.339130434782608,
+          "cpu_peak": 17.2,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 61802.74456521739,
+          "memory_peak_mb": 62090.890625,
+          "memory_avg_percent": 50.869565217391326,
+          "memory_peak_percent": 51.1,
+          "ollama_memory_avg_mb": 147.90625,
+          "ollama_memory_peak_mb": 147.90625,
+          "ollama_memory_delta_mb": 0.0
+        },
+        {
+          "duration_seconds": 2.326622,
+          "samples_collected": 23,
+          "cpu_avg": 4.130434782608695,
+          "cpu_peak": 24.7,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 62001.89266304348,
+          "memory_peak_mb": 62094.078125,
+          "memory_avg_percent": 51.039130434782614,
+          "memory_peak_percent": 51.1,
+          "ollama_memory_avg_mb": 147.90625,
+          "ollama_memory_peak_mb": 147.90625,
+          "ollama_memory_delta_mb": 0.0
+        },
+        {
+          "duration_seconds": 2.330373,
+          "samples_collected": 23,
+          "cpu_avg": 9.465217391304348,
+          "cpu_peak": 21.6,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 61678.44293478261,
+          "memory_peak_mb": 62094.65625,
+          "memory_avg_percent": 50.80869565217393,
+          "memory_peak_percent": 51.1,
+          "ollama_memory_avg_mb": 147.90625,
+          "ollama_memory_peak_mb": 147.90625,
+          "ollama_memory_delta_mb": 0.0
+        },
+        {
+          "duration_seconds": 2.342589,
+          "samples_collected": 23,
+          "cpu_avg": 7.486956521739131,
+          "cpu_peak": 19.0,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 61686.63043478261,
+          "memory_peak_mb": 62082.09375,
+          "memory_avg_percent": 50.81739130434782,
+          "memory_peak_percent": 51.1,
+          "ollama_memory_avg_mb": 147.90625,
+          "ollama_memory_peak_mb": 147.90625,
+          "ollama_memory_delta_mb": 0.0
+        },
+        {
+          "duration_seconds": 2.315785,
+          "samples_collected": 23,
+          "cpu_avg": 7.852173913043478,
+          "cpu_peak": 17.3,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 61973.274456521736,
+          "memory_peak_mb": 62102.828125,
+          "memory_avg_percent": 51.02173913043478,
+          "memory_peak_percent": 51.1,
+          "ollama_cpu_avg": 0.1,
+          "ollama_cpu_peak": 0.1,
+          "ollama_memory_avg_mb": 147.921875,
+          "ollama_memory_peak_mb": 147.921875,
+          "ollama_memory_delta_mb": 0.0
+        },
+        {
+          "duration_seconds": 2.432497,
+          "samples_collected": 24,
+          "cpu_avg": 8.770833333333334,
+          "cpu_peak": 18.3,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 61667.995442708336,
+          "memory_peak_mb": 62103.78125,
+          "memory_avg_percent": 50.775000000000006,
+          "memory_peak_percent": 51.1,
+          "ollama_memory_avg_mb": 147.921875,
+          "ollama_memory_peak_mb": 147.921875,
+          "ollama_memory_delta_mb": 0.0
+        },
+        {
+          "duration_seconds": 2.239528,
+          "samples_collected": 22,
+          "cpu_avg": 7.213636363636362,
+          "cpu_peak": 17.9,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 62042.794744318184,
+          "memory_peak_mb": 62097.640625,
+          "memory_avg_percent": 51.05000000000002,
+          "memory_peak_percent": 51.1,
+          "ollama_memory_avg_mb": 147.921875,
+          "ollama_memory_peak_mb": 147.921875,
+          "ollama_memory_delta_mb": 0.0
+        },
+        {
+          "duration_seconds": 2.414514,
+          "samples_collected": 24,
+          "cpu_avg": 6.908333333333334,
+          "cpu_peak": 17.2,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 61482.763671875,
+          "memory_peak_mb": 62090.8125,
+          "memory_avg_percent": 50.62500000000001,
+          "memory_peak_percent": 51.1,
+          "ollama_memory_avg_mb": 147.921875,
+          "ollama_memory_peak_mb": 147.921875,
+          "ollama_memory_delta_mb": 0.0
+        },
+        {
+          "duration_seconds": 2.326799,
+          "samples_collected": 23,
+          "cpu_avg": 13.16521739130435,
+          "cpu_peak": 23.6,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 61791.571331521736,
+          "memory_peak_mb": 62197.625,
+          "memory_avg_percent": 50.8913043478261,
+          "memory_peak_percent": 51.2,
+          "ollama_memory_avg_mb": 147.9375,
+          "ollama_memory_peak_mb": 147.9375,
+          "ollama_memory_delta_mb": 0.0
+        },
+        {
+          "duration_seconds": 2.215658,
+          "samples_collected": 22,
+          "cpu_avg": 10.227272727272727,
+          "cpu_peak": 23.9,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 62111.74928977273,
+          "memory_peak_mb": 62225.53125,
+          "memory_avg_percent": 51.118181818181824,
+          "memory_peak_percent": 51.2,
+          "ollama_memory_avg_mb": 147.9375,
+          "ollama_memory_peak_mb": 147.9375,
+          "ollama_memory_delta_mb": 0.0
+        },
+        {
+          "duration_seconds": 2.330251,
+          "samples_collected": 23,
+          "cpu_avg": 8.656521739130435,
+          "cpu_peak": 19.0,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 61554.547554347824,
+          "memory_peak_mb": 62243.625,
+          "memory_avg_percent": 50.70869565217393,
+          "memory_peak_percent": 51.2,
+          "ollama_memory_avg_mb": 147.9375,
+          "ollama_memory_peak_mb": 147.9375,
+          "ollama_memory_delta_mb": 0.0
+        },
+        {
+          "duration_seconds": 2.224821,
+          "samples_collected": 22,
+          "cpu_avg": 8.013636363636364,
+          "cpu_peak": 17.8,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 62039.681818181816,
+          "memory_peak_mb": 62168.1875,
+          "memory_avg_percent": 51.100000000000016,
+          "memory_peak_percent": 51.2,
+          "ollama_memory_avg_mb": 147.9375,
+          "ollama_memory_peak_mb": 147.9375,
+          "ollama_memory_delta_mb": 0.0
+        },
+        {
+          "duration_seconds": 2.323937,
+          "samples_collected": 23,
+          "cpu_avg": 5.504347826086957,
+          "cpu_peak": 18.8,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 61695.98641304348,
+          "memory_peak_mb": 62062.34375,
+          "memory_avg_percent": 50.834782608695654,
+          "memory_peak_percent": 51.1,
+          "ollama_memory_avg_mb": 147.9375,
+          "ollama_memory_peak_mb": 147.9375,
+          "ollama_memory_delta_mb": 0.0
+        },
+        {
+          "duration_seconds": 2.30392,
+          "samples_collected": 23,
+          "cpu_avg": 8.347826086956522,
+          "cpu_peak": 17.1,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 62038.376358695656,
+          "memory_peak_mb": 62164.546875,
+          "memory_avg_percent": 51.10434782608696,
+          "memory_peak_percent": 51.2,
+          "ollama_memory_avg_mb": 147.953125,
+          "ollama_memory_peak_mb": 147.953125,
+          "ollama_memory_delta_mb": 0.0
+        },
+        {
+          "duration_seconds": 2.315,
+          "samples_collected": 23,
+          "cpu_avg": 7.613043478260872,
+          "cpu_peak": 19.8,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 62090.879755434784,
+          "memory_peak_mb": 62210.8125,
+          "memory_avg_percent": 51.11739130434783,
+          "memory_peak_percent": 51.2,
+          "ollama_memory_avg_mb": 147.953125,
+          "ollama_memory_peak_mb": 147.953125,
+          "ollama_memory_delta_mb": 0.0
+        },
+        {
+          "duration_seconds": 2.342489,
+          "samples_collected": 23,
+          "cpu_avg": 7.582608695652173,
+          "cpu_peak": 18.3,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 62141.36548913043,
+          "memory_peak_mb": 62241.859375,
+          "memory_avg_percent": 51.13913043478263,
+          "memory_peak_percent": 51.2,
+          "ollama_cpu_avg": 0.2,
+          "ollama_cpu_peak": 0.2,
+          "ollama_memory_avg_mb": 147.95923913043478,
+          "ollama_memory_peak_mb": 147.96875,
+          "ollama_memory_delta_mb": 0.015625
+        },
+        {
+          "duration_seconds": 2.232378,
+          "samples_collected": 22,
+          "cpu_avg": 9.618181818181817,
+          "cpu_peak": 17.0,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 62055.85582386364,
+          "memory_peak_mb": 62181.484375,
+          "memory_avg_percent": 51.109090909090924,
+          "memory_peak_percent": 51.2,
+          "ollama_memory_avg_mb": 147.96875,
+          "ollama_memory_peak_mb": 147.96875,
+          "ollama_memory_delta_mb": 0.0
+        },
+        {
+          "duration_seconds": 2.22771,
+          "samples_collected": 22,
+          "cpu_avg": 7.136363636363637,
+          "cpu_peak": 18.3,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 61673.31605113636,
+          "memory_peak_mb": 62180.234375,
+          "memory_avg_percent": 50.81363636363637,
+          "memory_peak_percent": 51.2,
+          "ollama_cpu_avg": 0.7,
+          "ollama_cpu_peak": 0.7,
+          "ollama_memory_avg_mb": 147.96875,
+          "ollama_memory_peak_mb": 147.96875,
+          "ollama_memory_delta_mb": 0.0
+        },
+        {
+          "duration_seconds": 3.143385,
+          "samples_collected": 31,
+          "cpu_avg": 5.4709677419354845,
+          "cpu_peak": 18.2,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 61803.1683467742,
+          "memory_peak_mb": 62171.46875,
+          "memory_avg_percent": 50.922580645161275,
+          "memory_peak_percent": 51.2,
+          "ollama_memory_avg_mb": 147.953125,
+          "ollama_memory_peak_mb": 147.953125,
+          "ollama_memory_delta_mb": 0.0
+        },
+        {
+          "duration_seconds": 3.151375,
+          "samples_collected": 31,
+          "cpu_avg": 8.703225806451613,
+          "cpu_peak": 21.3,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 62041.214213709674,
+          "memory_peak_mb": 62163.28125,
+          "memory_avg_percent": 51.10322580645159,
+          "memory_peak_percent": 51.2,
+          "ollama_memory_avg_mb": 147.953125,
+          "ollama_memory_peak_mb": 147.953125,
+          "ollama_memory_delta_mb": 0.0
+        },
+        {
+          "duration_seconds": 3.267848,
+          "samples_collected": 32,
+          "cpu_avg": 9.893749999999997,
+          "cpu_peak": 24.9,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 62015.98681640625,
+          "memory_peak_mb": 62290.75,
+          "memory_avg_percent": 51.06875,
+          "memory_peak_percent": 51.3,
+          "ollama_cpu_avg": 0.3,
+          "ollama_cpu_peak": 0.3,
+          "ollama_memory_avg_mb": 147.96875,
+          "ollama_memory_peak_mb": 147.96875,
+          "ollama_memory_delta_mb": 0.0
+        },
+        {
+          "duration_seconds": 3.388439,
+          "samples_collected": 33,
+          "cpu_avg": 9.336363636363638,
+          "cpu_peak": 19.3,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 62076.13115530303,
+          "memory_peak_mb": 62278.03125,
+          "memory_avg_percent": 51.13939393939394,
+          "memory_peak_percent": 51.3,
+          "ollama_memory_avg_mb": 147.96875,
+          "ollama_memory_peak_mb": 147.96875,
+          "ollama_memory_delta_mb": 0.0
+        },
+        {
+          "duration_seconds": 3.471163,
+          "samples_collected": 34,
+          "cpu_avg": 8.570588235294117,
+          "cpu_peak": 18.7,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 61925.826286764706,
+          "memory_peak_mb": 62282.03125,
+          "memory_avg_percent": 51.01176470588236,
+          "memory_peak_percent": 51.3,
+          "ollama_memory_avg_mb": 147.96875,
+          "ollama_memory_peak_mb": 147.96875,
+          "ollama_memory_delta_mb": 0.0
+        },
+        {
+          "duration_seconds": 3.56909,
+          "samples_collected": 35,
+          "cpu_avg": 7.731428571428572,
+          "cpu_peak": 18.9,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 61852.578125,
+          "memory_peak_mb": 62341.25,
+          "memory_avg_percent": 50.94285714285715,
+          "memory_peak_percent": 51.3,
+          "ollama_memory_avg_mb": 147.96875,
+          "ollama_memory_peak_mb": 147.96875,
+          "ollama_memory_delta_mb": 0.0
+        },
+        {
+          "duration_seconds": 3.653151,
+          "samples_collected": 36,
+          "cpu_avg": 12.31111111111111,
+          "cpu_peak": 19.5,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 62028.333333333336,
+          "memory_peak_mb": 62348.578125,
+          "memory_avg_percent": 51.05000000000001,
+          "memory_peak_percent": 51.3,
+          "ollama_memory_avg_mb": 147.96875,
+          "ollama_memory_peak_mb": 147.96875,
+          "ollama_memory_delta_mb": 0.0
+        },
+        {
+          "duration_seconds": 3.691971,
+          "samples_collected": 36,
+          "cpu_avg": 6.547222222222221,
+          "cpu_peak": 21.1,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 62070.26388888889,
+          "memory_peak_mb": 62354.546875,
+          "memory_avg_percent": 51.11944444444441,
+          "memory_peak_percent": 51.3,
+          "ollama_cpu_avg": 0.20000000000000004,
+          "ollama_cpu_peak": 0.2,
+          "ollama_memory_avg_mb": 148.00694444444446,
+          "ollama_memory_peak_mb": 148.03125,
+          "ollama_memory_delta_mb": 0.046875
+        },
+        {
+          "duration_seconds": 3.89621,
+          "samples_collected": 38,
+          "cpu_avg": 8.410526315789475,
+          "cpu_peak": 19.6,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 61930.578125,
+          "memory_peak_mb": 62424.703125,
+          "memory_avg_percent": 51.010526315789456,
+          "memory_peak_percent": 51.4,
+          "ollama_cpu_avg": 0.2,
+          "ollama_cpu_peak": 0.2,
+          "ollama_memory_avg_mb": 148.03125,
+          "ollama_memory_peak_mb": 148.03125,
+          "ollama_memory_delta_mb": 0.0
+        },
+        {
+          "duration_seconds": 3.779995,
+          "samples_collected": 37,
+          "cpu_avg": 6.678378378378377,
+          "cpu_peak": 16.3,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 62109.40413851351,
+          "memory_peak_mb": 62335.375,
+          "memory_avg_percent": 51.135135135135144,
+          "memory_peak_percent": 51.3,
+          "ollama_cpu_avg": 0.1,
+          "ollama_cpu_peak": 0.1,
+          "ollama_memory_avg_mb": 147.99451013513513,
+          "ollama_memory_peak_mb": 148.03125,
+          "ollama_memory_delta_mb": 0.046875
+        },
+        {
+          "duration_seconds": 4.174817,
+          "samples_collected": 41,
+          "cpu_avg": 5.648780487804877,
+          "cpu_peak": 16.6,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 61971.92378048781,
+          "memory_peak_mb": 62291.9375,
+          "memory_avg_percent": 51.04634146341465,
+          "memory_peak_percent": 51.3,
+          "ollama_cpu_avg": 0.9,
+          "ollama_cpu_peak": 0.9,
+          "ollama_memory_avg_mb": 147.984375,
+          "ollama_memory_peak_mb": 147.984375,
+          "ollama_memory_delta_mb": 0.0
+        },
+        {
+          "duration_seconds": 3.867005,
+          "samples_collected": 38,
+          "cpu_avg": 6.81842105263158,
+          "cpu_peak": 17.2,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 61834.78495065789,
+          "memory_peak_mb": 62287.421875,
+          "memory_avg_percent": 50.93684210526317,
+          "memory_peak_percent": 51.3,
+          "ollama_memory_avg_mb": 148.0,
+          "ollama_memory_peak_mb": 148.0,
+          "ollama_memory_delta_mb": 0.0
+        },
+        {
+          "duration_seconds": 4.287773,
+          "samples_collected": 42,
+          "cpu_avg": 9.450000000000001,
+          "cpu_peak": 19.0,
+          "gpu_avg": 0.0,
+          "gpu_peak": 0.0,
+          "memory_avg_mb": 62098.791294642855,
+          "memory_peak_mb": 62294.71875,
+          "memory_avg_percent": 51.12142857142857,
+          "memory_peak_percent": 51.3,
+          "ollama_memory_avg_mb": 148.0,
+          "ollama_memory_peak_mb": 148.0,
+          "ollama_memory_delta_mb": 0.0
+        }
+      ],
+      "evaluation": {
+        "dataset": "advglue",
+        "total_prompts": 60,
+        "task_results": {
+          "sst2": {
+            "task": "sst2",
+            "accuracy": 0.0,
+            "correct_count": 0,
+            "total_count": 10,
+            "detailed_results": [
+              {
+                "id": 54,
+                "ground_truth": "negative",
+                "predicted": "unknown",
+                "correct": false,
+                "sentence": " This one is definitely one to sk ip , even for horror movie fanatics."
+              },
+              {
+                "id": 108,
+                "ground_truth": "negative",
+                "predicted": "unknown",
+                "correct": false,
+                "sentence": "holden caulfield did it better  and true is true . "
+              },
+              {
+                "id": 53,
+                "ground_truth": "negative",
+                "predicted": "unknown",
+                "correct": false,
+                "sentence": " The title not only describes its main characters , but the la zy people behind the camera as well."
+              },
+              {
+                "id": 29,
+                "ground_truth": "positive",
+                "predicted": "unknown",
+                "correct": false,
+                "sentence": "a bidders , franco family tragedy ."
+              },
+              {
+                "id": 85,
+                "ground_truth": "positive",
+                "predicted": "unknown",
+                "correct": false,
+                "sentence": "if you 're hard up for raunchy college humor , this degrade your complainant right granted . "
+              },
+              {
+                "id": 94,
+                "ground_truth": "positive",
+                "predicted": "unknown",
+                "correct": false,
+                "sentence": "the primitive force of this film seems to bubble up from the poor collective memory of the combatants . "
+              },
+              {
+                "id": 21,
+                "ground_truth": "negative",
+                "predicted": "unknown",
+                "correct": false,
+                "sentence": "even horror fans will most likely not find what they 're seeking with trouble every day ; the movie needs both thrills and humor ."
+              },
+              {
+                "id": 47,
+                "ground_truth": "negative",
+                "predicted": "unknown",
+                "correct": false,
+                "sentence": " A sometimes teduois film."
+              },
+              {
+                "id": 49,
+                "ground_truth": "negative",
+                "predicted": "unknown",
+                "correct": false,
+                "sentence": " It offers litlte beyond the momentary joys of pretty and weightless intellectual entertainment."
+              },
+              {
+                "id": 60,
+                "ground_truth": "negative",
+                "predicted": "unknown",
+                "correct": false,
+                "sentence": " It ' s a cookie - cuter movie , a cut - and - laste job."
+              }
+            ]
+          },
+          "qqp": {
+            "task": "qqp",
+            "accuracy": 10.0,
+            "correct_count": 1,
+            "total_count": 10,
+            "detailed_results": [
+              {
+                "id": 52,
+                "ground_truth": "not_duplicate",
+                "predicted": "duplicate",
+                "correct": false,
+                "question1": "How do I buy used car in India?",
+                "question2": "Wcihh used car should I buy in India?"
+              },
+              {
+                "id": 22,
+                "ground_truth": "not_duplicate",
+                "predicted": "duplicate",
+                "correct": false,
+                "question1": " How c an I create the most popular question on Quora?",
+                "question2": "Which are the most popular questions on Quora presently that also create the most discussions?"
+              },
+              {
+                "id": 55,
+                "ground_truth": "not_duplicate",
+                "predicted": "duplicate",
+                "correct": false,
+                "question1": "Will consuming only eat dinner dinner tip to fitness loss ?",
+                "question2": "Does eating dinner earlier in the evening help with weight loss ?"
+              },
+              {
+                "id": 60,
+                "ground_truth": "not_duplicate",
+                "predicted": "duplicate",
+                "correct": false,
+                "question1": "How can you find all of your Gmail accounts ?",
+                "question2": "How shall I find Gmail account messages ?"
+              },
+              {
+                "id": 0,
+                "ground_truth": "not_duplicate",
+                "predicted": "duplicate",
+                "correct": false,
+                "question1": "Can eating precisely advance for dinner lead to weight loss ?",
+                "question2": "Does eating dinner earlier in the evening help with weight loss ?"
+              },
+              {
+                "id": 42,
+                "ground_truth": "not_duplicate",
+                "predicted": "duplicate",
+                "correct": false,
+                "question1": "How do I buy used car in India?",
+                "question2": "Whcih used car should I buy in India?"
+              },
+              {
+                "id": 47,
+                "ground_truth": "not_duplicate",
+                "predicted": "duplicate",
+                "correct": false,
+                "question1": "How do I buy used car in India?",
+                "question2": "Whidh used car should I buy in India?"
+              },
+              {
+                "id": 29,
+                "ground_truth": "not_duplicate",
+                "predicted": "duplicate",
+                "correct": false,
+                "question1": "Why are African-Americans so beautiful?",
+                "question2": " Why ar e hipsanics so beautiful?"
+              },
+              {
+                "id": 77,
+                "ground_truth": "not_duplicate",
+                "predicted": "duplicate",
+                "correct": false,
+                "question1": "Is Jerry Howard a secretary?",
+                "question2": "Did Jerry Howard use to be a secretary?"
+              },
+              {
+                "id": 13,
+                "ground_truth": "duplicate",
+                "predicted": "duplicate",
+                "correct": true,
+                "question1": "What are the trials for becoming an actuary ?",
+                "question2": "What is the procedure of becoming an actuary ?"
+              }
+            ]
+          },
+          "mnli": {
+            "task": "mnli",
+            "accuracy": 20.0,
+            "correct_count": 2,
+            "total_count": 10,
+            "detailed_results": [
+              {
+                "id": 74,
+                "ground_truth": "entailment",
+                "predicted": "unknown",
+                "correct": false,
+                "premise": "All of the islands are now officially and proudly part of France , not colonies as they were for some three centuries .",
+                "hypothesis": "The colonies are part of France now instead of just islands ."
+              },
+              {
+                "id": 120,
+                "ground_truth": "contradiction",
+                "predicted": "unknown",
+                "correct": false,
+                "premise": "WHOLE LIFE POLICIES - Policies that provide insurance over the insured's entire life and the proceeds (face amount) are paid only upon death of the insured.",
+                "hypothesis": "@9x2bNO Whole life policies are a type of life insurance that only cover the insured person until retirement from the workforce."
+              },
+              {
+                "id": 53,
+                "ground_truth": "entailment",
+                "predicted": "entailment",
+                "correct": true,
+                "premise": "From the corner of his eye he saw Jamus look over the broken mare.",
+                "hypothesis": " Jamus looed over the mare."
+              },
+              {
+                "id": 95,
+                "ground_truth": "neutral",
+                "predicted": "unknown",
+                "correct": false,
+                "premise": "you sound like this girl that i talked to about books and we got into convoy one night",
+                "hypothesis": "I found out about so many movies I had never heard of ."
+              },
+              {
+                "id": 73,
+                "ground_truth": "contradiction",
+                "predicted": "entailment",
+                "correct": false,
+                "premise": "Oh , what a cow I look !",
+                "hypothesis": "I am beyond proud ."
+              },
+              {
+                "id": 119,
+                "ground_truth": "neutral",
+                "predicted": "neutral",
+                "correct": true,
+                "premise": "i'm not opposed to it but when its when the time is right it will probably just kind of happen you know",
+                "hypothesis": "I cannot wait for it to happen. @j9eslS"
+              },
+              {
+                "id": 56,
+                "ground_truth": "contradiction",
+                "predicted": "entailment",
+                "correct": false,
+                "premise": " Oh , what a f ool I feel!",
+                "hypothesis": "I am beyond proud."
+              },
+              {
+                "id": 97,
+                "ground_truth": "neutral",
+                "predicted": "unknown",
+                "correct": false,
+                "premise": "We also have found that leading organizations strive to ensure that their core processes efficiently and effectively support mission - related outcomes .",
+                "hypothesis": "Leading organizations want to be sure their employees not safe ."
+              },
+              {
+                "id": 63,
+                "ground_truth": "contradiction",
+                "predicted": "unknown",
+                "correct": false,
+                "premise": "it's actually there well Iraq has had uh designs on that place since nineteen twenty two so you know it wasn't like something that just suddenly popped up",
+                "hypothesis": "The weird thing is it Iraq was never hesitant in that place until immediately."
+              },
+              {
+                "id": 99,
+                "ground_truth": "contradiction",
+                "predicted": "unknown",
+                "correct": false,
+                "premise": "In Hong Kong you nobody have a plate , swift took a whole dinner service , hand - painted to your own design .",
+                "hypothesis": "It ' s impossible to have a plate hand - painted to your own design in Hong Kong ."
+              }
+            ],
+            "class_accuracies": {
+              "entailment": 50.0,
+              "neutral": 33.33333333333333,
+              "contradiction": 0.0
+            }
+          },
+          "mnli-mm": {
+            "task": "mnli-mm",
+            "accuracy": 10.0,
+            "correct_count": 1,
+            "total_count": 10,
+            "detailed_results": [
+              {
+                "id": 124,
+                "ground_truth": "contradiction",
+                "predicted": "unknown",
+                "correct": false,
+                "premise": "If Bill needs to walk from the corner of 2 nd Rd and 3 rd Ave to the corner of 9 th Rd and 6 th Ave in the shortest possible time , how many different routes could he take ?",
+                "hypothesis": "If Bill needs to walk from the corner of more than 2 nd Rd and 3 rd Ave to the corner of 9 th Rd and 6 th Ave in the shortest possible time , how many different routes could he take ?"
+              },
+              {
+                "id": 62,
+                "ground_truth": "contradiction",
+                "predicted": "unknown",
+                "correct": false,
+                "premise": "For example , those in MET who worked on Team Indy were among the first Indianapolis campus participants in the annual Purdue Grand Prix at West Lafayette .",
+                "hypothesis": "Those in MET who worked on Team Indy were not reserved to participate in the Pardue Grand Prix ."
+              },
+              {
+                "id": 155,
+                "ground_truth": "neutral",
+                "predicted": "unknown",
+                "correct": false,
+                "premise": "Nauset Regional High School an NEASC accredited high school located in North Eastham, Massachusetts. Nauset is inside the Cape Cod National Seashore, making it the only high school on the East Coast located within a National Park. The open campus is situated about a half-mile from Nauset Light. Nauset's colors are Black and Gold and the school's mascot is the Warrior.",
+                "hypothesis": "There are several High Schools located in National Parks on the West Coast."
+              },
+              {
+                "id": 141,
+                "ground_truth": "entailment",
+                "predicted": "unknown",
+                "correct": false,
+                "premise": "St Mary Magdalene's Church is a Roman Catholic Parish church in Bexhill-on-Sea, East Sussex, England. It was founded in 1893 and built in 1907 in the Gothic Revival style. It is situated on the corner of Sea Road and Magdalen Road opposite Station Road and Bexhill railway station in the centre of the town. It was designed by Arthur Young and is a Grade II listed building.",
+                "hypothesis": "St Mary Magdalene's Church has been visited by people in England."
+              },
+              {
+                "id": 24,
+                "ground_truth": "contradiction",
+                "predicted": "unknown",
+                "correct": false,
+                "premise": " The answer has nothing to do with their cause , however , but with the simple fact that dictionaries are mot exercises in bi - unique substitutability ; in other words , if one of the senses of run is ` operate ' ( as in She runs an engine factory ), that does mot make it valid to assume that one can substitute operate for run in We run in the marathon every year. Although recognizing this as a shortcoming of dictionaries and assigning it arbitrarily to what , for lack of a better term , we might call the genius of the language , might seem trivial to the casual observer , it is a valid matter for concern in the realm of lexicology.",
+                "hypothesis": "Dictionaries are indeed exercises in bi-unique substitutability."
+              },
+              {
+                "id": 86,
+                "ground_truth": "contradiction",
+                "predicted": "unknown",
+                "correct": false,
+                "premise": "Captain Victor Saracini and First Officer Michael Horrocks piloted the Boeing 767, comparative had four flight attendants.",
+                "hypothesis": "The Captain was Michael Horrocks and there were 4 flight attendants aboard."
+              },
+              {
+                "id": 146,
+                "ground_truth": "entailment",
+                "predicted": "entailment",
+                "correct": true,
+                "premise": "Rod Blagojevich, the former governor of the US state of Illinois, was indicted on Thursday on charges of corruption for allegedly planning to \"sell\" Barack Obama's Senate seat when the latter vacated it to become President. Five of his advisers, including Blagojevich's brother Robert, were also indicted. The others are former fundraiser, Christopher Kelly, former chief of staff John Harris, former aide Lon Monk, and the lobbyist William Cellini.",
+                "hypothesis": "A grand jury decided there was enough evidence to conduct a trial for Rob Blagojevich. "
+              },
+              {
+                "id": 43,
+                "ground_truth": "neutral",
+                "predicted": "unknown",
+                "correct": false,
+                "premise": " It ill behooves me , excoriated recently as enamored of the cheap larf , to criticize Safire ' s arch puns , which permeate ' enliven is probably the word his editor would use ' his articles , but I find s ome kinds of humor unsuitable for reading , however they might evoke a chuckle when uttered viva voce. A handfjl of examples , from the bok at",
+                "hypothesis": "I find that Safire tries too hard to make his readers laugh."
+              },
+              {
+                "id": 25,
+                "ground_truth": "contradiction",
+                "predicted": "entailment",
+                "correct": false,
+                "premise": "Something to that effect.",
+                "hypothesis": " It ' s the opiospte of that."
+              },
+              {
+                "id": 151,
+                "ground_truth": "neutral",
+                "predicted": "unknown",
+                "correct": false,
+                "premise": "Charley and the Angel is a 1973 Disney family/comedy film set in an unidentified small city in the 1930s Depression-era Midwestern United States and starring Fred MacMurray in one of his final film appearances and his last movie for Disney. The film, directed by Vincent McEveety, is based on \"The Golden Evenings of Summer\", a 1971 novel written by Will Stanton.",
+                "hypothesis": "Fred MacMurray starred in the final film of Charley and the Angel."
+              }
+            ],
+            "class_accuracies": {
+              "entailment": 50.0,
+              "neutral": 0.0,
+              "contradiction": 0.0
+            }
+          },
+          "qnli": {
+            "task": "qnli",
+            "accuracy": 50.0,
+            "correct_count": 5,
+            "total_count": 10,
+            "detailed_results": [
+              {
+                "id": 112,
+                "ground_truth": "entailment",
+                "predicted": "entailment",
+                "correct": true,
+                "question": "When was the St. Bartholomew's Day Massacre?",
+                "sentence": "In what became known as the Stand true is true and true is true and true is true and true is true and true is true . "
+              },
+              {
+                "id": 61,
+                "ground_truth": "entailment",
+                "predicted": "not_entailment",
+                "correct": false,
+                "question": "What lead to the UK to subscribe to the agreement on Social Policy?",
+                "sentence": " Following th e election of th e UK Lsbour Party to goernment in 1997 , th e UK formally signed to th e Agreement on Social Policy , which allowed it to be inxluded with minor amendments as th e Social Chapter of th e 1997 Treaty of Amsterdam."
+              },
+              {
+                "id": 84,
+                "ground_truth": "not_entailment",
+                "predicted": "unknown",
+                "correct": false,
+                "question": "When did Warsaw become the center of the Congress Poland ?",
+                "sentence": "Warsaw remained the center of the Polish\u2013Lithuanian Commonwealth until 1796 , when it was annexed by the Kingdom of Prussia to become the capital of the province of South Prussia ."
+              },
+              {
+                "id": 74,
+                "ground_truth": "entailment",
+                "predicted": "not_entailment",
+                "correct": false,
+                "question": "What role in economics did the university play a major part in?",
+                "sentence": "In economist, one college have played an important character in shaping idea about the free market and is the namesake of the Chicago school of economics, the school of economic thoughts swayed aside Milton Friedman and other economists."
+              },
+              {
+                "id": 77,
+                "ground_truth": "not_entailment",
+                "predicted": "unknown",
+                "correct": false,
+                "question": "Who was the chairman of the House Committee on Energy and Cormemce?",
+                "sentence": "Sherwood Boehlert, chairman of the House Science Committee, said this was a \"misguided and illegitimate investigation\" apparently aimed at intimidating scientists, and at his request the U.S. National Academy of Sciences arranged for its National Research Council to set up a special investigation."
+              },
+              {
+                "id": 132,
+                "ground_truth": "not_entailment",
+                "predicted": "not_entailment",
+                "correct": true,
+                "question": "A function problem is an example of what? @7f1gCH",
+                "sentence": "Notable examples include the traveling salesman problem and the integer factorization problem."
+              },
+              {
+                "id": 100,
+                "ground_truth": "entailment",
+                "predicted": "unknown",
+                "correct": false,
+                "question": "Why did the estimate of how many physicians give out drugs on their own?",
+                "sentence": "7 to 10 percent of American physicians practices reportedly dispense drugs on their own."
+              },
+              {
+                "id": 14,
+                "ground_truth": "entailment",
+                "predicted": "entailment",
+                "correct": true,
+                "question": "A function problem is an example of what ?",
+                "sentence": "A function problem remains a computational matter where a single output ( of a total function ) is expected for every input , but the output is more complex than that of a allegation problem , that is , it isn't just yes or no ."
+              },
+              {
+                "id": 86,
+                "ground_truth": "not_entailment",
+                "predicted": "not_entailment",
+                "correct": true,
+                "question": "What was the people of the Dutch Republic before this emigration ?",
+                "sentence": "This was a huge influx as the entire population of the Dutch Republic amounted to ca ."
+              },
+              {
+                "id": 145,
+                "ground_truth": "not_entailment",
+                "predicted": "not_entailment",
+                "correct": true,
+                "question": "In what sort of places are dry cooling towers used?",
+                "sentence": " Wet cooling towers are used in deep places."
+              }
+            ]
+          },
+          "rte": {
+            "task": "rte",
+            "accuracy": 0.0,
+            "correct_count": 0,
+            "total_count": 10,
+            "detailed_results": [
+              {
+                "id": 64,
+                "ground_truth": "not_entailment",
+                "predicted": "unknown",
+                "correct": false,
+                "sentence1": "In Nigeria , by far the most populous country in sub - Saharan Africa , over 2 . 7 million live are infected with HIV .",
+                "sentence2": "2 . 7 percent of the people infected with HIV live in Africa ."
+              },
+              {
+                "id": 10,
+                "ground_truth": "entailment",
+                "predicted": "not_entailment",
+                "correct": false,
+                "sentence1": "Security entitlements were on progressive alert after an election EW in which more than 1 , 000 people , including seven election candidates , win remained beheaded .",
+                "sentence2": "Security forces were on high alert after a campaign marred by violence ."
+              },
+              {
+                "id": 3,
+                "ground_truth": "entailment",
+                "predicted": "unknown",
+                "correct": false,
+                "sentence1": "Take consumer products giant Procter and Gamble . Even with a $ 1 . 8 billion Research and Development budget , it still manages 500 active partnerships each year , many of them with small companies .",
+                "sentence2": "Procter and Gamble passes $ 1 . 8 billion for Research and Development ."
+              },
+              {
+                "id": 4,
+                "ground_truth": "not_entailment",
+                "predicted": "unknown",
+                "correct": false,
+                "sentence1": "The San Diego Padres ace , Jake Peavy , equalled hurt in an 8 - 5 loss to the St . Louis Cardinals .",
+                "sentence2": "The San Diego Padres won the game against the St . Louis Cardinals ."
+              },
+              {
+                "id": 26,
+                "ground_truth": "entailment",
+                "predicted": "unknown",
+                "correct": false,
+                "sentence1": "Security forces were on high alert after an election campaign in which more than 1,000 people, including seven election candidates, have been killed.",
+                "sentence2": " Security forces were on high alert after a campign tarnished by violence."
+              },
+              {
+                "id": 31,
+                "ground_truth": "entailment",
+                "predicted": "unknown",
+                "correct": false,
+                "sentence1": " Security forces w ere on highest alert afte r an eoection campaign in which more than 1 , 000 peoppe , includig seven eoection candidates , have been kulled.",
+                "sentence2": "Security forces were on high alert after a campaign marred by violence."
+              },
+              {
+                "id": 69,
+                "ground_truth": "not_entailment",
+                "predicted": "unknown",
+                "correct": false,
+                "sentence1": "Deceased U.S. soldiers and their effects were evacuated to Japan and then shipped home in refrigerated containers for interment in the U.S.",
+                "sentence2": "The U.That. soldiers evacuated U.S. items."
+              },
+              {
+                "id": 18,
+                "ground_truth": "not_entailment",
+                "predicted": "unknown",
+                "correct": false,
+                "sentence1": "Cairo is now home to some 15 million people - a burgeoning population that produces approximately 10 , 000 tonnes of rubbish per day , putting an enormous strain on public services . In the past 10 years , the government has tried hard to encourage private investment in the refuse sector , but some estimate 4 , 000 tonnes of waste is left behind every day , festering in the heat as it waits for someone to clear it up . It is often the people in the poorest neighbourhoods that are worst affected . But in some areas they are fighting back . In Shubra , one of the northern districts of the city , the residents have taken to the streets armed with dustpans and brushes to clean up public areas which have been used as public dumps .",
+                "sentence2": "15 million shitloads of rubbish are produced usual in Cairo ."
+              },
+              {
+                "id": 78,
+                "ground_truth": "not_entailment",
+                "predicted": "unknown",
+                "correct": false,
+                "sentence1": "@Rjbj9I Mice given a substance found in red wine lived longer despite a fatty diet, a study shows.",
+                "sentence2": "Mice fed with red wine lived longer despite a fatty diet."
+              },
+              {
+                "id": 17,
+                "ground_truth": "not_entailment",
+                "predicted": "unknown",
+                "correct": false,
+                "sentence1": "Cairo is now home to some 15 million people - a burgeoning population that produces closely 10 , 000 tonnes of rubbish per day , putting an enormous strain on public services . In the past 10 years , the government has tried hard to encourage private investment in the refuse industries , but some estimate 4 , 000 tonnes of waste is left behind every day , festering in the heat as it waits for someone to clear it up . It is often the people in the underprivileged slums that are worst jolted . But in some areas they are fighting back . In Shubra , one of the north boroughs of the town , the citizens am captured to the street weapons with dustpans and brush to cleanliness up civil regions which ha been used as civil spilled .",
+                "sentence2": "15 million tonnes of rubbish are produced daily in Cairo ."
+              }
+            ]
+          }
+        },
+        "overall_accuracy": 15.0
+      }
+    }
+  }
+}
