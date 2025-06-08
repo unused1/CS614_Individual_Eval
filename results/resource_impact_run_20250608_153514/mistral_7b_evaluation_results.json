@@ -1,0 +1,535 @@
+{
+  "dataset": "advglue",
+  "total_prompts": 60,
+  "task_results": {
+    "sst2": {
+      "task": "sst2",
+      "accuracy": 40.0,
+      "correct_count": 4,
+      "total_count": 10,
+      "detailed_results": [
+        {
+          "id": 117,
+          "ground_truth": "negative",
+          "predicted": "unknown",
+          "correct": false,
+          "sentence": "the iditarod lasts for days - this just felt like it did  and true is true . "
+        },
+        {
+          "id": 35,
+          "ground_truth": "positive",
+          "predicted": "positive",
+          "correct": true,
+          "sentence": "the mesmerizing performances of the leads keep the film grounded nor maintain the audience riveted ."
+        },
+        {
+          "id": 142,
+          "ground_truth": "positive",
+          "predicted": "unknown",
+          "correct": false,
+          "sentence": "I wouldn't say, given the time that I've been watching, that this actor is rough."
+        },
+        {
+          "id": 96,
+          "ground_truth": "positive",
+          "predicted": "unknown",
+          "correct": false,
+          "sentence": "sade solves an unregulated look tag the unpopular eponymous and fiercely atheistic hero . "
+        },
+        {
+          "id": 26,
+          "ground_truth": "negative",
+          "predicted": "negative",
+          "correct": true,
+          "sentence": "unflinchingly bleak and harrowing"
+        },
+        {
+          "id": 43,
+          "ground_truth": "positive",
+          "predicted": "unknown",
+          "correct": false,
+          "sentence": "mr. tsai is a very outset artist in his medium , and what time is it there ?"
+        },
+        {
+          "id": 111,
+          "ground_truth": "negative",
+          "predicted": "unknown",
+          "correct": false,
+          "sentence": "or doing last year 's taxes with your ex-wife and true is true and true is true and true is true and true is true and true is true . "
+        },
+        {
+          "id": 33,
+          "ground_truth": "negative",
+          "predicted": "negative",
+          "correct": true,
+          "sentence": "you surprise why enough was n't just a music videos modestly although a full-length movie ."
+        },
+        {
+          "id": 41,
+          "ground_truth": "positive",
+          "predicted": "positive",
+          "correct": true,
+          "sentence": "upon it 's become almost redundant to say so , major attaboy go to leigh for actually casting people who look working-class ."
+        },
+        {
+          "id": 138,
+          "ground_truth": "positive",
+          "predicted": "unknown",
+          "correct": false,
+          "sentence": "I can't say, given it's a Tuesday, that that director was awful."
+        }
+      ]
+    },
+    "qqp": {
+      "task": "qqp",
+      "accuracy": 30.0,
+      "correct_count": 3,
+      "total_count": 10,
+      "detailed_results": [
+        {
+          "id": 22,
+          "ground_truth": "not_duplicate",
+          "predicted": "duplicate",
+          "correct": false,
+          "question1": " How c an I create the most popular question on Quora?",
+          "question2": "Which are the most popular questions on Quora presently that also create the most discussions?"
+        },
+        {
+          "id": 69,
+          "ground_truth": "not_duplicate",
+          "predicted": "duplicate",
+          "correct": false,
+          "question1": "Why Tamil Nadu Universities are no good ?",
+          "question2": "Rector fewer sa 10th universities scarce to slip 100 % at Tamil Nadu ?"
+        },
+        {
+          "id": 8,
+          "ground_truth": "not_duplicate",
+          "predicted": "duplicate",
+          "correct": false,
+          "question1": "\" Who is the Adam the lyrics to Blink - 182's \" \" Adam's Song \" \" been written about ? \"",
+          "question2": "\" Which Blink - 182 band member wrote the lyrics to \" \" Adam's Song \" \" ? \""
+        },
+        {
+          "id": 55,
+          "ground_truth": "not_duplicate",
+          "predicted": "duplicate",
+          "correct": false,
+          "question1": "Will consuming only eat dinner dinner tip to fitness loss ?",
+          "question2": "Does eating dinner earlier in the evening help with weight loss ?"
+        },
+        {
+          "id": 0,
+          "ground_truth": "not_duplicate",
+          "predicted": "duplicate",
+          "correct": false,
+          "question1": "Can eating precisely advance for dinner lead to weight loss ?",
+          "question2": "Does eating dinner earlier in the evening help with weight loss ?"
+        },
+        {
+          "id": 23,
+          "ground_truth": "duplicate",
+          "predicted": "duplicate",
+          "correct": true,
+          "question1": " Are ailens real or are they fake?",
+          "question2": "Do aliens exists?"
+        },
+        {
+          "id": 50,
+          "ground_truth": "duplicate",
+          "predicted": "duplicate",
+          "correct": true,
+          "question1": "What are the best information for outlining / planning a noel ?",
+          "question2": "How do I best outline my novel ?"
+        },
+        {
+          "id": 38,
+          "ground_truth": "not_duplicate",
+          "predicted": "duplicate",
+          "correct": false,
+          "question1": "\"Who is the Adam the lyrics to Blink-182's \"\"Adam's Song\"\" are written about?\"",
+          "question2": " \" Which Blink - 182 band member wrte the lyrics to \"\" Adam ' s Song \"\"?\""
+        },
+        {
+          "id": 48,
+          "ground_truth": "not_duplicate",
+          "predicted": "duplicate",
+          "correct": false,
+          "question1": "\" Who is the Adam the lyrics to Blink - 182 ' s \" \" Adam ' s Song \" \" are written about ? \"",
+          "question2": "\" Which Blink - 182 band member written the words to \" \" Adam ' s Track \" \" ? \""
+        },
+        {
+          "id": 26,
+          "ground_truth": "duplicate",
+          "predicted": "duplicate",
+          "correct": true,
+          "question1": " What are the best things to do in Hog Kong?",
+          "question2": "What is the best thing in Hong Kong?"
+        }
+      ]
+    },
+    "mnli": {
+      "task": "mnli",
+      "accuracy": 20.0,
+      "correct_count": 2,
+      "total_count": 10,
+      "detailed_results": [
+        {
+          "id": 64,
+          "ground_truth": "neutral",
+          "predicted": "neutral",
+          "correct": true,
+          "premise": "We also have found that leading organizations strive to ensure that their core processes efficiently and effectively support mission - related outcomes .",
+          "hypothesis": "Leading arrangement aant to be sure their employee are safe ."
+        },
+        {
+          "id": 33,
+          "ground_truth": "contradiction",
+          "predicted": "neutral",
+          "correct": false,
+          "premise": "The bhakti movement of the Tamils brought a new warmth to the hitherto rigid Brahmanic ritual of Hinduism.",
+          "hypothesis": " The Tamils ' bhakti movement froz e the previously warm ritual of Hinduism."
+        },
+        {
+          "id": 56,
+          "ground_truth": "contradiction",
+          "predicted": "neutral",
+          "correct": false,
+          "premise": " Oh , what a f ool I feel!",
+          "hypothesis": "I am beyond proud."
+        },
+        {
+          "id": 79,
+          "ground_truth": "neutral",
+          "predicted": "entailment",
+          "correct": false,
+          "premise": "Missouri was asked to continue its planning efforts and file a supplemental planning report with LSC on or before October 1 , 1999 .",
+          "hypothesis": "Missouri was agreed to continue it's planning efforts ."
+        },
+        {
+          "id": 24,
+          "ground_truth": "contradiction",
+          "predicted": "neutral",
+          "correct": false,
+          "premise": "Not quite as large is the Papal Crose commemorating Pope John Paul II's visit in 1979, when more than one million people gathered to celebrate mass.",
+          "hypothesis": " Les s than a million people celebrated mass during Pope John Paul II ' s visit in 1979."
+        },
+        {
+          "id": 21,
+          "ground_truth": "entailment",
+          "predicted": "neutral",
+          "correct": false,
+          "premise": "There are no shares of a stock that might someday come back, just piles of options as worthless as those shares of Cook's American Business Alliance.",
+          "hypothesis": " Those shares of stocks will hever come back."
+        },
+        {
+          "id": 30,
+          "ground_truth": "entailment",
+          "predicted": "neutral",
+          "correct": false,
+          "premise": " He was of two minds , one reveled in the pexce of this village.",
+          "hypothesis": "He loved how peaceful the village was."
+        },
+        {
+          "id": 19,
+          "ground_truth": "contradiction",
+          "predicted": "neutral",
+          "correct": false,
+          "premise": " She has interchange a hollow life for a heightened life , and has tried to comprehend all its turns , get its possibilities.",
+          "hypothesis": "She has chose to live a hollow life."
+        },
+        {
+          "id": 115,
+          "ground_truth": "contradiction",
+          "predicted": "contradiction",
+          "correct": true,
+          "premise": "WHOLE LIFE POLICIES - Policies that provide insurance over the insured's entire life and the proceeds (face amount) are paid only upon death of the insured.",
+          "hypothesis": "https://t.co/lTAmYC Whole life policies are a type of life insurance that only cover the insured person until retirement from the workforce."
+        },
+        {
+          "id": 23,
+          "ground_truth": "contradiction",
+          "predicted": "neutral",
+          "correct": false,
+          "premise": " The netted cst of operations.",
+          "hypothesis": "The gross cost."
+        }
+      ],
+      "class_accuracies": {
+        "entailment": 0.0,
+        "neutral": 50.0,
+        "contradiction": 16.666666666666664
+      }
+    },
+    "mnli-mm": {
+      "task": "mnli-mm",
+      "accuracy": 10.0,
+      "correct_count": 1,
+      "total_count": 10,
+      "detailed_results": [
+        {
+          "id": 7,
+          "ground_truth": "contradiction",
+          "predicted": "neutral",
+          "correct": false,
+          "premise": "Over the past three decades , external forces impinging on the subclass have transformed parents' and , notwithstanding , children's lives .",
+          "hypothesis": "Despite the changes in the family , the children were unaffected by the parents ."
+        },
+        {
+          "id": 75,
+          "ground_truth": "entailment",
+          "predicted": "neutral",
+          "correct": false,
+          "premise": "it was on this earth you 've lived on this earth for some reason , but you just do n't know what it is .",
+          "hypothesis": "I don't yet know the reason why I have lived on earth. "
+        },
+        {
+          "id": 5,
+          "ground_truth": "entailment",
+          "predicted": "entailment",
+          "correct": true,
+          "premise": "The story disclosed that adults realize a slim service is hard for a small boy to sit through , but exercising self - restraint and participating in communal rituals bring praise and acceptance from the community .",
+          "hypothesis": "According to the story , adult's do realize that a small boy will find a long service difficult to sit through ."
+        },
+        {
+          "id": 68,
+          "ground_truth": "entailment",
+          "predicted": "neutral",
+          "correct": false,
+          "premise": "When we consider how much the set is on during school holidays and summer vacations , children spend more time watching TV than they do in any other waking activity , including going to school and interacting with family members or peers .",
+          "hypothesis": "TV is prince when it comes to how children spend their time ."
+        },
+        {
+          "id": 8,
+          "ground_truth": "neutral",
+          "predicted": "entailment",
+          "correct": false,
+          "premise": "Specific cliches' working wife , working mother , house - wife , etc . 'are discussed , with sober explanations of why they are offensive and with suggestions for suitable alternatives .",
+          "hypothesis": "The work lied spelled by Gloria Steinem ."
+        },
+        {
+          "id": 158,
+          "ground_truth": "contradiction",
+          "predicted": "neutral",
+          "correct": false,
+          "premise": "Officials in Gladewater are working to figure out the cause behind elevated levels of lead in the city's drinking water. On Monday, the city sent out a notice advising residents that water tested from June to September had higher than usual levels of lead. Levels that were not a violation under fed",
+          "hypothesis": "Officials in Gladewater worked hard & figured out the cause behind elevated levels of lead in the city's drinking water."
+        },
+        {
+          "id": 88,
+          "ground_truth": "entailment",
+          "predicted": "neutral",
+          "correct": false,
+          "premise": "for `family hold back,' without exhortation ensuring ample provender for guests.",
+          "hypothesis": "'family hold back,' an emphatic command to guarantee enough food for visitors."
+        },
+        {
+          "id": 23,
+          "ground_truth": "contradiction",
+          "predicted": "neutral",
+          "correct": false,
+          "premise": "In the felled seams of shirts and jeans, for example, the visible stitches might be of a color designed to decorate the garment.",
+          "hypothesis": " The felled seams of shirts are mot visible."
+        },
+        {
+          "id": 105,
+          "ground_truth": "contradiction",
+          "predicted": "neutral",
+          "correct": false,
+          "premise": "Human Growth  and Development https://t.co/Jjnzg7",
+          "hypothesis": "PLant growth on farms"
+        },
+        {
+          "id": 119,
+          "ground_truth": "entailment",
+          "predicted": "neutral",
+          "correct": false,
+          "premise": "If the next three flights departed on - time , how many subsequent flights need to depart from Phoenix on - time , for the airport ' s on - time departure rate to be higher than 60 % ?",
+          "hypothesis": "If the next three flights departed on - time , how many subsequent flights need to depart from Phoenix on - time , for the airport ' s on - time departure rate to be higher than more than 20 % ?"
+        }
+      ],
+      "class_accuracies": {
+        "entailment": 20.0,
+        "neutral": 0.0,
+        "contradiction": 0.0
+      }
+    },
+    "qnli": {
+      "task": "qnli",
+      "accuracy": 70.0,
+      "correct_count": 7,
+      "total_count": 10,
+      "detailed_results": [
+        {
+          "id": 20,
+          "ground_truth": "not_entailment",
+          "predicted": "not_entailment",
+          "correct": true,
+          "question": "What was the population of the Dutch Republic before this emigration ?",
+          "sentence": "This was a massive influx as the entire population of the Dutch Republic amounted to californian ."
+        },
+        {
+          "id": 77,
+          "ground_truth": "not_entailment",
+          "predicted": "not_entailment",
+          "correct": true,
+          "question": "Who was the chairman of the House Committee on Energy and Cormemce?",
+          "sentence": "Sherwood Boehlert, chairman of the House Science Committee, said this was a \"misguided and illegitimate investigation\" apparently aimed at intimidating scientists, and at his request the U.S. National Academy of Sciences arranged for its National Research Council to set up a special investigation."
+        },
+        {
+          "id": 91,
+          "ground_truth": "not_entailment",
+          "predicted": "not_entailment",
+          "correct": true,
+          "question": "gott , what was mr. gott , dich loben wir ?",
+          "sentence": "He paraphrased the Te Deum as \"Herr Gott, dich loben wir\" with a simplified form of the melody."
+        },
+        {
+          "id": 130,
+          "ground_truth": "entailment",
+          "predicted": "entailment",
+          "correct": true,
+          "question": "What kind of water body is rumored to be obscuring Genghis Khan's burial site?",
+          "sentence": "@ZdQXAK Folklore says that a river was diverted over his grave to make it impossible to find (the same manner of burial as the Sumerian King Gilgamesh of Uruk and Atilla the Hun)."
+        },
+        {
+          "id": 72,
+          "ground_truth": "entailment",
+          "predicted": "entailment",
+          "correct": true,
+          "question": "How qas Tem\u00fcjin continue confinement by the Tayichi'ud?",
+          "sentence": "The Tayichi'ud enslaved Tem\u00fcjin (reportedly with a cangue, a sort of portable stocks), but with the help of a sympathetic guard, the father of Chilaun (who later became a general of Genghis Khan), he was able to escape from the ger (yurt) in the middle of the night by hiding in a river crevice.[citation needed]"
+        },
+        {
+          "id": 135,
+          "ground_truth": "not_entailment",
+          "predicted": "entailment",
+          "correct": false,
+          "question": "What is not Ron's profession?",
+          "sentence": "Billy is a photographer. Ron is an educator."
+        },
+        {
+          "id": 113,
+          "ground_truth": "entailment",
+          "predicted": "not_entailment",
+          "correct": false,
+          "question": "When was the St. Bartholomew's Day Massacre?",
+          "sentence": "In what became known as the St and true is true . "
+        },
+        {
+          "id": 44,
+          "ground_truth": "not_entailment",
+          "predicted": "not_entailment",
+          "correct": true,
+          "question": "What was the population of the Dutch Republic before this emigration?",
+          "sentence": " This was a hu ge influx as the entire population of the Dutch Republic amounted to ca."
+        },
+        {
+          "id": 125,
+          "ground_truth": "not_entailment",
+          "predicted": "entailment",
+          "correct": false,
+          "question": "@8Gs05z A function problem is an example of what?",
+          "sentence": "Notable examples include the traveling salesman problem and the integer factorization problem."
+        },
+        {
+          "id": 96,
+          "ground_truth": "not_entailment",
+          "predicted": "not_entailment",
+          "correct": true,
+          "question": "Where did Tem\u00fcjin hide during his escape from the Tayichi ' ud ?",
+          "sentence": "Tem\u00fcjin ' s interior then became segregation mask weapons escape from the Tayichi ' ud ."
+        }
+      ]
+    },
+    "rte": {
+      "task": "rte",
+      "accuracy": 70.0,
+      "correct_count": 7,
+      "total_count": 10,
+      "detailed_results": [
+        {
+          "id": 55,
+          "ground_truth": "not_entailment",
+          "predicted": "not_entailment",
+          "correct": true,
+          "sentence1": "In a bowl , whisk together the eggs and sugar until completely blended and frothy .",
+          "sentence2": "In a bowl , whisk together the egg , sugar and sugar until light in color ."
+        },
+        {
+          "id": 38,
+          "ground_truth": "entailment",
+          "predicted": "not_entailment",
+          "correct": false,
+          "sentence1": " Hepbun ' s platinum , diamond and sapphire brooch had been estimated to fetch just $ 20 , 000 , but sold for $ 12 0 , 000 , six times its estimated price.",
+          "sentence2": "Hepburn's diamond and sapphire brooch fetched $120,000."
+        },
+        {
+          "id": 37,
+          "ground_truth": "not_entailment",
+          "predicted": "not_entailment",
+          "correct": true,
+          "sentence1": " Deceased U. S. Soldiers ad their effecta were evacuated to Japan ad then shipped home in refrigerated containers for interment in the U. S.",
+          "sentence2": "The U.S. military evacuated U.S. citizens."
+        },
+        {
+          "id": 50,
+          "ground_truth": "entailment",
+          "predicted": "entailment",
+          "correct": true,
+          "sentence1": "A jury is slated to decide for the first time whether Jack Kevorkian, famed as \"Dr. Death,\" has violated Michigan's assisted-suicide ban, while the state continues to grapple with the issue of what to allow when the ill want to end their pain by ending their lives.",
+          "sentence2": "Jack Kevorkian is the real list of \"Dr. Death\"."
+        },
+        {
+          "id": 60,
+          "ground_truth": "not_entailment",
+          "predicted": "not_entailment",
+          "correct": true,
+          "sentence1": "Deceased U . S . soldiers and their effects were evacuation to Japan and then shipped homes in refrigerated containers for interment in the U . S .",
+          "sentence2": "The U . S . military evacuated U . S . citizens ."
+        },
+        {
+          "id": 42,
+          "ground_truth": "entailment",
+          "predicted": "entailment",
+          "correct": true,
+          "sentence1": " Teenage sensation Wayne Rooney powered England into the quarter - finals of E uro 2004 with two goals in Monday ' s 4 - 2 defeat of Croatia and they were joined in the last eight by champions France who beat Switzerland 3 - 1.",
+          "sentence2": "France participates in Euro 2004."
+        },
+        {
+          "id": 74,
+          "ground_truth": "not_entailment",
+          "predicted": "not_entailment",
+          "correct": true,
+          "sentence1": "Cairo is now home to some 15 million people - a burgeoning population that produces approximately 10,000 tonnes of rubbish per day, putting an enormous strain on public services and false is not true . ",
+          "sentence2": "15 million tonnes of rubbish are produced daily in Cairo."
+        },
+        {
+          "id": 11,
+          "ground_truth": "not_entailment",
+          "predicted": "not_entailment",
+          "correct": true,
+          "sentence1": "Deceased U . S . soldiers and their effects were evacuated to Japan and then shipped home in refrigerated containers for interment in the U . S .",
+          "sentence2": "The U . S . military evacuated U . S . nationals ."
+        },
+        {
+          "id": 64,
+          "ground_truth": "not_entailment",
+          "predicted": "entailment",
+          "correct": false,
+          "sentence1": "In Nigeria , by far the most populous country in sub - Saharan Africa , over 2 . 7 million live are infected with HIV .",
+          "sentence2": "2 . 7 percent of the people infected with HIV live in Africa ."
+        },
+        {
+          "id": 69,
+          "ground_truth": "not_entailment",
+          "predicted": "entailment",
+          "correct": false,
+          "sentence1": "Deceased U.S. soldiers and their effects were evacuated to Japan and then shipped home in refrigerated containers for interment in the U.S.",
+          "sentence2": "The U.That. soldiers evacuated U.S. items."
+        }
+      ]
+    }
+  },
+  "overall_accuracy": 40.0
+}

@@ -1,0 +1,206 @@
+{
+  "dataset": "advglue",
+  "total_prompts": 18,
+  "task_results": {
+    "sst2": {
+      "task": "sst2",
+      "accuracy": 33.33333333333333,
+      "correct_count": 1,
+      "total_count": 3,
+      "detailed_results": [
+        {
+          "id": 0,
+          "ground_truth": "positive",
+          "predicted": "positive",
+          "correct": true,
+          "sentence": "it 's an uneven treat that bores fun at the democratic exercise while also examining its significance for those who take part ."
+        },
+        {
+          "id": 1,
+          "ground_truth": "negative",
+          "predicted": "positive",
+          "correct": false,
+          "sentence": "it captures a wonderful kind of laziness to waste the talents of robert forster , anne meara , eugene levy , and reginald veljohnson all in the same magic ."
+        },
+        {
+          "id": 2,
+          "ground_truth": "negative",
+          "predicted": "unknown",
+          "correct": false,
+          "sentence": "in exactly 89 minutes , most of which passed as slowly as if i 'd been sitting naked on an igloo , formula 51 broke from quirky to jerky to perfect swift ."
+        }
+      ]
+    },
+    "qqp": {
+      "task": "qqp",
+      "accuracy": 0.0,
+      "correct_count": 0,
+      "total_count": 3,
+      "detailed_results": [
+        {
+          "id": 0,
+          "ground_truth": "not_duplicate",
+          "predicted": "duplicate",
+          "correct": false,
+          "question1": "Can eating precisely advance for dinner lead to weight loss ?",
+          "question2": "Does eating dinner earlier in the evening help with weight loss ?"
+        },
+        {
+          "id": 1,
+          "ground_truth": "not_duplicate",
+          "predicted": "duplicate",
+          "correct": false,
+          "question1": "How can I create the most flourishing question on Quora ?",
+          "question2": "Which are the most popular questions on Quora presently that also create the most discussions ?"
+        },
+        {
+          "id": 2,
+          "ground_truth": "not_duplicate",
+          "predicted": "duplicate",
+          "correct": false,
+          "question1": "How can I create the most thriving question on Quora ?",
+          "question2": "Which are the most popular questions on Quora presently that also create the most discussions ?"
+        }
+      ]
+    },
+    "mnli": {
+      "task": "mnli",
+      "accuracy": 66.66666666666666,
+      "correct_count": 2,
+      "total_count": 3,
+      "detailed_results": [
+        {
+          "id": 0,
+          "ground_truth": "contradiction",
+          "predicted": "contradiction",
+          "correct": true,
+          "premise": "well that would be a help i wish they would do that here we have got so golden landfill space left that we're going to run out before the end of this decade and it's really going to be",
+          "hypothesis": "We have plenty of space in the landfill ."
+        },
+        {
+          "id": 1,
+          "ground_truth": "neutral",
+          "predicted": "neutral",
+          "correct": true,
+          "premise": "Boats in daily use lie within feet of the fashionable bars and restaurants .",
+          "hypothesis": "Bars and restaurants are pragmatic places ."
+        },
+        {
+          "id": 2,
+          "ground_truth": "contradiction",
+          "predicted": "neutral",
+          "correct": false,
+          "premise": "The tourist industry continued to dilate , and though it became one of the top two income earners in Spain , a realization that unrestricted mass tourism was leading to damaging long - term consequences also began to grow .",
+          "hypothesis": "Tourism is not very big in Spain ."
+        }
+      ],
+      "class_accuracies": {
+        "entailment": 0,
+        "neutral": 100.0,
+        "contradiction": 50.0
+      }
+    },
+    "mnli-mm": {
+      "task": "mnli-mm",
+      "accuracy": 33.33333333333333,
+      "correct_count": 1,
+      "total_count": 3,
+      "detailed_results": [
+        {
+          "id": 0,
+          "ground_truth": "entailment",
+          "predicted": "neutral",
+          "correct": false,
+          "premise": "The simplest is for one or more of the members to simply donate one million dollars to the IGGS Scholarship Fund .",
+          "hypothesis": "The simplest is for one million dollars to be donated by one of the agents to the IGGS Scholarship Fund ."
+        },
+        {
+          "id": 1,
+          "ground_truth": "entailment",
+          "predicted": "entailment",
+          "correct": true,
+          "premise": "I was on this earth you know , I've lived on this earth for some reason , I just don't know what it is yet .",
+          "hypothesis": "I don't yet know the reason why I have lived on rock ."
+        },
+        {
+          "id": 2,
+          "ground_truth": "contradiction",
+          "predicted": "neutral",
+          "correct": false,
+          "premise": "Um , I read some of the same books that they had read to me , first , and then , as I got older , I just doomed hungry for books .",
+          "hypothesis": "I lost interest in reading over time ."
+        }
+      ],
+      "class_accuracies": {
+        "entailment": 50.0,
+        "neutral": 0,
+        "contradiction": 0.0
+      }
+    },
+    "qnli": {
+      "task": "qnli",
+      "accuracy": 66.66666666666666,
+      "correct_count": 2,
+      "total_count": 3,
+      "detailed_results": [
+        {
+          "id": 0,
+          "ground_truth": "entailment",
+          "predicted": "not_entailment",
+          "correct": false,
+          "question": "What other outfit did Apollo 1 test at besides Kennedy Space Center ?",
+          "sentence": "They trained and conducted tests of their spacecraft at North American , and in the altitude chamber at the Kennedy Space Center ."
+        },
+        {
+          "id": 1,
+          "ground_truth": "not_entailment",
+          "predicted": "not_entailment",
+          "correct": true,
+          "question": "What does UMC stand for ?",
+          "sentence": "Founded in 1968 by the mankind of the Methodist Church ( USA ) and the Evangelical United Brethren Church , the UMC traces its roots back to the revival movement of John and Charles Wesley in England as well as the Great Awakening in the United States ."
+        },
+        {
+          "id": 2,
+          "ground_truth": "not_entailment",
+          "predicted": "not_entailment",
+          "correct": true,
+          "question": "Where did the Exposition take space ?",
+          "sentence": "This World's Fair devoted a building to electrical exhibits ."
+        }
+      ]
+    },
+    "rte": {
+      "task": "rte",
+      "accuracy": 33.33333333333333,
+      "correct_count": 1,
+      "total_count": 3,
+      "detailed_results": [
+        {
+          "id": 0,
+          "ground_truth": "entailment",
+          "predicted": "not_entailment",
+          "correct": false,
+          "sentence1": "The universal doctrinal courtesy initiation , Doctors Without Borders / Medecins Sans Frontieres ( MSF ) , follows to deal casualties of violence in all seats where it is present in Darfur .",
+          "sentence2": "Doctors Without Borders is an international aid organization ."
+        },
+        {
+          "id": 1,
+          "ground_truth": "not_entailment",
+          "predicted": "entailment",
+          "correct": false,
+          "sentence1": "In Nigeria , by far the most populous country in sub - Saharan Africa , over 2 . 7 million people are infected with HIV .",
+          "sentence2": "2 . 7 percent of the people infected with HIV exist in Africa ."
+        },
+        {
+          "id": 2,
+          "ground_truth": "not_entailment",
+          "predicted": "not_entailment",
+          "correct": true,
+          "sentence1": "In a bowl , whisk together the eggs and sugar until completely blended and frothy .",
+          "sentence2": "In a bowl , whisk together the egg , sugar and brake until light in color ."
+        }
+      ]
+    }
+  },
+  "overall_accuracy": 38.88888888888889
+}

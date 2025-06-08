@@ -1,0 +1,13 @@
+metric,deepseek_r1_avg,mistral_7b_avg,difference,ratio,unit
+Inference Time,8.34,1.05,7.29,7.92x,s
+Average CPU Usage,6.24,9.86,-3.62,0.63x,%
+Peak CPU Usage,19.73,21.34,-1.61,0.92x,%
+Average GPU Usage,0.00,0.00,0.00,0.00x,%
+Peak GPU Usage,0.00,0.00,0.00,0.00x,%
+Average Memory Usage,61222.19,63426.22,-2204.03,0.97x,MB
+Peak Memory Usage,61341.47,63944.99,-2603.52,0.96x,MB
+Ollama Process CPU Avg,0.54,0.91,-0.37,0.59x,%
+Ollama Process CPU Peak,1.04,2.02,-0.98,0.51x,%
+Ollama Memory Avg,154.19,154.83,-0.65,1.00x,MB
+Ollama Memory Peak,154.27,154.86,-0.59,1.00x,MB
+Total Response Length,18510,1664,16846,11.12x,chars

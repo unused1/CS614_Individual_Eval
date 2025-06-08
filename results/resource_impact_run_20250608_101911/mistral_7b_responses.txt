@@ -1,0 +1,154 @@
+MODEL RESPONSES: mistral:7b
+Test Run: 20250608_101911
+Number of prompts: 10
+====================================================================================================
+
+====================================================================================================
+PROMPT 0
+====================================================================================================
+Model: mistral:7b
+Timestamp: 2025-06-08T10:20:55.467142
+Duration: 1.46s
+Response Length: 28 chars
+Contains Think Tags: NO
+==================================================
+PROMPT:
+What is 2+2? Choose the best answer: A) 3 B) 4 C) 5 D) 6
+==================================================
+RAW RESPONSE:
+ The correct answer is B) 4.
+
+====================================================================================================
+PROMPT 1
+====================================================================================================
+Model: mistral:7b
+Timestamp: 2025-06-08T10:20:58.040853
+Duration: 0.45s
+Response Length: 45 chars
+Contains Think Tags: NO
+==================================================
+PROMPT:
+Analyze the sentiment of this text and classify as positive or negative: 'The movie was absolutely terrible.'
+==================================================
+RAW RESPONSE:
+ The sentiment of the given text is negative.
+
+====================================================================================================
+PROMPT 2
+====================================================================================================
+Model: mistral:7b
+Timestamp: 2025-06-08T10:21:01.428827
+Duration: 1.27s
+Response Length: 269 chars
+Contains Think Tags: NO
+==================================================
+PROMPT:
+Is the following statement true or false? 'All birds can fly.' Explain briefly.
+==================================================
+RAW RESPONSE:
+ The statement 'All birds can fly' is not strictly true, as there are exceptions to this rule. While most birds are capable of flying, some species such as ostriches, emus, and penguins are flightless. Therefore, the statement should be revised to 'Most birds can fly.'
+
+====================================================================================================
+PROMPT 3
+====================================================================================================
+Model: mistral:7b
+Timestamp: 2025-06-08T10:21:04.496314
+Duration: 1.02s
+Response Length: 146 chars
+Contains Think Tags: NO
+==================================================
+PROMPT:
+Complete the pattern: 2, 4, 8, 16, ?
+==================================================
+RAW RESPONSE:
+32 is the next number in the pattern. The pattern appears to be doubling each time, starting from 2 and moving up by powers of 2. So, 16 * 2 = 32.
+
+====================================================================================================
+PROMPT 4
+====================================================================================================
+Model: mistral:7b
+Timestamp: 2025-06-08T10:21:07.478933
+Duration: 0.84s
+Response Length: 134 chars
+Contains Think Tags: NO
+==================================================
+PROMPT:
+Which word doesn't belong: Apple, Orange, Carrot, Banana?
+==================================================
+RAW RESPONSE:
+ Carrot does not belong to the group because apples, oranges, and bananas are all types of fruits, while a carrot is a root vegetable.
+
+====================================================================================================
+PROMPT 5
+====================================================================================================
+Model: mistral:7b
+Timestamp: 2025-06-08T10:21:10.779000
+Duration: 1.21s
+Response Length: 240 chars
+Contains Think Tags: NO
+==================================================
+PROMPT:
+If it takes 5 machines 5 minutes to make 5 widgets, how long would it take 100 machines to make 100 widgets?
+==================================================
+RAW RESPONSE:
+ Since each machine takes 5 minutes to produce one widget and you have 100 machines working simultaneously, they can all produce their widgets at the same time. Therefore, it would still take 5 minutes to make 100 widgets with 100 machines.
+
+====================================================================================================
+PROMPT 6
+====================================================================================================
+Model: mistral:7b
+Timestamp: 2025-06-08T10:21:13.341156
+Duration: 0.46s
+Response Length: 52 chars
+Contains Think Tags: NO
+==================================================
+PROMPT:
+What is the capital of France? Answer in one word.
+==================================================
+RAW RESPONSE:
+ Paris (not a city, but it's the seat of government)
+
+====================================================================================================
+PROMPT 7
+====================================================================================================
+Model: mistral:7b
+Timestamp: 2025-06-08T10:21:16.649171
+Duration: 1.17s
+Response Length: 186 chars
+Contains Think Tags: NO
+==================================================
+PROMPT:
+Solve: If x + 3 = 7, what is x?
+==================================================
+RAW RESPONSE:
+ To solve for x in the equation x + 3 = 7, you subtract 3 from both sides of the equation. This gives you x = 7 - 3, which simplifies to x = 4. So, the solution to the equation is x = 4.
+
+====================================================================================================
+PROMPT 8
+====================================================================================================
+Model: mistral:7b
+Timestamp: 2025-06-08T10:21:20.767410
+Duration: 2.02s
+Response Length: 461 chars
+Contains Think Tags: NO
+==================================================
+PROMPT:
+Is this grammatically correct? 'Me and him went to the store.'
+==================================================
+RAW RESPONSE:
+ No, it is not grammatically correct. A more appropriate way to phrase it would be "He and I went to the store." or "We went to the store." The subject-verb agreement should match the nouns in the sentence, and "he" and "I" are both subjects, so using "we" is a more natural choice. However, if you want to emphasize one person over the other, you can use the phrase as you provided, but it's less common and considered informal or colloquial in formal writing.
+
+====================================================================================================
+PROMPT 9
+====================================================================================================
+Model: mistral:7b
+Timestamp: 2025-06-08T10:21:23.538371
+Duration: 0.63s
+Response Length: 103 chars
+Contains Think Tags: NO
+==================================================
+PROMPT:
+What comes next in the sequence: Monday, Tuesday, Wednesday, ?
+==================================================
+RAW RESPONSE:
+ Thursday. The pattern here is the days of the week, starting with Monday and progressing sequentially.
