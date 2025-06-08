@@ -14,10 +14,6 @@ deepseek-r1:7b:
   qnli: 70.00% (7/10)
   rte: 70.00% (7/10)
 
-  Resource Usage:
-    Avg CPU: 0.0%
-    Avg Memory: 0.0 MB
-
 mistral:7b:
 ------------------------------------------------------------
   Overall Accuracy: 40.00%
@@ -27,9 +23,5 @@ mistral:7b:
   mnli-mm: 10.00% (1/10)
   qnli: 70.00% (7/10)
   rte: 70.00% (7/10)
-
-  Resource Usage:
-    Avg CPU: 0.0%
-    Avg Memory: 0.0 MB
 
 ================================================================================
