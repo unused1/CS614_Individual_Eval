@@ -503,3 +503,6 @@ This project is provided as-is for educational and research purposes.
 13. Declare-lab/red-instruct. (2025). [Python]. Deep Cognition and Language Research (DeCLaRe) Lab. https://github.com/declare-lab/red-instruct (Original work published 2023)
 14. Download Llama. (n.d.). Llama. Retrieved 17 May 2025, from https://www.llama.com/llama-downloads/
 15. Run LLM inference on Cloud Run GPUs with Gemma 3 and Ollama  |  Cloud Run Documentation  |  Google Cloud. (n.d.). Retrieved 18 May 2025, from https://cloud.google.com/run/docs/tutorials/gpu-gemma-with-ollama?authuser=1
+16. Ali, S. (2025, June 2). Token Bloat: Managing LLM Output Size and Cost in Cloud Environments. Medium. https://medium.com/@saifaliunity/token-bloat-managing-llm-output-size-and-cost-in-cloud-environments-52b5ee7ebb51
+17. Cohen, S. (2025, May 18). Stop Wasting LLM Tokens! Medium. https://shmulc.medium.com/stop-wasting-tokens-508d55e81cff
+18. Cui, Y., Cai, Y., & Wang, Y. (2025). Token-Efficient Prompt Injection Attack: Provoking Cessation in LLM Reasoning via Adaptive Token Compression (No. arXiv:2504.20493; Version 1). arXiv. https://doi.org/10.48550/arXiv.2504.20493

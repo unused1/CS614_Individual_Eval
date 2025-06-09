@@ -1,0 +1,75 @@
+Model Comparison - Raw Responses
+================================================================================
+Timestamp: 2025-06-09T08:32:45.657623
+Prompt: What is 2+2? Choose the best answer: A) 3 B) 4 C) 5 D) 6
+Temperature: 0.0
+================================================================================
+
+
+Model: deepseek-r1:7b
+------------------------------------------------------------
+Duration: 10.05s
+Response length: 2370 characters
+Contains <think> tags: YES
+
+FULL RAW RESPONSE:
+```
+<think>
+Okay, so I need to figure out what 2 plus 2 is. Hmm, let's see. I remember from when I was a kid that addition is like putting things together. So if I have two apples and someone gives me two more apples, how many apples do I have in total? That should be four apples, right?
+
+Wait, but why isn't it three? Maybe because you start counting after the second one. Like, when you add 2 + 2, you count each number once. So first is 1 (from the first two), then 2 (the next two). No, that doesn't make sense. I think I'm confusing something.
+
+Let me try using my fingers. If I hold up two fingers on one hand and two on the other, how many do I have? That's four fingers in total. Yeah, so it must be four. But let me check with a number line. Starting at 2, if I move forward two more steps, where do I land? One step is 3, two steps from 2 would be 4. So that confirms it.
+
+I guess sometimes when I'm unsure, I overcomplicate things. Like, maybe thinking about multiplication or something else. But no, addition is straightforward. It's just combining quantities without any overlaps or groups beyond the immediate numbers.
+
+So yeah, after all that thinking and checking with different methods—counting objects, using my fingers, visualizing a number line—it seems clear that 2 plus 2 equals 4. I don't think it's 3 because that would be if you added one more to two, making three, but here we're adding two more.
+
+I also remember learning in school that addition tables are the foundation of arithmetic. So looking at a simple addition table, 2 + 2 is definitely 4. There's no ambiguity there unless someone is messing with the numbers, which isn't the case here.
+
+Maybe I'm overcomplicating it because sometimes when you're stressed or not thinking clearly, your mind wanders. But in this case, I think I've got it right. It's one of those basic facts that everyone knows, but it's good to verify just to be sure.
+</think>
+
+The sum of 2 and 2 is calculated by adding the two quantities together.
+
+**Step-by-Step Explanation:**
+
+1. **Understanding Addition:** Addition combines two or more numbers to find their total value.
+2. **Applying to 2 + 2:**
+   - Start with the first number, which is 2.
+   - Add the second number, also 2, to it.
+3. **Calculation:**
+   - 2 (from the first number)
+   - + 2 (from the second number)
+   - = 4 (total sum)
+
+**Answer:** B) 4
+```
+
+================================================================================
+
+Model: mistral:7b
+------------------------------------------------------------
+Duration: 0.50s
+Response length: 28 characters
+Contains <think> tags: NO
+
+FULL RAW RESPONSE:
+```
+ The correct answer is B) 4.
+```
+
+================================================================================
+
+Model: llama3:instruct
+------------------------------------------------------------
+Duration: 0.53s
+Response length: 27 characters
+Contains <think> tags: NO
+
+FULL RAW RESPONSE:
+```
+The correct answer is B) 4.
+```
+
+================================================================================
